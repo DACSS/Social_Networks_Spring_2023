@@ -1,0 +1,19 @@
+---
+title: "Short Assignment 2"
+author: "Steve O'Neill"
+editor: visual
+tags: 
+  - shortassignment1
+---
+
+```{r setup, include=FALSE}
+library(igraph)
+library(statnet)
+library(tidyverse)
+```
+
+### Reading in data
+
+```{r}
+got_marriages <- read_csv("_data/got/got_marriages.csv", show_col_types = FALSE)
+```
