@@ -9,6 +9,8 @@ tags:
 ```{r setup, include=FALSE}
 library(igraph)
 library(statnet)
+library(tidyverse)
+library(lubridate)
 ```
 
 ### Reading in data
