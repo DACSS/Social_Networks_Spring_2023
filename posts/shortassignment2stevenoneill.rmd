@@ -9,7 +9,6 @@ tags:
 ```{r setup, include=FALSE}
 library(igraph)
 library(statnet)
-library(tidyverse)
 ```
 
 ### Reading in data
