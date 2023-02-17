@@ -35,6 +35,14 @@ jobs:
              any::igraph
              any::statnet
           cache-version: 1
+          
+      - name: Check R package dependencies
+        run: |
+          required_packages <- quarto::list_required_packages()
+          missing_packages <- setdiff(required_packages, rownames(installed.packages()))
+          if (length(missing_packages) > 0) {
+          install.packages(missing_packages)
+          }
    
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
