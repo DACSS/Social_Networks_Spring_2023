@@ -12,10 +12,7 @@ format:
 # editor: visual
 categories: 
   - challenge_1
-  - instruction
-  # - railroads
-  # - faostat
-  # - wildbirds
+  - networks
 ---
 
 ```{r}
@@ -43,6 +40,7 @@ Read in one (or more) of the following data sets, using the correct R package an
 Find the `_data` folder, located inside the `posts` folder. Then you can read in the data, using base `read.csv` or `read_csv` standard tidy read command to read Comma Separated Values files or, alternatively, read the data in directly from loading a package.
 
 ```{r}
+got_marriages<- read.csv("po")
 ```
 
 Add any comments or documentation as needed. More challenging data sets may require additional code chunks and documentation.
