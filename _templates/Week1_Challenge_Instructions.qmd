@@ -12,7 +12,14 @@ format:
 # editor: visual
 categories: 
   - challenge_1
+<<<<<<< HEAD
   - networks
+=======
+  - instructions
+  # - railroads
+  # - faostat
+  # - wildbirds
+>>>>>>> 40c62976ef7a93cf0f3cefec792ed2af64a9e3b2
 ---
 
 ```{r}

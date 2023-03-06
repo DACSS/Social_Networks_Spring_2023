@@ -24,6 +24,7 @@ library(googlesheets4)
 library(igraph)
 library(statnet)
 
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Reading in the Data
