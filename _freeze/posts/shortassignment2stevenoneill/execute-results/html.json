@@ -1,0 +1,14 @@
+{
+  "hash": "d4c87c7b9bf5e5ad306e53a8d295acc5",
+  "result": {
+    "markdown": "---\ntitle: \"Short Assignment 2\"\nauthor: \"Steve O'Neill\"\neditor: visual\ntags: \n  - shortassignment1\n---\n\n\n\n\n### Reading in data\n\n\n::: {.cell}\n\n```{.r .cell-code}\ngot_marriages <- read_csv(\"_data/got/got_marriages.csv\", show_col_types = FALSE)\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ndependencies <- renv::dependencies()$Package\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nFinding R package dependencies ... Done!\n```\n:::\n\n```{.r .cell-code}\ndependencies\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n [1] \"rmarkdown\" \"renv\"      \"tidyverse\" \"renv\"      \"renv\"      \"rmarkdown\"\n [7] \"renv\"      \"tidyverse\" \"renv\"      \"renv\"      \"rmarkdown\" \"igraph\"   \n[13] \"statnet\"   \"tidyverse\" \"igraph\"    \"readxl\"    \"tidyverse\" \"igraph\"   \n[19] \"igraph\"    \"igraph\"    \"rmarkdown\"\n```\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nrenv::hydrate()\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n* Discovering package dependencies ... Done!\n* Copying packages into the library ... Done!\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

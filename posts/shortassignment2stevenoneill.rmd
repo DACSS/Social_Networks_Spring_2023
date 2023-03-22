@@ -7,10 +7,9 @@ tags:
 ---
 
 ```{r setup, include=FALSE}
-library(igraph)
-library(statnet)
+
 library(tidyverse)
-library(lubridate)
+library(renv)
 ```
 
 ### Reading in data
@@ -18,3 +17,12 @@ library(lubridate)
 ```{r}
 got_marriages <- read_csv("_data/got/got_marriages.csv", show_col_types = FALSE)
 ```
+
+```{r}
+dependencies <- renv::dependencies()$Package
+dependencies
+```
+```{r}
+renv::hydrate()
+```
+
