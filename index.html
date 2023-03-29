@@ -73,10 +73,10 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 25,
+      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      page: 30,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta name="twitter:title" content="DACSS 697E: Social Networks Spring-2023">
-<meta name="twitter:description" content="The blog posts here are contributed by students enrolled in DACSS 697E, Social Networks Spring 2023.">
+<meta name="twitter:description" content="Spring 2023">
 <meta name="twitter:creator" content="@UMassDACSS">
 <meta name="twitter:site" content="@UMassDACSS">
 <meta name="twitter:card" content="summary">
@@ -146,18 +146,19 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(34)</span></div><div class="category" data-category="Claire Battaglia">Claire Battaglia <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Describe the Network Data - Introduction - Objective - Data Read and Negative Edge Normalization - Network Size, Features and Attributes">Describe the Network Data - Introduction - Objective - Data Read and Negative Edge Normalization - Network Size, Features and Attributes <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Dyad and Triad Census">Dyad and Triad Census <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Erika_Nagai">Erika_Nagai <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Game of Thrones">Game of Thrones <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Global and Local Transitivity or Clustering">Global and Local Transitivity or Clustering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="IO_account">IO_account <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Jyoti Rani">Jyoti Rani <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Loading data and creating network">Loading data and creating network <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Mekhala Kumar">Mekhala Kumar <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Miranda Manka">Miranda Manka <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Path Length and Component Structure">Path Length and Component Structure <span class="quarto-category-count">(1)</span></div><div class="category" data-category="challenge Overview">challenge Overview <span class="quarto-category-count">(1)</span></div><div class="category" data-category="challenge1">challenge1 <span class="quarto-category-count">(3)</span></div><div class="category" data-category="challenge2">challenge2 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="challenge3">challenge3 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="challenge_1">challenge_1 <span class="quarto-category-count">(13)</span></div><div class="category" data-category="challenge_2">challenge_2 <span class="quarto-category-count">(9)</span></div><div class="category" data-category="challenge_3">challenge_3 <span class="quarto-category-count">(4)</span></div><div class="category" data-category="challenge_4">challenge_4 <span class="quarto-category-count">(2)</span></div><div class="category" data-category="degree">degree <span class="quarto-category-count">(1)</span></div><div class="category" data-category="density">density <span class="quarto-category-count">(1)</span></div><div class="category" data-category="fish_encounters">fish_encounters <span class="quarto-category-count">(1)</span></div><div class="category" data-category="got like_dislike">got like_dislike <span class="quarto-category-count">(1)</span></div><div class="category" data-category="gotmarriages">gotmarriages <span class="quarto-category-count">(1)</span></div><div class="category" data-category="industry">industry <span class="quarto-category-count">(1)</span></div><div class="category" data-category="input output data">input output data <span class="quarto-category-count">(1)</span></div><div class="category" data-category="instruction">instruction <span class="quarto-category-count">(5)</span></div><div class="category" data-category="instructions">instructions <span class="quarto-category-count">(10)</span></div><div class="category" data-category="solution">solution <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">DACSS 697E: Social Networks Spring-2023</h1>
+<p class="subtitle lead">Spring 2023</p>
 </div>
 
 
@@ -177,1440 +178,456 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1679941519827" data-listing-reading-time-sort="1.97">
-<div class="thumbnail">
-<a href="./posts/steveoneill_week2.html">
-<div class="thumbnail-image">
+<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
 
-</div>
-</a><p><a href="./posts/steveoneill_week2.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/steveoneill_week2.html">
-<h3 class="no-anchor listing-title">
-Short Assignment 1: Reading Network Data
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-This edgelist comes with edge attributes <code>Type</code>, <code>Notes</code> and <code>Generation</code>.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/steveoneill_week2.html">
-<div class="listing-author">
+<table class="quarto-listing-table table table-hover">
+<thead>
+<tr>
+<th>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1680122956002" data-listing-reading-time-sort="1.97" data-listing-title-sort="Short Assignment 1: Reading Network Data" data-listing-filename-sort="steveoneill_week2.rmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
+</td>
+<td class="listing-title">
+<a href="./posts/steveoneill_week2.html" class="title">Short Assignment 1: Reading Network Data</a>
+</td>
+<td class="listing-author">
 Steve O’Neill
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="challenge_1,solution" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="1.24">
-<div class="thumbnail">
-<a href="./posts/Week1_Challenge_Solutions.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week1_Challenge_Solutions.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week1_Challenge_Solutions.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge Solutions
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_1'); return false;">
-challenge_1
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('solution'); return false;">
-solution
-</div>
-</div>
-<a href="./posts/Week1_Challenge_Solutions.html">
-<div class="listing-description">
-Before starting, the necessary packages should be loaded:
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week1_Challenge_Solutions.html">
-<div class="listing-author">
+</td>
+</tr>
+<tr data-index="1" data-categories="challenge_1,solution" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="1.24" data-listing-title-sort="Week 1 Challenge Solutions" data-listing-filename-sort="Week1_Challenge_Solutions.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
+</td>
+<td class="listing-title">
+<a href="./posts/Week1_Challenge_Solutions.html" class="title">Week 1 Challenge Solutions</a>
+</td>
+<td class="listing-author">
 Oriol Vallès Codina
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="challenge_2,challenge_3,challenge_4,solution" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="8.525">
-<div class="thumbnail">
-<p><a href="./posts/Week234_Challenge_Solutions.html"> <img src="./posts/_data/ntrwk_mex_total.png " class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/Week234_Challenge_Solutions.html">
-<h3 class="no-anchor listing-title">
-Week 2/3/4 Challenge Solutions
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_2'); return false;">
-challenge_2
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_3'); return false;">
-challenge_3
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_4'); return false;">
-challenge_4
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('solution'); return false;">
-solution
-</div>
-</div>
-<a href="./posts/Week234_Challenge_Solutions.html">
-<div class="listing-description">
-<p>Analyzing the Complex Structure of the Economic Input-Output Network of the US, 2012</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week234_Challenge_Solutions.html">
-<div class="listing-author">
+</td>
+</tr>
+<tr data-index="2" data-categories="challenge_2,challenge_3,challenge_4,solution" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="8.525" data-listing-title-sort="Week 2/3/4 Challenge Solutions" data-listing-filename-sort="Week234_Challenge_Solutions.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
+</td>
+<td class="listing-title">
+<a href="./posts/Week234_Challenge_Solutions.html" class="title">Week 2/3/4 Challenge Solutions</a>
+</td>
+<td class="listing-author">
 Oriol Vallès Codina
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="challenge Overview,Describe the Network Data - Introduction - Objective - Data Read and Negative Edge Normalization - Network Size, Features and Attributes,Dyad and Triad Census,Global and Local Transitivity or Clustering,Path Length and Component Structure" data-listing-date-sort="1679875200000" data-listing-file-modified-sort="1679941519827" data-listing-reading-time-sort="10.025">
-<div class="thumbnail">
-<a href="./posts/akhilesh_challenge_2.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/akhilesh_challenge_2.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/akhilesh_challenge_2.html">
-<h3 class="no-anchor listing-title">
-Week 2 Challenge Submission
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge Overview'); return false;">
-challenge Overview
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Describe the Network Data - Introduction - Objective - Data Read and Negative Edge Normalization - Network Size, Features and Attributes'); return false;">
-Describe the Network Data - Introduction - Objective - Data Read and Negative Edge Normalization - Network Size, Features and Attributes
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Dyad and Triad Census'); return false;">
-Dyad and Triad Census
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Global and Local Transitivity or Clustering'); return false;">
-Global and Local Transitivity or Clustering
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Path Length and Component Structure'); return false;">
-Path Length and Component Structure
-</div>
-</div>
-<a href="./posts/akhilesh_challenge_2.html">
-<div class="listing-description">
-<p>Describing the Basic Structure of a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/akhilesh_challenge_2.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="3" data-categories="challenge Overview,Describe the Network Data - Introduction - Objective - Data Read and Negative Edge Normalization - Network Size, Features and Attributes,Dyad and Triad Census,Global and Local Transitivity or Clustering,Path Length and Component Structure" data-listing-date-sort="1679875200000" data-listing-file-modified-sort="1680122956002" data-listing-reading-time-sort="10.025" data-listing-title-sort="Week 2 Challenge Submission" data-listing-filename-sort="akhilesh_challenge_2.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Mar 27, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/akhilesh_challenge_2.html" class="title">Week 2 Challenge Submission</a>
+</td>
+<td class="listing-author">
 Akhilesh Kumar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="challenge_3,Mekhala Kumar,input output data" data-listing-date-sort="1679702400000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="1.77">
-<div class="thumbnail">
-<a href="./posts/Challenge_3_Mekhala.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Challenge_3_Mekhala.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Challenge_3_Mekhala.html">
-<h3 class="no-anchor listing-title">
-Challenge 3 Mekhala
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_3'); return false;">
-challenge_3
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Mekhala Kumar'); return false;">
-Mekhala Kumar
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('input output data'); return false;">
-input output data
-</div>
-</div>
-<a href="./posts/Challenge_3_Mekhala.html">
-<div class="listing-description">
-<p>Degree and Density of a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Challenge_3_Mekhala.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="4" data-categories="challenge_3,Mekhala Kumar,input output data" data-listing-date-sort="1679702400000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="1.77" data-listing-title-sort="Challenge 3 Mekhala" data-listing-filename-sort="Challenge_3_Mekhala.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Mar 25, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Challenge_3_Mekhala.html" class="title">Challenge 3 Mekhala</a>
+</td>
+<td class="listing-author">
 Mekhala Kumar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="challenge_2,Mekhala Kumar,got like_dislike" data-listing-date-sort="1679616000000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="1.735">
-<div class="thumbnail">
-<a href="./posts/Challenge_2_Mekhala.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Challenge_2_Mekhala.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Challenge_2_Mekhala.html">
-<h3 class="no-anchor listing-title">
-Challenge 2 Mekhala
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_2'); return false;">
-challenge_2
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Mekhala Kumar'); return false;">
-Mekhala Kumar
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('got like_dislike'); return false;">
-got like_dislike
-</div>
-</div>
-<a href="./posts/Challenge_2_Mekhala.html">
-<div class="listing-description">
-<p>Describing the Basic Structure of a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Challenge_2_Mekhala.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="5" data-categories="challenge_2,Mekhala Kumar,got like_dislike" data-listing-date-sort="1679616000000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="1.735" data-listing-title-sort="Challenge 2 Mekhala" data-listing-filename-sort="Challenge_2_Mekhala.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Mar 24, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Challenge_2_Mekhala.html" class="title">Challenge 2 Mekhala</a>
+</td>
+<td class="listing-author">
 Mekhala Kumar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="Claire Battaglia,challenge3,degree,density" data-listing-date-sort="1679443200000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="2.825">
-<div class="thumbnail">
-<a href="./posts/ClaireBattaglia_Week3Challenge.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/ClaireBattaglia_Week3Challenge.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/ClaireBattaglia_Week3Challenge.html">
-<h3 class="no-anchor listing-title">
-Week 3 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Claire Battaglia'); return false;">
-Claire Battaglia
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('challenge3'); return false;">
-challenge3
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('degree'); return false;">
-degree
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('density'); return false;">
-density
-</div>
-</div>
-<a href="./posts/ClaireBattaglia_Week3Challenge.html">
-<div class="listing-description">
-<p>Degree and density of a network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/ClaireBattaglia_Week3Challenge.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="6" data-categories="Claire Battaglia,challenge3,degree,density" data-listing-date-sort="1679443200000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="2.825" data-listing-title-sort="Week 3 Challenge" data-listing-filename-sort="ClaireBattaglia_Week3Challenge.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Mar 22, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/ClaireBattaglia_Week3Challenge.html" class="title">Week 3 Challenge</a>
+</td>
+<td class="listing-author">
 Claire Battaglia
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="challenge_2,Miranda Manka" data-listing-date-sort="1679443200000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="0.99">
-<div class="thumbnail">
-<a href="./posts/MirandaManka_Challenge2.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/MirandaManka_Challenge2.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/MirandaManka_Challenge2.html">
-<h3 class="no-anchor listing-title">
-Week 2 Challenge - GOT Marriages - Census, Transitivity, etc
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_2'); return false;">
-challenge_2
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Miranda Manka'); return false;">
-Miranda Manka
-</div>
-</div>
-<a href="./posts/MirandaManka_Challenge2.html">
-<div class="listing-description">
-<p>Describing the Basic Structure of a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/MirandaManka_Challenge2.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="7" data-categories="challenge_2,Miranda Manka" data-listing-date-sort="1679443200000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="0.99" data-listing-title-sort="Week 2 Challenge - GOT Marriages - Census, Transitivity, etc" data-listing-filename-sort="MirandaManka_Challenge2.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Mar 22, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/MirandaManka_Challenge2.html" class="title">Week 2 Challenge - GOT Marriages - Census, Transitivity, etc</a>
+</td>
+<td class="listing-author">
 Miranda Manka
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="challenge_3,instructions" data-listing-date-sort="1678060800000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="1.27">
-<div class="thumbnail">
-<a href="./posts/Week3_Challenge_Instructions.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week3_Challenge_Instructions.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week3_Challenge_Instructions.html">
-<h3 class="no-anchor listing-title">
-Week 3 Challenge Instructions
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_3'); return false;">
-challenge_3
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instructions'); return false;">
-instructions
-</div>
-</div>
-<a href="./posts/Week3_Challenge_Instructions.html">
-<div class="listing-description">
-<p>Degree and Density of a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week3_Challenge_Instructions.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="8" data-categories="challenge_3,instructions" data-listing-date-sort="1678060800000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="1.27" data-listing-title-sort="Week 3 Challenge Instructions" data-listing-filename-sort="Week3_Challenge_Instructions.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Mar 6, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week3_Challenge_Instructions.html" class="title">Week 3 Challenge Instructions</a>
+</td>
+<td class="listing-author">
 Oriol Vallès Codina
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="challenge_3" data-listing-date-sort="1678060800000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="2.16">
-<div class="thumbnail">
-<a href="./posts/Week3Challenge_BenRamsey.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week3Challenge_BenRamsey.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week3Challenge_BenRamsey.html">
-<h3 class="no-anchor listing-title">
-Week 3 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_3'); return false;">
-challenge_3
-</div>
-</div>
-<a href="./posts/Week3Challenge_BenRamsey.html">
-<div class="listing-description">
-<p>Degree and Density of a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week3Challenge_BenRamsey.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="9" data-categories="challenge_3" data-listing-date-sort="1678060800000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="2.16" data-listing-title-sort="Week 3 Challenge" data-listing-filename-sort="Week3Challenge_BenRamsey.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Mar 6, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week3Challenge_BenRamsey.html" class="title">Week 3 Challenge</a>
+</td>
+<td class="listing-author">
 Ben Ramsey
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="10" data-categories="challenge_4,instructions" data-listing-date-sort="1678060800000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="0.625">
-<div class="thumbnail">
-<a href="./posts/Week4_Challenge_Instructions.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week4_Challenge_Instructions.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week4_Challenge_Instructions.html">
-<h3 class="no-anchor listing-title">
-Week 4 Challenge Instructions
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_4'); return false;">
-challenge_4
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instructions'); return false;">
-instructions
-</div>
-</div>
-<a href="./posts/Week4_Challenge_Instructions.html">
-<div class="listing-description">
-<p>Centrality of a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week4_Challenge_Instructions.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="10" data-categories="challenge_4,instructions" data-listing-date-sort="1678060800000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="0.625" data-listing-title-sort="Week 4 Challenge Instructions" data-listing-filename-sort="Week4_Challenge_Instructions.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Mar 6, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week4_Challenge_Instructions.html" class="title">Week 4 Challenge Instructions</a>
+</td>
+<td class="listing-author">
 Oriol Vallès Codina
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="11" data-categories="challenge_2,instructions" data-listing-date-sort="1678060800000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="1.95">
-<div class="thumbnail">
-<a href="./posts/Challenge2_BrynKruzlic.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Challenge2_BrynKruzlic.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Challenge2_BrynKruzlic.html">
-<h3 class="no-anchor listing-title">
-Kruzlic Week 2 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_2'); return false;">
-challenge_2
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instructions'); return false;">
-instructions
-</div>
-</div>
-<a href="./posts/Challenge2_BrynKruzlic.html">
-<div class="listing-description">
-<p>Basics of a Network: Dyads and Triads</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Challenge2_BrynKruzlic.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="11" data-categories="challenge_2,instructions" data-listing-date-sort="1678060800000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="1.95" data-listing-title-sort="Kruzlic Week 2 Challenge" data-listing-filename-sort="Challenge2_BrynKruzlic.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Mar 6, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Challenge2_BrynKruzlic.html" class="title">Kruzlic Week 2 Challenge</a>
+</td>
+<td class="listing-author">
 Bryn Kruzlic
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="12" data-categories="Claire Battaglia,challenge2" data-listing-date-sort="1677628800000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="3.955">
-<div class="thumbnail">
-<a href="./posts/ClaireBattaglia_Week2Challenge.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/ClaireBattaglia_Week2Challenge.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/ClaireBattaglia_Week2Challenge.html">
-<h3 class="no-anchor listing-title">
-Week 2 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Claire Battaglia'); return false;">
-Claire Battaglia
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('challenge2'); return false;">
-challenge2
-</div>
-</div>
-<a href="./posts/ClaireBattaglia_Week2Challenge.html">
-<div class="listing-description">
-This week I’ll be creating a network of the distances between various places in Game of Thrones. The data are organized in an edgelist.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/ClaireBattaglia_Week2Challenge.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="12" data-categories="Claire Battaglia,challenge2" data-listing-date-sort="1677628800000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="3.955" data-listing-title-sort="Week 2 Challenge" data-listing-filename-sort="ClaireBattaglia_Week2Challenge.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Mar 1, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/ClaireBattaglia_Week2Challenge.html" class="title">Week 2 Challenge</a>
+</td>
+<td class="listing-author">
 Claire Battaglia
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="13" data-categories="challenge_1,instructions" data-listing-date-sort="1677542400000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="0.615">
-<div class="thumbnail">
-<a href="./posts/Challenge1_BrynKruzlic.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Challenge1_BrynKruzlic.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Challenge1_BrynKruzlic.html">
-<h3 class="no-anchor listing-title">
-Challenge 1 Kruzlic
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_1'); return false;">
-challenge_1
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instructions'); return false;">
-instructions
-</div>
-</div>
-<a href="./posts/Challenge1_BrynKruzlic.html">
-<div class="listing-description">
-<p>Loading Game of Thrones marriages and Creating a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Challenge1_BrynKruzlic.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="13" data-categories="challenge_1,instructions" data-listing-date-sort="1677542400000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="0.615" data-listing-title-sort="Challenge 1 Kruzlic" data-listing-filename-sort="Challenge1_BrynKruzlic.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 28, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Challenge1_BrynKruzlic.html" class="title">Challenge 1 Kruzlic</a>
+</td>
+<td class="listing-author">
 Bryn Kruzlic
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="14" data-categories="challenge_1,instruction" data-listing-date-sort="1677456000000" data-listing-file-modified-sort="1679941519827" data-listing-reading-time-sort="1.76">
-<div class="thumbnail">
-<a href="./posts/akhilesh_challenge_1.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/akhilesh_challenge_1.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/akhilesh_challenge_1.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge Submission
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_1'); return false;">
-challenge_1
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instruction'); return false;">
-instruction
-</div>
-</div>
-<a href="./posts/akhilesh_challenge_1.html">
-<div class="listing-description">
-<p>Loading Data and Creating a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/akhilesh_challenge_1.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="14" data-categories="challenge_1,instruction" data-listing-date-sort="1677456000000" data-listing-file-modified-sort="1680122955998" data-listing-reading-time-sort="1.76" data-listing-title-sort="Week 1 Challenge Submission" data-listing-filename-sort="akhilesh_challenge_1.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 27, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/akhilesh_challenge_1.html" class="title">Week 1 Challenge Submission</a>
+</td>
+<td class="listing-author">
 Akhilesh Kumar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="15" data-categories="challenge_1,instructions" data-listing-date-sort="1677456000000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="0.92">
-<div class="thumbnail">
-<a href="./posts/Yakub_Rabiutheen_Challenge1_Instructions.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Yakub_Rabiutheen_Challenge1_Instructions.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Yakub_Rabiutheen_Challenge1_Instructions.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge Instructions
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_1'); return false;">
-challenge_1
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instructions'); return false;">
-instructions
-</div>
-</div>
-<a href="./posts/Yakub_Rabiutheen_Challenge1_Instructions.html">
-<div class="listing-description">
-<p>Loading Data and Creating a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Yakub_Rabiutheen_Challenge1_Instructions.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="15" data-categories="challenge_1,instructions" data-listing-date-sort="1677456000000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="0.92" data-listing-title-sort="Week 1 Challenge Instructions" data-listing-filename-sort="Yakub_Rabiutheen_Challenge1_Instructions.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 27, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Yakub_Rabiutheen_Challenge1_Instructions.html" class="title">Week 1 Challenge Instructions</a>
+</td>
+<td class="listing-author">
 Yakub Rabiutheen
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="16" data-categories="challenge_1" data-listing-date-sort="1677110400000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="0.115">
-<div class="thumbnail">
-<a href="./posts/Week1Challenge_KenDocekal.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week1Challenge_KenDocekal.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week1Challenge_KenDocekal.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_1'); return false;">
-challenge_1
-</div>
-</div>
-<a href="./posts/Week1Challenge_KenDocekal.html">
-<div class="listing-description">
-<p>Loading Data and Creating a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week1Challenge_KenDocekal.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="16" data-categories="challenge_1" data-listing-date-sort="1677110400000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="0.115" data-listing-title-sort="Week 1 Challenge" data-listing-filename-sort="Week1Challenge_KenDocekal.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 23, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week1Challenge_KenDocekal.html" class="title">Week 1 Challenge</a>
+</td>
+<td class="listing-author">
 Ken Docekal
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="17" data-categories="challenge_1,Loading data and creating network,Jyoti Rani" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="0.845">
-<div class="thumbnail">
-<a href="./posts/Jyoti_Rani_Challenge_1.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Jyoti_Rani_Challenge_1.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Jyoti_Rani_Challenge_1.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_1'); return false;">
-challenge_1
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Loading data and creating network'); return false;">
-Loading data and creating network
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Jyoti Rani'); return false;">
-Jyoti Rani
-</div>
-</div>
-<a href="./posts/Jyoti_Rani_Challenge_1.html">
-<div class="listing-description">
-<p>Loading Data and Creating a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Jyoti_Rani_Challenge_1.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="17" data-categories="challenge_1,Loading data and creating network,Jyoti Rani" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="0.845" data-listing-title-sort="Week 1 Challenge" data-listing-filename-sort="Jyoti_Rani_Challenge_1.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 22, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Jyoti_Rani_Challenge_1.html" class="title">Week 1 Challenge</a>
+</td>
+<td class="listing-author">
 Jyoti Rani
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="18" data-categories="challenge_2,instructions" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="2.055">
-<div class="thumbnail">
-<a href="./posts/Week2_Challenge_Instructions.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week2_Challenge_Instructions.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week2_Challenge_Instructions.html">
-<h3 class="no-anchor listing-title">
-Week 2 Challenge Instructions
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_2'); return false;">
-challenge_2
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instructions'); return false;">
-instructions
-</div>
-</div>
-<a href="./posts/Week2_Challenge_Instructions.html">
-<div class="listing-description">
-<p>Describing the Basic Structure of a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week2_Challenge_Instructions.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="18" data-categories="challenge_2,instructions" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="2.055" data-listing-title-sort="Week 2 Challenge Instructions" data-listing-filename-sort="Week2_Challenge_Instructions.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 22, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week2_Challenge_Instructions.html" class="title">Week 2 Challenge Instructions</a>
+</td>
+<td class="listing-author">
 Oriol Vallès Codina
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="19" data-categories="challenge1,Mekhala Kumar,gotmarriages,fish_encounters" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="0.34">
-<div class="thumbnail">
-<a href="./posts/Challenge_1_Mekhala.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Challenge_1_Mekhala.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Challenge_1_Mekhala.html">
-<h3 class="no-anchor listing-title">
-Challenge 1 Mekhala
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge1'); return false;">
-challenge1
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Mekhala Kumar'); return false;">
-Mekhala Kumar
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('gotmarriages'); return false;">
-gotmarriages
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('fish_encounters'); return false;">
-fish_encounters
-</div>
-</div>
-<a href="./posts/Challenge_1_Mekhala.html">
-<div class="listing-description">
-The network has 20 vertices and 255 edges. It is a unimodal, undirected and unweighted network.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Challenge_1_Mekhala.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="19" data-categories="challenge1,Mekhala Kumar,gotmarriages,fish_encounters" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="0.34" data-listing-title-sort="Challenge 1 Mekhala" data-listing-filename-sort="Challenge_1_Mekhala.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 22, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Challenge_1_Mekhala.html" class="title">Challenge 1 Mekhala</a>
+</td>
+<td class="listing-author">
 Mekhala Kumar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="20" data-categories="challenge_2,Erika_Nagai,industry,IO_account" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="6.35">
-<div class="thumbnail">
-<a href="./posts/Week2_Challenge_ErikaNagai.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week2_Challenge_ErikaNagai.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week2_Challenge_ErikaNagai.html">
-<h3 class="no-anchor listing-title">
-Week 2 Challenge Erika Nagai
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_2'); return false;">
-challenge_2
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Erika_Nagai'); return false;">
-Erika_Nagai
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('industry'); return false;">
-industry
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('IO_account'); return false;">
-IO_account
-</div>
-</div>
-<a href="./posts/Week2_Challenge_ErikaNagai.html">
-<div class="listing-description">
-<p>Describing the Basic Structure of a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week2_Challenge_ErikaNagai.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="20" data-categories="challenge_2,Erika_Nagai,industry,IO_account" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="6.35" data-listing-title-sort="Week 2 Challenge Erika Nagai" data-listing-filename-sort="Week2_Challenge_ErikaNagai.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 22, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week2_Challenge_ErikaNagai.html" class="title">Week 2 Challenge Erika Nagai</a>
+</td>
+<td class="listing-author">
 Erika Nagai
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="21" data-categories="challenge1,Miranda Manka" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="0.36">
-<div class="thumbnail">
-<a href="./posts/MirandaManka_Challenge1.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/MirandaManka_Challenge1.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/MirandaManka_Challenge1.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge1'); return false;">
-challenge1
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Miranda Manka'); return false;">
-Miranda Manka
-</div>
-</div>
-<a href="./posts/MirandaManka_Challenge1.html">
-<div class="listing-description">
-Today’s challenge is to
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/MirandaManka_Challenge1.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="21" data-categories="challenge1,Miranda Manka" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="0.36" data-listing-title-sort="Week 1 Challenge" data-listing-filename-sort="MirandaManka_Challenge1.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 22, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/MirandaManka_Challenge1.html" class="title">Week 1 Challenge</a>
+</td>
+<td class="listing-author">
 Miranda Manka
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="22" data-categories="challenge_2,instructions" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="2.525">
-<div class="thumbnail">
-<a href="./posts/Week2Challenge_BenRamsey.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week2Challenge_BenRamsey.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week2Challenge_BenRamsey.html">
-<h3 class="no-anchor listing-title">
-Week 2 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_2'); return false;">
-challenge_2
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instructions'); return false;">
-instructions
-</div>
-</div>
-<a href="./posts/Week2Challenge_BenRamsey.html">
-<div class="listing-description">
-<p>Describing the Basic Structure of a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week2Challenge_BenRamsey.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="22" data-categories="challenge_2,instructions" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="2.525" data-listing-title-sort="Week 2 Challenge" data-listing-filename-sort="Week2Challenge_BenRamsey.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 22, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week2Challenge_BenRamsey.html" class="title">Week 2 Challenge</a>
+</td>
+<td class="listing-author">
 Ben Ramsey
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="23" data-categories="challenge_1" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="0.395">
-<div class="thumbnail">
-<a href="./posts/Week1_Challenge_AnanyaPujary.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week1_Challenge_AnanyaPujary.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week1_Challenge_AnanyaPujary.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_1'); return false;">
-challenge_1
-</div>
-</div>
-<a href="./posts/Week1_Challenge_AnanyaPujary.html">
-<div class="listing-description">
-<p>Loading Data and Creating a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week1_Challenge_AnanyaPujary.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="23" data-categories="challenge_1" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="0.395" data-listing-title-sort="Week 1 Challenge" data-listing-filename-sort="Week1_Challenge_AnanyaPujary.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 22, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week1_Challenge_AnanyaPujary.html" class="title">Week 1 Challenge</a>
+</td>
+<td class="listing-author">
 Ananya Pujary
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="24" data-categories="Claire Battaglia,challenge1" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="0.96">
-<div class="thumbnail">
-<a href="./posts/ClaireBattaglia_Week1Challenge.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/ClaireBattaglia_Week1Challenge.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/ClaireBattaglia_Week1Challenge.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Claire Battaglia'); return false;">
-Claire Battaglia
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('challenge1'); return false;">
-challenge1
-</div>
-</div>
-<a href="./posts/ClaireBattaglia_Week1Challenge.html">
-<div class="listing-description">
-This dataset represents the teams in Game of Thrones.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/ClaireBattaglia_Week1Challenge.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="24" data-categories="Claire Battaglia,challenge1" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="0.96" data-listing-title-sort="Week 1 Challenge" data-listing-filename-sort="ClaireBattaglia_Week1Challenge.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 22, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/ClaireBattaglia_Week1Challenge.html" class="title">Week 1 Challenge</a>
+</td>
+<td class="listing-author">
 Claire Battaglia
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="25" data-categories="challenge_2,instructions" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="2.355">
-<div class="thumbnail">
-<a href="./posts/Week_2_Mani_Kanta.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week_2_Mani_Kanta.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week_2_Mani_Kanta.html">
-<h3 class="no-anchor listing-title">
-Week 2 Challenge Instructions
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_2'); return false;">
-challenge_2
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instructions'); return false;">
-instructions
-</div>
-</div>
-<a href="./posts/Week_2_Mani_Kanta.html">
-<div class="listing-description">
-<p>Describing the Basic Structure of a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week_2_Mani_Kanta.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="25" data-categories="challenge_2,instructions" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="2.355" data-listing-title-sort="Week 2 Challenge Instructions" data-listing-filename-sort="Week_2_Mani_Kanta.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 22, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week_2_Mani_Kanta.html" class="title">Week 2 Challenge Instructions</a>
+</td>
+<td class="listing-author">
 Mani Kanta Gogula
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="26" data-categories="challenge_2,instructions" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="4.62">
-<div class="thumbnail">
-<a href="./posts/Week2Challenge_ONeill.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week2Challenge_ONeill.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week2Challenge_ONeill.html">
-<h3 class="no-anchor listing-title">
-Week 2 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_2'); return false;">
-challenge_2
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instructions'); return false;">
-instructions
-</div>
-</div>
-<a href="./posts/Week2Challenge_ONeill.html">
-<div class="listing-description">
-<p>Describing the Basic Structure of a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week2Challenge_ONeill.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="26" data-categories="challenge_2,instructions" data-listing-date-sort="1677024000000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="4.62" data-listing-title-sort="Week 2 Challenge" data-listing-filename-sort="Week2Challenge_ONeill.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 22, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week2Challenge_ONeill.html" class="title">Week 2 Challenge</a>
+</td>
+<td class="listing-author">
 Steve O’Neill
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="27" data-categories="challenge_1" data-listing-date-sort="1676419200000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="2.05">
-<div class="thumbnail">
-<a href="./posts/Week1_Challenge_JerinJacob.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week1_Challenge_JerinJacob.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week1_Challenge_JerinJacob.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_1'); return false;">
-challenge_1
-</div>
-</div>
-<a href="./posts/Week1_Challenge_JerinJacob.html">
-<div class="listing-description">
-<p>Loading Data and Creating a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week1_Challenge_JerinJacob.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="27" data-categories="challenge_1" data-listing-date-sort="1676419200000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="2.05" data-listing-title-sort="Week 1 Challenge" data-listing-filename-sort="Week1_Challenge_JerinJacob.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 15, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week1_Challenge_JerinJacob.html" class="title">Week 1 Challenge</a>
+</td>
+<td class="listing-author">
 Jerin Jacob
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="28" data-categories="challenge_1,instruction,Game of Thrones,Erika_Nagai" data-listing-date-sort="1676419200000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="2.66">
-<div class="thumbnail">
-<a href="./posts/Week1_Challenge_ErikaNagai.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week1_Challenge_ErikaNagai.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week1_Challenge_ErikaNagai.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_1'); return false;">
-challenge_1
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instruction'); return false;">
-instruction
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Game of Thrones'); return false;">
-Game of Thrones
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Erika_Nagai'); return false;">
-Erika_Nagai
-</div>
-</div>
-<a href="./posts/Week1_Challenge_ErikaNagai.html">
-<div class="listing-description">
-<p>Loading Data and Creating a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week1_Challenge_ErikaNagai.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="28" data-categories="challenge_1,instruction,Game of Thrones,Erika_Nagai" data-listing-date-sort="1676419200000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="2.66" data-listing-title-sort="Week 1 Challenge" data-listing-filename-sort="Week1_Challenge_ErikaNagai.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 15, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week1_Challenge_ErikaNagai.html" class="title">Week 1 Challenge</a>
+</td>
+<td class="listing-author">
 Erika Nagai
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="29" data-categories="challenge_1,instruction" data-listing-date-sort="1676246400000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="1.785">
-<div class="thumbnail">
-<a href="./posts/Week1_Challenge_QuinnH.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week1_Challenge_QuinnH.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week1_Challenge_QuinnH.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_1'); return false;">
-challenge_1
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instruction'); return false;">
-instruction
-</div>
-</div>
-<a href="./posts/Week1_Challenge_QuinnH.html">
-<div class="listing-description">
-<p>Loading Data and Creating a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week1_Challenge_QuinnH.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="29" data-categories="challenge_1,instruction" data-listing-date-sort="1676246400000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="1.785" data-listing-title-sort="Week 1 Challenge" data-listing-filename-sort="Week1_Challenge_QuinnH.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 13, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week1_Challenge_QuinnH.html" class="title">Week 1 Challenge</a>
+</td>
+<td class="listing-author">
 Quinn He
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="30" data-categories="challenge_1,instruction" data-listing-date-sort="1676246400000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="0.885">
-<div class="thumbnail">
-<a href="./posts/Week1Challenge_BenRamsey.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week1Challenge_BenRamsey.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week1Challenge_BenRamsey.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_1'); return false;">
-challenge_1
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instruction'); return false;">
-instruction
-</div>
-</div>
-<a href="./posts/Week1Challenge_BenRamsey.html">
-<div class="listing-description">
-<p>Loading Data and Creating a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week1Challenge_BenRamsey.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="30" data-categories="challenge_1,instruction" data-listing-date-sort="1676246400000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="0.885" data-listing-title-sort="Week 1 Challenge" data-listing-filename-sort="Week1Challenge_BenRamsey.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 13, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week1Challenge_BenRamsey.html" class="title">Week 1 Challenge</a>
+</td>
+<td class="listing-author">
 Ben Ramsey
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="31" data-listing-date-sort="1676246400000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="0.21">
-<div class="thumbnail">
-<a href="./posts/Week1_Challenge_AG.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week1_Challenge_AG.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week1_Challenge_AG.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge - AG
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Loading Data and Creating a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week1_Challenge_AG.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="31" data-listing-date-sort="1676246400000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="0.21" data-listing-title-sort="Week 1 Challenge - AG" data-listing-filename-sort="Week1_Challenge_AG.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 13, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week1_Challenge_AG.html" class="title">Week 1 Challenge - AG</a>
+</td>
+<td class="listing-author">
 Alex Genovese
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="32" data-categories="challenge_1,instructions" data-listing-date-sort="1676246400000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="0.86">
-<div class="thumbnail">
-<a href="./posts/Week_1_Mani Kanta.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week_1_Mani Kanta.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week_1_Mani Kanta.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_1'); return false;">
-challenge_1
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instructions'); return false;">
-instructions
-</div>
-</div>
-<a href="./posts/Week_1_Mani Kanta.html">
-<div class="listing-description">
-<p>Loading Data and Creating a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week_1_Mani Kanta.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="32" data-categories="challenge_1,instructions" data-listing-date-sort="1676246400000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="0.86" data-listing-title-sort="Week 1 Challenge" data-listing-filename-sort="Week_1_Mani Kanta.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 13, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week_1_Mani Kanta.html" class="title">Week 1 Challenge</a>
+</td>
+<td class="listing-author">
 Mani Kanta Gogula
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="33" data-categories="challenge_1,instruction" data-listing-date-sort="1676246400000" data-listing-file-modified-sort="1679941519735" data-listing-reading-time-sort="0.845">
-<div class="thumbnail">
-<a href="./posts/Week1_Challenge_Instructions.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/Week1_Challenge_Instructions.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/Week1_Challenge_Instructions.html">
-<h3 class="no-anchor listing-title">
-Week 1 Challenge Instructions
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('challenge_1'); return false;">
-challenge_1
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('instruction'); return false;">
-instruction
-</div>
-</div>
-<a href="./posts/Week1_Challenge_Instructions.html">
-<div class="listing-description">
-<p>Loading Data and Creating a Network</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Week1_Challenge_Instructions.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="33" data-categories="challenge_1,instruction" data-listing-date-sort="1676246400000" data-listing-file-modified-sort="1680122955906" data-listing-reading-time-sort="0.845" data-listing-title-sort="Week 1 Challenge Instructions" data-listing-filename-sort="Week1_Challenge_Instructions.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-date">
 Feb 13, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./posts/Week1_Challenge_Instructions.html" class="title">Week 1 Challenge Instructions</a>
+</td>
+<td class="listing-author">
 Oriol Vallès Codina
-</div>
-</a>
-</div>
-</div>
-</div>
+</td>
+</tr>
+</tbody>
+
+</table>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
