@@ -109,9 +109,9 @@ print(marriages.stat)
 
 The marriage network is directed and not bipartite. There are, however, loops and multiple edges between actors. This finding could suggest a few options:
 
-a) a re-occurrence of a relationship between actors over time, such as within or between a current or past `Generation`, or
+a)  a re-occurrence of a relationship between actors over time, such as within or between a current or past `Generation`, or
 
-b\) a change in the relationship `Type` such as engaged, married, or an affair between actors.
+b) a change in the relationship `Type` such as engaged, married, or an affair between actors.
 
 Both suggestions are plausible and evidenced in the data frame sampled below, where we see reoccurring observations within the same `Generation` between *Martell* and *Essos*a and a change in their relationship `Type`.
 
