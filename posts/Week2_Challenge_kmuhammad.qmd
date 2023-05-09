@@ -1,0 +1,180 @@
+---
+title: "Week 2 Challenge"
+author: "Kalimah Muhammad"
+description: "Describing the Basic Structure of a Like/Dislike Network"
+date: "03/13/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+# editor: visual
+categories: 
+  - challenge_2
+---
+
+```{r}
+#| label: setup
+#| include: false
+```
+
+```{r, include= FALSE}
+library(igraph)
+library(statnet)
+library(readr)
+```
+
+## Challenge Overview
+
+Describe the basic structure of a network following the steps in tutorial of week 2, this time using a data set of your choice: for instance, you could use Marriages in Game of Thrones or Like/Dislike from week 1. 
+
+## Describe the Network Data
+
+```{r, results='hide'}
+#load Game of Thrones like and dislike data
+like_dislike<- read_csv('_data/got/got_like_dislike.csv')
+```
+
+```{r, warning=FALSE}
+#create IGRAPH object
+like_dislike.ig <- graph_from_data_frame(got_like_dislike)
+```
+
+1. *List and inspect* List the objects to make sure the data files are working properly.
+
+```{r}
+#list and inspect igraph object
+ls(like_dislike.ig)
+```
+
+Below is a plot of the like/dislike network. 
+
+```{r}
+plot(like_dislike.ig)
+```
+
+
+2. *Network Size* What is the size of the network? 
+
+```{r}
+#count nodes
+vcount(like_dislike.ig)
+
+#count edges
+ecount(like_dislike.ig)
+```
+
+There are 11 vertices and 46 nodes.
+
+3. *Network features* Are these networks weighted, directed, and bipartite?
+
+```{r}
+is_weighted(like_dislike.ig)
+is_directed(like_dislike.ig)
+is_bipartite(like_dislike.ig)
+```
+
+The network is directed but neither weighted nor bipartite. 
+
+4. *Network Attributes* Listing the vertex and edge attributes.
+
+```{r}
+#display vertex attributes for igraph object
+vertex_attr_names(like_dislike.ig)
+```
+`Name` is the only vertex attribute.
+
+```{r}
+#display edge attributes for igraph object
+edge_attr_names(like_dislike.ig)
+```
+
+There are approximately 47 edge attributes.
+
+## Dyad and Triad Census
+
+5. Conduct a *dyad census* to determine the number of dyads where the relationship is:
+
+- Reciprocal (mutual), or `mut`
+- Asymmetric (non-mutual), or `asym`, and
+- Absent, or `null`
+
+```{r}
+igraph::dyad.census(like_dislike.ig)
+```
+
+There is one mutual/ reciprocal dyad, 12 asymmetric dyads, and 42 absent relationships. 
+
+6. Now, I'll find the *triad census*.
+
+```{r}
+igraph::triad_census(like_dislike.ig)
+```
+Here we see most triads are null as shown in the first classification. This result is consistent with the high absent relationships in the dyad census. The second classification with a result of 32 points toward a single directed edge, similar to the asymmetrical dyad relationships seen earlier. Finally in the fifth classification with a result of 22, there is a suggestion of an inward star as the third most frequent triad type.   
+
+
+## Global and Local Transitivity or Clustering
+
+Compute the global transitivity, local transitivity of specific nodes of your choice, and the average clustering coefficient. What is the distribution of node degree and how does it compare with the distribution of local transitivity?
+
+```{r, global transitivity}
+#calculate the global transitivity
+transitivity(like_dislike.ig, type="global")
+```
+
+The global transitivity is 0.237 suggesting a lower proportion of connected triads within the overall network.
+
+Next, I calculate the local transitivity.
+
+```{r, local transitivity}
+#calculate the local transitivity using specific nodes
+transitivity(like_dislike.ig, type ="local")
+
+```
+Then, I calculated the average local clustering coefficient.
+
+```{r}
+##get average local clustering coefficient: igraph
+transitivity(like_dislike.ig, type="average")
+```
+
+The average clustering coefficient is 0.59 suggesting higher connected triads among neighboring actors than among the entire network as seen in the global transitivity score 0.23. Here the emphasis on low degree nodes suggest more ties between fewer actors. 
+
+
+## Path Length and Component Structure 
+
+Compute the average path length and the _diameter_ of the network:
+
+```{r, shortest path}
+#find average shortest path for network
+average.path.length(like_dislike.ig,directed=T)
+
+#find the network diameter
+diameter(like_dislike.ig)
+```
+
+The shortest path for the network is 1.3 and the diameter is 2.
+
+Find the component structure of the network and identify the cluster membership of each node:
+
+```{r, network components}
+#get number of components
+igraph::components(like_dislike.ig)$no 
+
+#get size of each component
+igraph::components(like_dislike.ig)$csize
+
+
+```
+
+There is one component in the network and the size of the component is 11. 
+
+
+
+
+
+
+
+
+
