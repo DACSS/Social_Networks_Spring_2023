@@ -1,0 +1,153 @@
+---
+title: "Week 3 Challenge"
+author: "Ananya Pujary"
+description: "Degree and Density of a Network"
+date: "03/06/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+# editor: visual
+categories: 
+  - challenge_3
+  - Ananya Pujary
+  # - railroads
+  # - faostat
+  # - wildbirds
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(igraph)
+library(network)
+library(readr)
+library(dplyr)
+
+```
+
+
+## Degree
+
+I've chosen to work with the `got_distances.csv` dataset that provides information about the distances between regions in the GOT universe.
+
+```{r}
+got_distances <-read_csv("../posts/_data/got/got_distances.csv")
+
+got_distances
+
+got_distances.ig <-graph_from_data_frame(got_distances, directed = TRUE)
+```
+
+```{r}
+# number of edges
+ecount(got_distances.ig)
+
+# number of vertices
+vcount(got_distances.ig)
+
+# vertex and edge attributes
+vertex_attr_names(got_distances.ig)
+edge_attr_names(got_distances.ig)
+
+# network features
+is_directed(got_distances.ig)
+is_bipartite(got_distances.ig)
+is_weighted(got_distances.ig)
+
+
+# dyad census
+igraph::dyad.census(got_distances.ig)
+
+
+# triad census
+triad_census(got_distances.ig)
+
+
+```
+This network has 200 edges and 103 vertices. The vertex attribute is 'name' and edge attributes are "To", "Miles", "Mode", and "Notes". It is directed, not bipartite, and not weighted. Dyad census reveals that there are 0 mutual, 93 asymmetric, and 5160 null relationships in this network of distances between regions in the GOT universe
+
+```{r}
+# number of components
+igraph::components(got_distances.ig)$no
+
+# size of components
+igraph::components(got_distances.ig)$csize 
+```
+
+There are 10 components, the smallest of which is 1 node and largest is 20.
+
+
+## Density
+
+
+```{r}
+# network density
+graph.density(got_distances.ig)
+
+# density without loops
+graph.density(got_distances.ig, loops=TRUE)
+
+```
+
+The density of this network, a global measure, is 0.01903674 which suggests that it isn't very dense. Without accounting for loops, the density value decreases to 0.01885192.
+
+Analyzing the average network degree, a vast majority of the nodes have an average degree of 1 or 2, which supports the previous finding of the network not being very dense.
+
+```{r}
+# average network degree
+igraph::degree(got_distances.ig)
+```
+
+Creating a data frame of the nodes in the network and finding out the in-degree and out-degree values of each:
+
+```{r}
+nodes_ig<-data.frame(name=V(got_distances.ig)$name, degree=igraph::degree(got_distances.ig,loops=FALSE))
+nodes_ig<-nodes_ig %>%
+    mutate(indegree=igraph::degree(got_distances.ig, mode="in", loops=FALSE),
+           outdegree=igraph::degree(got_distances.ig, mode="out", loops=FALSE))
+head(nodes_ig)
+```
+```{r}
+summary(nodes_ig)
+```
+
+## Random Network
+
+Creating a random (Erdos-Renyi) network with the same number of nodes and edges as the GOT distances network:
+
+```{r}
+
+erdos_renyi.ig <- sample_gnm(103, 200, directed = TRUE, loops = FALSE)
+
+# density of random network
+graph.density(erdos_renyi.ig)
+
+# dyad census of random network
+igraph::dyad.census(erdos_renyi.ig)
+
+# triad census of random network
+igraph::triad.census(erdos_renyi.ig)
+
+```
+
+The density of the random graph is 0.01903674. It has 1 mutual, 198 asymmetric, and 5054 null relationships.
+
+Now, looking at the degree distributions in this random network:
+
+```{r}
+nodes_rand<-data.frame(degree=igraph::degree(erdos_renyi.ig))
+nodes_rand<-nodes_rand %>%
+    mutate(indegree=igraph::degree(erdos_renyi.ig, mode="in", loops=FALSE),
+           outdegree=igraph::degree(erdos_renyi.ig, mode="out", loops=FALSE))
+head(nodes_rand)
+
+```
+```{r}
+summary(nodes_rand)
+```
+
+Comparing the random network statistics with those of the `got_distances.ig`, the density values are comparable, and so are the values from the dyad census. The triad census values for the random network are higher. The in-degree values for the distances network are all 0. At the same time, its values for out-degree and degree are much higher than those in the random network.
