@@ -12,6 +12,7 @@ format:
 # editor: visual
 categories: 
   - challenge_1
+  - Ananya Pujary
   # - railroads
   # - faostat
   # - wildbirds
