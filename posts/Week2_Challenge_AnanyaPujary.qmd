@@ -104,7 +104,7 @@ Now doing a triad census:
 
 ```{r}
 triad_census(got_marriages.ig)
-
+ 
 ```
 
 

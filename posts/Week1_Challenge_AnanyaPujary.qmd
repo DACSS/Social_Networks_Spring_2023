@@ -19,7 +19,7 @@ categories:
 ---
 
 ```{r}
-#| label: setup
+#| label: setup 
 #| include: false
 library(tidyverse) 
 library(igraph)
