@@ -1,6 +1,6 @@
 ---
 title: "Week 2 Challenge Instructions"
-author: "Oriol Vallès Codina"
+author: "Hannah Rosenbaum"
 description: "Describing the Basic Structure of a Network"
 date: "02/22/2023"
 format:
@@ -23,6 +23,12 @@ categories:
 #| include: false
 #| 
 ```
+
+```{r}
+library(tidyverse)
+library(igraph)
+```
+
 
 ## Challenge Overview
 
@@ -66,7 +72,56 @@ Compute global transitivity using `transitivity` on `igraph` or `gtrans` on `sta
 ## Path Length and Component Structure 
 
 Can you compute the average path length and the _diameter_ of the network? Can you find the component structure of the network and identify the cluster membership of each node?
+```{r}
+# find got marriages data frame
+got_marriages <- read.csv("C:/Users/18639/Social_Networks_Spring_2023/posts/_data/got/got_marriages.csv")
+```
+
 
 ```{r}
+graph <- graph_from_edgelist(as.matrix(got_marriages[, c("From", "To")]))
 
+# List/display data
+head(got_marriages)
+
+# Show network size
+vcount(graph)
+ecount(graph)
+
+# Is the graph bipartite
+is_bipartite(graph)
+
+# Is teh graph weighted
+is_weighted(graph)
+
+# Is the graph directed
+is_directed(graph)
+
+# Listing vertex attributes
+vertex_attr_names(graph)
+
+# Listing edge attributes
+edge_attr_names(graph)
+
+```
+
+```{r}
+# Performa a dyad census of the network
+dyad.census(graph)
+
+# Perform a triad census on the network
+triad.census(graph)
+```
+
+```{r}
+# Compute the transitivity of the netwrok
+transitivity(graph)
+```
+
+```{r}
+# Find the average path length
+average.path.length(graph)
+
+# Find the width of the network
+diameter(graph)
 ```
