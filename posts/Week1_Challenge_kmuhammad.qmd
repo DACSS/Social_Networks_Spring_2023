@@ -1,0 +1,130 @@
+---
+title: "Week 1 Challenge"
+author: "Kalimah Muhammad"
+description: "Loading Data and Creating a Network"
+date: "03/13/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+# editor: visual
+categories: 
+  - challenge_1
+  # - railroads
+  # - faostat
+  # - wildbirds
+---
+
+```{r}
+#| label: setup
+#| include: false
+```
+
+```{r, include=FALSE}
+library(statnet)
+library(igraph) 
+library(readr)
+```
+
+## Challenge Overview
+
+Today's challenge is to
+
+1)  read in a data set, and
+
+2)  create a network object
+
+## Load the Data
+
+Read in one (or more) of the following data sets, using the correct R package and command.
+
+-   got_marriages.csv
+-   fish_encounters data set (available in the `tidyr` package)
+-   got_like_dislike.csv
+
+```{r, results='hide'}
+#read in data set
+got_marriages <- read_csv('_data/got/got_marriages.csv')
+```
+
+Show top 10 observations from the marriage data set
+
+```{r}
+#show top results
+head(got_marriages, 10)
+```
+
+## Create a Network
+
+**Instructions**: Load the package `igraph` and create an `igraph` object (i.e. a graph or network) in the form of an edge list. The command may vary whether the data is given as a list of connections or an adjacency matrix. Is the network directed or undirected; weighted or unweighted; unimodal or bipartite? Can you plot it?
+
+### Marriage network using `igraph`
+
+#### Preview of `igraph` object
+
+```{r}
+#create igraph object
+marriages.ig <- graph_from_data_frame(got_marriages)
+#print igraph
+print(marriages.ig)
+```
+
+#### Is the network directed?
+
+```{r}
+is_directed(marriages.ig)
+```
+
+#### Is the network weighted?
+
+```{r}
+is_weighted(marriages.ig)
+```
+
+#### Is the network bipartite?
+
+```{r}
+is_bipartite(marriages.ig)
+```
+
+#### Plot of marriage network in `igraph`
+
+```{r}
+plot(marriages.ig, edge.arrow.size = 0)
+```
+
+### Marriage network using `statnet`
+
+```{r, include=FALSE}
+marriages.stat <- as.network(got_marriages, loops = TRUE, multiple = TRUE)
+```
+
+#### Summary of network attributes
+
+```{r}
+print(marriages.stat)
+```
+
+The marriage network is directed and not bipartite. There are, however, loops and multiple edges between actors. This finding could suggest a few options:
+
+a)  a re-occurrence of a relationship between actors over time, such as within or between a current or past `Generation`, or
+
+b) a change in the relationship `Type` such as engaged, married, or an affair between actors.
+
+Both suggestions are plausible and evidenced in the data frame sampled below, where we see reoccurring observations within the same `Generation` between *Martell* and *Essos*a and a change in their relationship `Type`.
+
+```{r}
+head(got_marriages, 10)
+```
+
+These changes do not appear as the only triggers of an event/ occurrence; thus, including an interval of time may help interpret these events.
+
+#### Plot of marriage network in `statnet`
+
+```{r}
+plot(marriages.stat)
+```
+
+This plot shows the direction of the relationship, indicated by the arrow lines, and the number of observations of the relationship, indicated in the varying weight of each edge. However, the actors' names, a critical piece of information, appear missing from the plot.
