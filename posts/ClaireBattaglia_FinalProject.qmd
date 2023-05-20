@@ -1,0 +1,373 @@
+---
+title: "The Local Food System in Missoula, Montana"
+subtitle: "A Network Analysis"
+author: "Claire Battaglia"
+description: ""
+date: "05/20/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+# editor: visual
+categories: 
+  - Claire Battaglia
+  - final project
+  - local food systems
+  - network analysis
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# load pkgs
+pacman::p_load(intergraph, # coerce network objects
+               sna, # network stats
+               igraph,
+               data.table,
+               tidyverse)
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Background
+
+Interest in locally produced food has grown significantly over the years, as evidenced by the expansion of local food systems in regions across the United States. Yet while some have become incredibly robust---weathering closures during COVID with ease and even capitalizing on the opportunities presented by the disruption to the conventional food system---others have faltered and stalled. Why? What makes a food system successful and resilient?
+
+Network analysis offers a unique opportunity to understand food systems *as networks*, allowing us to identify network features that are determinants of food system success and resilience.
+
+Identifying these features requires the analysis of many, many local food systems as networks, which is beyond the scope of this project. This analysis, then, will serve as a first step by developing a framework for analysis that can be replicated with other food systems in the future.
+
+## Research Question & Hypotheses
+
+What are the network determinants of success and resilience for local food systems?
+
+H₁: How a network is formed is a determinant of success/resilience.
+
+H₂: Network size is a determinant of success/resilience.
+
+H₃: The category of entity (i.e. producer, processor, distributor, retailer) with the highest degree centralization is a determinant of success/resilience.
+
+H₄: The category of entity (i.e. producer, processor, distributor, retailer) with the highest betweenness centralization is a determinant of success/resilience.
+
+Testing these hypotheses will not be possible until I have analyzed data from enough networks to build a model in which these features are the predictor variables and food system success and resilience are the outcome variables. For this project, then, I will explore the aforementioned measures and test the following hypotheses pertaining to network formation:
+
+H₁: The degree centralization is different than what we would expect if this network were formed by chance.
+
+H₂: The betweenness centralization is different than what we would expect if this network were formed by chance.
+
+## Methods & Data
+
+### Data
+
+All data were collected by me and compiled into a node list and edge list.
+
+A node is any entity along the local food supply chain: producer, processor, distributor, retailer.
+
+A tie represents that goods are flowing between two entities. It is a binary classification and does not indicate the type or volume of goods flowing.
+
+I used the [Abundant Montana Local Food Guide](https://abundantmontana.com/), Google Maps, websites of known entities, and field identification and verification to compile both the node and edge list.
+
+### Hypothesis Testing
+
+I will perform a CUG-test to test my hypotheses about network formation.
+
+## Network Structure & Statistics
+
+I'll begin by reading in my data and transforming it into a network object.
+
+```{r data}
+# read in data
+nodes <- read.csv("food_system_network - nodelist.csv", header = T, as.is = T)
+links <- read.csv("food_system_network - edgelist.csv", header = T, as.is = T)
+```
+
+```{r preview}
+# preview
+head(nodes, 5)
+head(links, 5)
+```
+
+```{r network object}
+# create network object - igraph
+net <- graph_from_data_frame(d = links, vertices = nodes, directed = T)
+
+# check
+class(net)
+print(net)
+```
+
+This network is *directed*, *named*, and contains `r gorder(net)` nodes and `r gsize(net)` ties. It is unweighted, meaning that each tie represents that goods are flowing but does not convey any other information, such as the type or volume of goods.
+
+```{r density}
+# calc density
+graph.density(net)
+```
+
+The density of this network appears to be extremely low, although until I have data from other food system networks I can't know whether it is low for *this type of network.*
+
+```{r census}
+# dyad census
+igraph::dyad.census(net)
+
+# triad census
+igraph::triad.census(net)
+```
+
+There are 0 mutual ties. That is, there are no node pairs who exchange goods with one another—all 64 ties are asymmetrical. There are 1,314 null ties, meaning that for those node pairs there is no flow of goods at all. This is not surprising, as most producers do not sell their products to other producers but to distributors or retailers. And while distributors and retailers purchase from producers, they do not typically sell any products to them.
+
+I have included the censuses as a point of comparison between food system networks as I continue this project but, given the nature of ties between nodes in a food supply chain, dyads and triads might not be as useful in evaluating supply chain networks as they are in evaluating other types of networks.
+
+```{r components}
+# get number of components
+igraph::components(net)$no
+
+# get size of components
+igraph::components(net)$csize
+```
+
+This network has 8 components, one of which contains 46 nodes and 7 isolates.
+
+## Centrality
+
+The measure of status that I am interested in is degree centrality (both in/out, as this is a directed network). Degree centrality---the number of nodes to which the focal node is connected---is important in the context of a food system because entities with high degree centrality likely have significant influence within the system. In price setting, for example. In comparing local food systems to one another, degree distribution will likely be relevant, as well as which type of entity has the highest degree centrality.
+
+The measure of power that I am interested in is betweenness centrality. This measure is extremely important to consider when thinking about resilience because entities with high betweenness centrality are likely critical to the system's ability to withstand shock. As with degree centrality, the distribution and type of entity with the highest betweenness centrality will likely be important when comparing local food systems.
+
+```{r centrality}
+# create dataframe of node degrees and betweenness
+net_nodes <- data.frame(name = V(net)$name, degree = degree(net)) %>%
+  mutate(indegree = degree(net, mode = "in", loops = FALSE),
+          outdegree = degree(net, mode = "out", loops = FALSE),
+          between = betweenness(net))
+
+print(net_nodes)
+
+# get summary
+summary(net_nodes)
+
+#png(filename = "distributions.png") # save as png
+par(mfrow = c(1,3))
+# plot in-deg dist
+hist(net_nodes$indegree, col = "#714466", main = "In-degree Distribution", xlab = "Number of entities from which goods are received")
+
+# plot out-deg dist
+hist(net_nodes$outdegree, col = "#714466", main = "Out-degree Distribution", xlab = "Number of entities to which goods are sent")
+
+# plot betweenness
+hist(net_nodes$between, col = "#714466", main = "Betweenness Distribution", xlab = "Betweenness")
+par(mfrow = c(1,1))
+#dev.off()
+```
+
+We can see that using both degree centrality and betweenness centrality, the Western Montana Growers Cooperative is the most important individual entity in the network. Moreover, we can also see that the network is extremely uneven in that there is only one entity with high degree and high betweenness centrality.
+
+## Network Visualization
+
+```{r network plot}
+# create plot
+#png(filename = "network.png") # save as png
+plot(net, vertex.shape = "circle", vertex.size = 7, vertex.label.cex = .5, vertex.label.color = "black", edge.arrow.size = .25, rescale = TRUE, asp = 0)
+#dev.off()
+```
+
+We can see in the above plot that the Western Montana Growers Cooperative (in blue) is, indeed, the node with the highest degree centrality and the highest betweenness centrality. We can also easily identify the isolates, all of which are large food retailers. It's important to note that they are only isolates in the *local* food setting.
+
+## Community Detection
+
+I'll use several methods of detecting communities within a network, beginning with the fast and greedy method, and then compare them.
+
+### Fast and Greedy
+
+```{r fast and greedy}
+# fast and greedy
+net_fg <- cluster_fast_greedy(as.undirected(net))
+
+# get groups
+igraph::groups(net_fg)
+
+# plot fast and greedy
+#png(filename = "fg_comms.png") # save as png
+plot(net_fg, net, vertex.shape = "circle", vertex.size = 7, vertex.label.cex = .5, vertex.label.color = "black", edge.arrow.size = .25, rescale = TRUE, asp = 0, sub = "Fast and Greedy Method")
+#dev.off()
+```
+
+These groups do actually make sense and can be broadly categorized as follows:
+
+-   Group 1: The Good Food Store and producers that sell directly to it
+-   Group 2: The Western Montana Growers Cooperative, producers that sell *only* to it, and retailers that buy *only* from it (i.e. do not buy from producers directly)
+-   Group 3: Missoula Farmers' Market and producers that participate (even if they also sell to other entities)
+-   Group 4: Clark Fork Market and producers that participate (even if they also sell to other entities)
+-   Groups 5-11: Those individual retailers who do not purchase local food
+
+### Walktrap
+
+```{r walktrap}
+# walktrap
+net_wt <- walktrap.community(net, steps = 4)
+
+# get groups
+igraph::groups(net_wt)
+
+# plot walktrap
+plot(net_wt, net, vertex.shape = "circle", vertex.size = 7, vertex.label.cex = .5, vertex.label.color = "black", edge.arrow.size = .25, rescale = TRUE, asp = 0, main = "Communities Within the Local Food System", sub = "Walktrap Method")
+```
+
+After tuning the `steps` parameter, this is the best grouping the walktrap method could produce. These communities make less sense than the those identified by the first method. Some communities that the fast and greedy method identified as unique have been collapsed into a single community in a way that does not make sense to me.
+
+### Leading Label Propagation
+
+```{r leading label}
+# leading label
+net_ll <- label.propagation.community(net)
+
+# get groups
+igraph::groups(net_ll)
+
+# plot leading label
+plot(net_ll, net, vertex.shape = "circle", vertex.size = 7, vertex.label.cex = .5, vertex.label.color = "black", edge.arrow.size = .25, rescale = TRUE, asp = 0, main = "Communities Within the Local Food System", sub = "Leading Label Propagation Method")
+```
+
+Leading label propagation has identified 45 distinct communities, which does not fit with how I know these entities interact.
+
+```{r modularity}
+# compare modularity scores
+mods <- c(fastgreedy = modularity(net_fg), walktrap = modularity(net_wt), llabel = modularity(net_ll))
+
+print(mods)
+```
+
+The modularity scores confirm what examination of the groupings indicate---that the fast and greedy method has done the best job of identifying communities within the network.
+
+## Hypothesis Testing
+
+The two hypotheses I will test are:
+
+H₁: The degree centralization is different than what we would expect if this network were formed by chance. I will condition on both size (the number of nodes) and edges (the number of ties).
+
+H₂: The betweenness centralization is different than what we would expect if this network were formed by chance. I will condition on both size (the number of nodes) and edges (the number of ties).
+
+```{r statnet network object}
+# coerce network object
+net_stat <- intergraph::asNetwork(net)
+
+# check
+class(net_stat)
+print(net_stat)
+```
+
+```{r cugtest degree}
+# cug test - cond on size
+cug_d_size <- cug.test(net_stat,
+                       FUN = centralization,
+                       FUN.arg = list(FUN = "degree", mode = "all"), 
+                       mode = "digraph", 
+                       cmode = "size")
+
+# cug test - cond on edges
+cug_d_edges <- cug.test(net_stat,
+                       FUN = centralization,
+                       FUN.arg = list(FUN = "degree", mode = "all"), 
+                       mode = "digraph", 
+                       cmode = "edges")
+
+print(cug_d_size)
+print(cug_d_edges)
+
+# combine outputs
+cug_d <- c(cug_d_size$obs.stat,
+           cug_d_edges$obs.stat)
+
+pct_g_d <- c(cug_d_size$pgteobs,
+             cug_d_edges$pgteobs)
+
+pct_l_d <- c(cug_d_size$plteobs,
+             cug_d_edges$plteobs)
+
+degree <- cbind(cug_d,
+                     pct_g_d, 
+                     pct_l_d)
+
+rownames(degree) <- c("Size", "Edges")
+
+round(degree, 2)
+```
+
+```{r cug degree plots}
+# plot
+#png(filename = "CUG_degree.png")
+par(mfrow = c(1,2))
+plot(cug_d_size, col = "#ebb83b", main = "Degree \nConditioned on Size" )
+plot(cug_d_edges, col = "#ebb83b", main = "Degree \nConditioned on Edges" )
+par(mfrow=c(1,1))
+#dev.off
+```
+
+We can see from the above table and plots that the observed degree centralization is very uncommon for a network of this size and with this number of ties. That is, it was likely not formed by chance.
+
+```{r cugtest betweenness}
+# cug test - cond on size
+cug_b_size <- cug.test(net_stat,
+                       FUN = centralization,
+                       FUN.arg = list(FUN = "betweenness"), 
+                       mode = "digraph", 
+                       cmode = "size")
+
+# cug test - cond on edges
+cug_b_edges <- cug.test(net_stat,
+                        FUN = centralization,
+                        FUN.arg = list(FUN = "betweenness"), 
+                        mode = "digraph", 
+                        cmode = "edges")
+
+print(cug_b_size)
+print(cug_b_edges)
+
+# combine outputs
+cug_b <- c(cug_b_size$obs.stat,
+           cug_b_edges$obs.stat)
+
+pct_g <- c(cug_b_size$pgteobs,
+           cug_b_edges$pgteobs)
+
+pct_l <- c(cug_b_size$plteobs,
+           cug_b_edges$plteobs)
+
+betweenness <- cbind(cug_b,
+                     pct_g, 
+                     pct_l)
+
+rownames(betweenness) <- c("Size", "Edges")
+
+round(betweenness, 2)
+```
+
+```{r cug betweenness plots}
+# plot
+#png(filename = "CUG_betweenness.png")
+par(mfrow = c(1,2))
+plot(cug_b_size, col = "#ebb83b", main = "Betweenness \nConditioned on Size" )
+plot(cug_b_edges, col = "#ebb83b", main = "Betweenness \nConditioned on Edges" )
+par(mfrow=c(1,1))
+#dev.off
+```
+
+We can see from the second table and set of plots that the observed betweenness centralization is very uncommon for a network of this size but not uncommon for a network with this number of ties.
+
+## Discussion
+
+We can see from the above exploration that this network is star shaped, meaning that it is likely highly efficient and potentially less resilient. A single node—the Western Montana Growers Cooperative—has the highest degree centrality and the highest betweenness centrality and likely has significant control over the flow of goods (and other content not represented in this network, like information). Thinking about local food system formation, success, and resilience, it may turn out that having one such node is essential. While I haven't operationalized "success" and "resilience" yet, the local food system in Missoula is generally considered to be fairly robust and, in fact, I coached several nascent local food distributors in other communities who were looking to replicate the success of the Western Montana Growers Cooperative during the COVID-19 pandemic.
+
+I am really interested to see what will surface after I have collected data to analyze other local food systems. That will allow me to determine baselines measurements to compare food systems to. Once I have a dataset in which each local food system (i.e. a network) is its own case and these network features are the variables, I will then operationalize "success" and "resilience" and be able to see which features predict success and resilience. This is critical because the current literature on local food system development tends to be qualitative, leading to a paucity of actionable recommendations to communities looking to create a robust local food system. This project will ultimately contribute to this body of research by providing clear, actionable recommendations that—importantly!—are driven by data.
+
+
+
+
+
+
+
+
+
+
