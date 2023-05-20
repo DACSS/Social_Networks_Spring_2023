@@ -1,0 +1,75 @@
+---
+title: "Week 4 Challenge Instructions"
+author: "Hannah Rosenbaum"
+description: "Centrality of a Network"
+date: "03/06/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+# editor: visual
+categories: 
+  - challenge_4
+  - instructions
+  # - railroads
+  # - faostat
+  # - wildbirds
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(dplyr)
+library(igraph)
+```
+
+## Challenge Overview
+
+Describe the many measures of centrality of at least one network of your choice.
+
+## Describe the Network Data
+
+If you have not done it before, always start by evaluating the basic structure of the network (number of edges and vertices, dyad and triad census, etc.). Create a data frame `nodes` with the corresponding local attributes such as degree or local transitivity.
+
+## Centrality
+
+Compute at least one measure of centrality for each node, adding them as attributes to `nodes` in the form of extra columns: eigencentrality, betweenness, closeness, etc. Compute the distribution of at least one of those measures. What do we learn from comparing these measures of centrality with an equivalent random network (i.e. with the same number of edges and vertices)?
+
+```{r}
+got_marriages <- read.csv("C:/Users/18639/Social_Networks_Spring_2023/posts/_data/got/got_marriages.csv")
+```
+
+```{r}
+graph <- graph_from_edgelist(as.matrix(got_marriages[, c("From", "To")]))
+```
+
+```{r}
+nodes <- data.frame("Name"=c(), "degree"=c(), "transitivity"=c(), 'centrality'=c())
+families <- unique.data.frame(as.data.frame(got_marriages[, c("To")]))
+centrality <- eigen_centrality(graph)$vector
+
+# Iterate across family names computing degrees
+for (name in families) {
+  obs <- data.frame("Name"=name, "degree"=degree(graph, v = name, mode = "total"), "transitivity"=transitivity(graph, vids=name, type="local"), "centrality"=centrality[name])
+
+  nodes <- rbind(nodes, obs)
+}
+nodes
+```
+
+```{r}
+random_network <- sample_gnp(length(V(graph)), graph.density(graph))
+plot(random_network)
+```
+
+```{r}
+hist(nodes$centrality)
+```
+
+```{r}
+hist(eigen_centrality(random_network)$vector)
+```

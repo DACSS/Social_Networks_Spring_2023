@@ -1,0 +1,107 @@
+---
+title: "Week 1 Challenge Instructions"
+author: "Hannah Rosenbaum"
+description: "Loading Data and Creating a Network"
+date: "02/13/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+# editor: visual
+categories: 
+  - challenge_1
+  - instructions
+  # - railroads
+  # - faostat
+  # - wildbirds
+---
+
+```{r}
+#| label: setup
+#| include: false
+#| 
+```
+
+## Challenge Overview
+
+Today's challenge is to
+
+1) read in a dataset, and
+
+2) create a network object
+
+## Load the Data
+
+Read in one (or more) of the following data sets, using the correct R package and command.
+
+-   got_marriages.csv
+-   fish_encounters dataset (available in the `tidyr` package)
+-   got_like_dislike.csv
+
+Find the `_data` folder, located inside the `posts` folder. Then you can read in the data, using base `read.csv` or `read_csv` standard tidy read command to read Comma Separated Values files or, alternatively, read the data in directly from loading a package.
+```{r}
+# Read in tidyverse and igraph packages for got marriages data frame
+
+library(tidyverse)
+library(igraph)
+```
+
+
+```{r}
+# find got marriages data frame
+got_marriages <- read.csv("C:/Users/18639/Social_Networks_Spring_2023/posts/_data/got/got_marriages.csv")
+
+```
+
+Add any comments or documentation as needed. More challenging data sets may require additional code chunks and documentation.
+
+## Create a Network
+```{r}
+graph <- graph_from_edgelist(as.matrix(got_marriages[, c("From", "To")]))
+```
+
+
+Load the package `igraph` and create an `igraph` object (i.e. a graph or network) in the form of an edge list. The command may vary whether the data is given as a list of connections or an adjacency matrix. Is the network directed or undirected; weighted or unweighted; unimodal or bipartite? Can you plot it?
+
+```{r}
+# Count the vertex objects in a network function: igraph
+vcount(graph)
+
+# Count the edge objects in a network function: igraph
+
+ecount(graph)
+
+# what type of network data is this object bipartite or weighted? 
+
+is_bipartite(graph)
+
+# are the network objects in this graph weighted or not? 
+
+is_weighted(graph)
+
+# are the network objects directed or undirected?
+
+is_directed(graph)
+
+# display vertex names for got marriages set for igraph object
+
+vertex_attr_names(graph)
+
+# display edge names for got marriages set for igraph object
+
+edge_attr_names(graph)
+
+# next step is to start describing the actual network itself we see this with the co-joining of the data frame and attributes
+
+# access vertex attribute in igraph for got marriages date frame: igraph
+V(graph)$name
+
+# access edge attributes in igraph for got marriages data frame: igraph 
+
+E(graph)$weight
+
+plot(graph)
+
+```

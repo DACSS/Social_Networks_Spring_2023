@@ -1,0 +1,161 @@
+---
+title: "Week 3 Challenge Instructions"
+author: "Hannah Rosenbaum"
+description: "Degree and Density of a Network"
+date: "03/06/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+# editor: visual
+categories: 
+  - challenge_3
+  - instructions
+  # - railroads
+  # - faostat
+  # - wildbirds
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(dplyr)
+library(igraph)
+```
+
+## Challenge Overview
+
+Describe the many measures of degree, as well as density, of a network and compare 
+
+## Degree
+
+If you have not done it before, evaluate the structure of the network (number of edges and vertices, dyad and triad census, etc.).
+
+Compute the many measures of _degree_ of the network of your choice, most preferably directed. Create a data frame called `nodes` where each row corresponds to a node and each column to an attribute of the node, namely the id, name or label, and different measures of degree: total, out-degree, and in-degree. What is the average degree of the network?
+
+Compute the distributions of those measures (or histograms if your network is small). What does this tell us about the structure of the network?
+
+## Density
+
+Compute the density of the network. Is this a global or local measure? Does it have a relationship with average degree? 
+
+## Random Network
+
+Create a random (Erdos-Renyi) network with the same number of nodes and edges than the network of your choice. On `igraph`, the necessary commands are `random.graph.game(n, p.or.m, type = c("gnp", "gnm"), directed = FALSE, loops = FALSE)` (deprecated), `sample_gnp(n, p, directed = FALSE, loops = FALSE)` or `sample_gnm(n, m, directed = FALSE, loops = FALSE)`. The `p.or.m` argument is to specify the probability of an edge $p$ or the number of edges $m$.
+  
+Compare the densities, dyad and triad censuses, and degree distributions, with the measures of the network of your choice. Does the comparison us something about the network of your choice? 
+
+```{r}
+got_marriages <- read.csv("C:/Users/18639/Social_Networks_Spring_2023/posts/_data/got/got_marriages.csv")
+```
+
+```{r}
+graph <- graph_from_edgelist(as.matrix(got_marriages[, c("From", "To")]))
+```
+
+```{r}
+# List/display data
+head(got_marriages)
+
+# Show network size
+vcount(graph)
+ecount(graph)
+
+# Is the graph bipartite
+is_bipartite(graph)
+
+# Is teh graph weighted
+is_weighted(graph)
+
+# Is the graph directed
+is_directed(graph)
+
+# Listing vertex attributes
+vertex_attr_names(graph)
+
+# Listing edge attributes
+edge_attr_names(graph)
+
+# Perform a dyad census of the network
+dyad.census(graph)
+
+# Perform a triad census on the network
+triad.census(graph)
+
+# Compute the transitivity of the netwrok
+transitivity(graph)
+
+# Find the average path length
+average.path.length(graph)
+
+# Find the width of the network
+diameter(graph)
+```
+
+```{r}
+#Compute the degree of the network
+degree(graph)
+```
+
+
+```{r}
+# Build `nodes`
+nodes <- data.frame("Name"=c(), "Total"=c(), "Out"=c(), "In"=c())
+families <- unique.data.frame(as.data.frame(got_marriages[, c("To")]))
+
+# Iterate across family names computing degrees
+for (name in families) {
+  obs <- data.frame("Name"=name, "Total"=degree(graph, v = name, mode = "total"), "Out"=degree(graph, v = name, mode = "out"), "In"=degree(graph, v = name, mode = "in"))
+
+  nodes <- rbind(nodes, obs)
+}
+nodes
+```
+
+```{r}
+# Calculate the average total degree
+mean(nodes$Total)
+```
+
+```{r}
+# Show histogram of total degree
+hist(nodes$Total)
+```
+
+```{r}
+# Show histogram of In degree
+hist(nodes$In)
+```
+
+```{r}
+# Show histogram of Out degree
+hist(nodes$Out)
+```
+
+```{r}
+# Compute the density of the network
+graph.density(graph)
+```
+
+```{r}
+random_network <- sample_gnp(length(V(graph)), graph.density(graph))
+plot(random_network)
+```
+
+```{r}
+# Find density of random network
+graph.density(random_network)
+
+# Performa a dyad census of the random network
+dyad.census(random_network)
+
+# Perform a triad census on the random network
+triad.census(random_network)
+
+#Compute the degree of the random network
+degree(random_network)
+```
