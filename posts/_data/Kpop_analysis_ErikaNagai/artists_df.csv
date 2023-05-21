@@ -1,0 +1,975 @@
+,name,id,top_kpop,genre,followers,name_lower
+0,BTS,3Nrfpe0tUJi4K4DXYWgMUX,1,"['k-pop', 'k-pop boy group', 'pop']",64752045,bts
+1,Jimin,1oSPZhvZMIrWW5I41kPkkY,1,['k-pop'],5246710,jimin
+2, JVKE,164Uj4eKjl6zTBKfJLFKKK,0,"['modern indie pop', 'pov: indie']",2302844,jvke
+3, Kodak Black,46SHBwWsqBkxI7EeeBEQG7,0,"['florida drill', 'florida rap', 'melodic rap', 'miami hip hop', 'rap', 'trap', 'trap latino']",9290954,kodak black
+4, NLE Choppa,0ErzCpIMyLcjPiwT4elrtZ,0,"['memphis hip hop', 'rap']",6153597,nle choppa
+5, Muni Long,7tjVFCxJdwT4NdrTmjyjQ6,0,['indie r&b'],242130,muni long
+7,Jung Kook,6HaGTQPmzraVmaVxvz6EUc,1,['k-pop'],7293779,jung kook
+9, FIFA Sound,5C01hDqpEmrmDfUhX9YWsH,0,[],167771,fifa sound
+11,benny blanco,5CiGnKThu5ctn9pBxv7DGa,0,['pop'],1048105,benny blanco
+13, Snoop Dogg,7hJcb9fa4alzcOq3EaNPoG,0,"['g funk', 'gangster rap', 'hip hop', 'pop rap', 'rap', 'west coast rap']",9674113,snoop dogg
+15,Charlie Puth,6VuMaDnrHyPL1p4EHjYLi7,0,"['pop', 'viral pop']",20213766,charlie puth
+19,Coldplay,4gzpq5DPGxSnKTe4SA8HAU,0,"['permanent wave', 'pop']",44068819,coldplay
+21, David Guetta,1Cs0zKBU1kc0i8ypK3B9ai,0,"['big room', 'dance pop', 'edm', 'pop', 'pop dance']",25985974,david guetta
+25, Galantis,4sTQVOfp9vEMCemLw50sbu,0,"['dance pop', 'edm', 'pop', 'pop dance', 'tropical house']",3356599,galantis
+32, SUGA,0ebNdVaOfp6N0oZ1guIxM8,0,['k-pop'],2333423,suga
+34, Megan Thee Stallion,181bsRPaVXVlUKXrxwZfHK,0,"['houston rap', 'pop', 'rap', 'trap queen']",7682516,megan thee stallion
+36,Jawsh 685,56mfhUDKa1vec6rSLZV5Eg,0,['nz pop'],110391,jawsh 685
+37, Jason Derulo,07YZf4WDAMNwqr4jfgOZ8y,0,"['dance pop', 'pop']",11822509,jason derulo
+40,Halsey,26VFTg2z8YR0cCuwLzESi2,0,"['electropop', 'etherpop', 'indie poptimism', 'pop']",20133665,halsey
+44, Lauv,5JZ7CnR6gTvEMKX4g70Amv,0,['pop'],5725991,lauv
+45, Frants,7qxLQ0CByGfbd3HdL7ilR8,0,[],604,frants
+49,Lil Nas X,7jVv8c5Fj3E9VhNjxT4snq,0,['lgbtq+ hip hop'],12416476,lil nas x
+50, RM,2auC28zjQyVTsiZKNgPRGs,1,['k-rap'],13576102,rm
+53, Juice WRLD,4MCBfE4596Uoi2O4DtmEMz,0,"['chicago rap', 'melodic rap', 'rap']",29057830,juice wrld
+55, Zara Larsson,1Xylc3o4UrD53lo9CvFvVg,0,"['pop', 'scandipop', 'swedish electropop', 'swedish pop']",10386278,zara larsson
+57, Charli XCX,25uiPmTg16RbhZWAqwLBy5,0,"['art pop', 'candy pop', 'metropopolis', 'pop', 'uk pop']",2848872,charli xcx
+59, PDOGG,5twg8ZDFT6UZeGqpEJTHfr,0,[],1031,pdogg
+63,Steve Aoki,77AiFEVeAVj2ORpC85QVJs,0,"['edm', 'electro house', 'pop dance']",3750484,steve aoki
+66, Desiigner,7pFeBzX627ff0VnN6bxPR4,0,"['pop rap', 'rap', 'southern hip hop', 'trap', 'viral trap']",3480815,desiigner
+68,BLACKPINK,41MozSoPIsD1dJM0CLPjZF,1,"['k-pop', 'k-pop girl group', 'pop']",40782301,blackpink
+69, Selena Gomez,0C8ZW7ezQVs4URX5aX7Kqx,0,"['pop', 'post-teen pop']",42246229,selena gomez
+71,Lady Gaga,1HY2Jd0NmPuamShAr6KMms,0,"['art pop', 'dance pop', 'pop']",26396005,lady gaga
+74,Dua Lipa,6M2wZ9GZgrQXHCFfjv46we,0,"['dance pop', 'pop', 'uk pop']",39760709,dua lipa
+76,TWICE,7n2Ycct7Beij7Dj7meI4X0,1,"['k-pop', 'k-pop girl group', 'pop']",17544057,twice
+77, Lindgren,0vk7Ds4u6waswHkzrfACVg,0,[],90,lindgren
+79, Tommy Brown,0ctSbHMEV1hrOkGvEnciDr,0,[],214,tommy brown
+81, ARMNHMR,0P2bZXPyjHYRW4guHVAFl1,0,"['melodic dubstep', 'pop edm']",96964,armnhmr
+83, Tommy “TBHits” Brown,06moEoVtCKweJmGYid8vU7,0,[],5,tommy “tbhits” brown
+85, Benny Benassi,4Ws2otunReOa6BbwxxpCt6,0,"['edm', 'electro house', 'pop dance']",538095,benny benassi
+87, The Stereotypes,5fR4xhDybxRY7SwyUwQy34,0,[],215,the stereotypes
+89, Yves V,47BEc2RoW53owMyxacXWdV,0,"['belgian edm', 'dutch house', 'edm', 'electro house', 'pop dance', 'progressive electro house', 'progressive house', 'slap house']",282355,yves v
+91, LEE HAE SOL,5xZzq9Bk8IociNfF0TfHdf,0,[],59,lee hae sol
+93, taalthechoi,0Wz3NC2nQgeV1titlYTj4C,0,[],84,taalthechoi
+94,Stray Kids,2dIgFjalVxs4ThymZ67YCE,1,"['k-pop', 'k-pop boy group', 'pop']",11204838,stray kids
+95,Alesso,4AVFqumd2ogHFlRbKIjp1t,0,"['dance pop', 'edm', 'pop', 'pop dance', 'tropical house']",3940482,alesso
+97, Mike Williams,3IpvVrP3VLhruTmnququq7,0,"['big room', 'dutch house', 'edm', 'electro house', 'future house', 'pop dance', 'progressive electro house']",353799,mike williams
+98, CORSAK,1TcbdifqhtxLz77unBYJ7z,0,['chinese electropop'],38063,corsak
+106,SEVENTEEN,7nqOGRxlXj7N2JYbgNEjYH,1,"['k-pop', 'k-pop boy group']",9155169,seventeen
+107,香取慎吾,23aPUZaR8bESXN4UD3T2Sx,0,[],20927,香取慎吾
+110, Anne-Marie,1zNqDE7qDGCsyzJwohVaoX,0,"['hel', 'pop']",10830687,anne-marie
+112,Pink Sweat$,1W7FNibLa0O0b572tB2w7t,0,['bedroom soul'],1679648,pink sweat$
+115,Yoon Jong Shin,0hW1muryuCdZLfjoLrUhnw,0,['korean pop'],57128,yoon jong shin
+118, AILEE,3uGFTJ7JMllvhgGpumieHF,1,['k-pop'],1094042,ailee
+119,TOMORROW X TOGETHER,0ghlgldX5Dd6720Q3qFyQB,1,"['k-pop', 'k-pop boy group']",7966311,tomorrow x together
+120, Coi Leray,6AMd49uBDJfhf30Ak2QR5s,0,"['new jersey underground rap', 'trap queen']",561082,coi leray
+122, iann dior,6ASri4ePR7RlsvIQgWPJpS,0,['melodic rap'],1734756,iann dior
+124,salem ilese,3QJUFtGBGL05vo0kCJZsmT,0,"['alt z', 'modern indie pop']",308932,salem ilese
+126, Alan Walker,7vk5e3vY1uw9plTHJAMwjN,0,['electro house'],37874768,alan walker
+128, Lilas Ikuta,1qM11R4ylJyQiPJ0DffE9z,0,"['j-pop', 'japanese teen pop']",430012,lilas ikuta
+130, MOD SUN,3u2R8st1bb6zfBqNWceRXG,0,"['indie pop rap', 'minnesota hip hop']",276276,mod sun
+131,ITZY,2KC9Qb60EaY0kW4eH68vr3,1,"['k-pop', 'k-pop girl group']",5422873,itzy
+132,Bebe Rexha,64M6ah0SkkRsnPGtGiRAbb,0,"['dance pop', 'pop']",8195745,bebe rexha
+134, YEJI & RYUJIN of ITZY,4TYswX6bKUjM9rbEL7CMBH,0,[],4977,yeji & ryujin of itzy
+136,Second Aunt KimDaVi,2XrCYhwuq6x15QFddD1gQv,0,['trot'],2501,second aunt kimdavi
+139, DallasK,7uas0F5EhsZg6KDJ7yy7rW,0,"['complextro', 'electro house', 'pop edm', 'progressive electro house', 'sky room']",44314,dallask
+141, Imad Royal,6OgklJh1e1Z9S1Q2IQsHgy,0,[],15184,imad royal
+152, Sam Feldt,20gsENnposVs2I4rQ5kvrf,0,"['edm', 'pop dance', 'tropical house']",751868,sam feldt
+153,(G)I-DLE,2AfmfGFbe0A0WsTYm0SDTx,1,"['k-pop', 'k-pop girl group']",5694888,(g)i-dle
+155, MINNIE,2pHkxVNynHBwQHhGaoBIXX,0,[],86594,minnie
+160, R3HAB,6cEuCEZu7PAE9ZSzLLc2oQ,0,"['dutch house', 'edm', 'electro house', 'pop dance', 'progressive electro house', 'slap house']",2472679,r3hab
+162, Dimitri Vegas & Like Mike,73jBynjsVtofjRpdpRAJGk,0,"['belgian dance', 'belgian edm', 'big room', 'dutch house', 'edm', 'electro house', 'pop dance', 'progressive electro house']",3354069,dimitri vegas & like mike
+166,K/DA,4gOc8TsQed9eqnqJct2c5v,0,['k-pop girl group'],1956117,k/da
+167, Madison Beer,2kRfqPViCqYdSGhYSM9R0Q,0,['pop'],5708741,madison beer
+169, Lexie Liu,6fs2or0cKLEM2xohWq8SoX,0,['chinese electropop'],128304,lexie liu
+170, Jaira Burns,0tRFWXqKBBQcu5oFVOgVzX,0,['alt z'],433911,jaira burns
+171, Seraphine,4TqlcgMFDryY96KWcvrhTv,0,[],112233,seraphine
+172, League of Legends,47mIJdHORyRerp4os813jD,0,"['speedrun', 'video game music']",1601700,league of legends
+176, Wolftyla,7qd6KGoABHifvXKeFNe2Yb,0,['trap queen'],61870,wolftyla
+177, Bea Miller,1o2NpYGqHiCq7FoiYdyd1x,0,"['alt z', 'pop', 'talent show']",2995410,bea miller
+185,Red Velvet,1z4g3DjTBBZKhvAroFlhOM,1,"['k-pop', 'k-pop girl group']",8364750,red velvet
+186, aespa,6YVMFz59CuY7ngCxTxjpxE,1,"['k-pop', 'k-pop girl group']",3136068,aespa
+188, PREP,31SBgHxc8eqZUk9MdveH42,0,[],254055,prep
+190, nomad,2xPc9Yvp2U0uUYxZdvFLOz,0,[],18,nomad
+192, Slom,0UswO8FFKS2tv6dzyNyJLD,0,[],21077,slom
+194, Demicat,3Geym1qRlviofLxjf1L0BK,0,['korean electronic'],1055,demicat
+196,Ellie Goulding,0X2BH1fck6amBIoJhDVmmJ,0,"['indietronica', 'metropopolis', 'pop', 'uk pop']",11942874,ellie goulding
+197, Diplo,5fMUXHkw8R8eOP2RNVYEZX,0,"['edm', 'electro house', 'moombahton', 'pop dance', 'tropical house']",2550218,diplo
+200,Raina,21dQ70DS91icGLN9J4mH7h,0,[],4380,raina
+201, 리지,45hd8opei1aSAIMNfJccfK,0,[],52,리지
+203, TAEYONG,6SKusTjOAPsTZ6kareKQdm,0,['k-pop'],1049443,taeyong
+205, nævis,2067CjQ2nC56cRZX8goeHg,0,[],14794,nævis
+207, BRLLNT,78EdVeIJjaqrSJdEaps9rt,0,['korean r&b'],6642,brllnt
+209, Minit,6TXbTOTnLFaF1iHywOaV1m,0,[],9326,minit
+211, Habstrakt,1YYJxpOXYk1z1WtqdeLMkn,0,"['bass house', 'dubstep', 'electro house', 'electronic trap', 'filthstep']",117998,habstrakt
+213, IMLAY,4b7ZEkk5uXPlwX2IPuV7Q2,0,['korean hyperpop'],11454,imlay
+215, Lionclad,2AGxU7q0xWss9jkiTPmxH7,0,['korean electronic'],3685,lionclad
+216,LISA,5L1lO4eRHmJ7a0Q6csE5cT,1,['k-pop'],4452830,lisa
+217,DJ Snake,540vIaP2JwjQb9dm3aArA4,0,"['edm', 'electronic trap', 'pop', 'pop dance']",8501091,dj snake
+218, Ozuna,1i8SpTcr7yvPOmcqrbnVXY,0,"['puerto rican pop', 'reggaeton', 'trap latino', 'urbano latino']",36674952,ozuna
+221,NCT DREAM,1gBUSTR3TyDdTVFIaQnc02,1,"['k-pop', 'k-pop boy group']",6513338,nct dream
+222, JINBO,4PlxqkEk6seCManiTAPTWb,0,"['k-rap', 'korean r&b']",8034,jinbo
+224, Hitchhiker,5ePDPFrSdmaieYrKrPDJPx,0,['korean hyperpop'],19133,hitchhiker
+226, MINIMONSTER,3bN6HZ9ACZ6nqQheU5rp68,0,[],313,minimonster
+228, Will Not Fear,3zQf6Ogadb67LzdBTHaZ0N,0,[],669,will not fear
+234,PRETTYMUCH,5Y8eJDj37KhaEeqbVO7Ag1,0,"['boy band', 'pop']",1269454,prettymuch
+237, HRVY,28y6CyJNkGNjJQKrlx4AmN,0,['pop'],1659970,hrvy
+238,j-hope,0b1sIQumIAsNbqAoIClSpy,1,"['k-pop', 'k-rap']",14644327,j-hope
+239, J. Cole,6l3HvQ5sa6mXTsMTB19rO5,0,"['conscious hip hop', 'hip hop', 'north carolina hip hop', 'rap']",20093571,j. cole
+241, Becky G,4obzFoKoKRHIphyHzJ35G3,0,"['latin pop', 'latin viral pop', 'rap latina', 'reggaeton', 'urbano latino']",13378030,becky g
+242,IU,3HqSLMAZ3g3d5poNaI7GOU,1,"['k-pop', 'pop']",7967603,iu
+243,Agust D,5RmQ8k4l3HZ8JoPb4mNsML,0,['k-rap'],11679645,agust d
+246, Kang Seungwon,48DsjCcpYJQWi5fulzyuBm,0,['korean pop'],1067,kang seungwon
+250,Sung Si Kyung,7jFUYMpMUBDL4JQtMZ5ilc,0,['korean pop'],200425,sung si kyung
+253, OHHYUK,68TCVp5t1Dxi2TvNuYoYK0,0,['korean pop'],53935,ohhyuk
+255, Zion.T,5HenzRvMtSrgtvU16XAoby,1,"['k-pop', 'k-rap', 'korean r&b']",566228,zion.t
+257,Ulala Session,2EFJSNZzGSfLXMfAaxbK2A,0,[],3719,ulala session
+260, Kim Chang-Wan,2yMDYqTvjFeBZcGC4ZMMVH,0,[],245,kim chang-wan
+262, Clon,3IvJqVgapy3AMUBmVGrvag,0,['classic k-pop'],6585,clon
+264,HIGH4,3cpG0SJLIJ1qpQfjmlWlzo,0,['k-pop boy group'],61011,high4
+267, FIESTAR,3IVjXrnR0npv1LY24kQSzd,0,"['k-pop', 'k-pop girl group']",153065,fiestar
+269, ＦＰＭ,0TGGLJ8adXSsX0v9bNCEAa,0,[],10,ｆｐｍ
+271, Pianist Kim Kwang Min,2iwYWSmPQBvAvoHtRCRT1Z,0,[],5,pianist kim kwang min
+273, Chundung,52KEoFZCGGap8hZHtOgENt,0,[],33,chundung
+275, Na Yun Gwon,0UCjY4RwfRkBzabQbwykhT,0,[],56,na yun gwon
+277, MARIO,1wLXYnlqlJNSFfNlsqEsbC,0,[],49,mario
+278,ATEEZ,68KmkJeZGfwe1OUaivBa2L,1,"['k-pop', 'k-pop boy group']",2852025,ateez
+279,Pentatonix,26AHtbjWKiwYzsoGoUZq53,0,"['a cappella', 'viral pop']",3583498,pentatonix
+282,Kim Jong Kook,60YNqzrSj7rJkuqHkpHPqG,0,['korean pop'],106122,kim jong kook
+285, SEAN OH,7lCMxLzay3subrSfwEcZxc,0,[],84,sean oh
+287, SPACECOWBOY,58Y3mQTF2ToepXQaS0RCIV,0,[],37,spacecowboy
+289, Buddy,74zjHeFm4yooE7SuemoFan,0,['partyschlager'],5466,buddy
+290,NCT 127,7f4ignuCJhLXfZ9giKT7rH,1,"['k-pop', 'k-pop boy group']",6636723,nct 127
+291, No Identity,2ladxDWywuVgNTdsivk5vI,0,[],66,no identity
+293, Viann,7yRs5f61v5AwXwVlUQ7bNE,0,[],1322,viann
+295, Biicla,72heZIc2iMXdpDwsTjTcCQ,0,[],9804,biicla
+299, Lodge Boy,4QwmzSTkQf1bayzLcPllow,0,[],55,lodge boy
+301, Valentino Khan,0deIjoDjl9g9Zpw0sCIOHh,0,"['brostep', 'edm', 'electro house', 'electronic trap', 'moombahton']",230194,valentino khan
+307,Ava Max,4npEfmQ6YuiwW1GpUmaq3F,0,['pop'],5886591,ava max
+311, LAY,4o7tWrzQOqarDtTMWD2HV9,0,"['chinese electropop', 'chinese idol pop', 'k-pop']",1483963,lay
+317,V,3JsHnjpbhX4SnySpvpa9DK,1,"['j-division', 'korean ost']",13096788,v
+318, JIN,5vV3bFXnN6D6N3Nj4xRvaV,0,['k-pop'],5853812,jin
+319,TAEYEON,3qNVuliS40BLgXGxhdBdqu,1,['k-pop'],2730862,taeyeon
+320, ZHU,28j8lBWDdDSHSSt5oPlsX2,0,"['edm', 'electro house', 'tropical house']",827923,zhu
+322, Moon Kyoo,1AhVoVOXXDOP5pkhUvoSjH,0,[],625,moon kyoo
+324, GINJO,75vTLAnhUDaUwzjPCKvaJM,0,[],5652,ginjo
+326,Lee Seung Chul,5Ecf8RR2UWFAvyeItabffF,0,['korean pop'],63148,lee seung chul
+329, CHANMINA,2vjeuQwzSP5ErC1S41gONX,0,"['j-rap', 'josei rap']",597932,chanmina
+331, MeloMance,6k4r73Wq8nhkCDoUsECL1e,0,"['k-pop', 'korean pop']",232563,melomance
+333, LUCAS,6S3tOdgtc5qz16hwmMjEBN,0,[],48431,lucas
+335, Verbal Jint,24sQuJhQ85ZygDG7sUVUxR,0,"['k-rap', 'korean old school hip hop']",71542,verbal jint
+337, The One,3eAsBHDYXtCSn67Zynq3Qd,0,['korean pop'],8148,the one
+338,PSY,2dd5mrQZvg6SmahdgVKDzh,1,"['k-rap', 'korean old school hip hop']",1628600,psy
+341, 2 Chainz,17lzZA2AlOHwCwFALHttmp,0,"['atl hip hop', 'hip hop', 'pop rap', 'rap', 'southern hip hop', 'trap']",7818478,2 chainz
+342, Tyga,5LHRHt1k9lMyONurDHEdrp,0,"['hip hop', 'pop rap', 'rap', 'trap']",6813329,tyga
+345, AFROJACK,4D75GcNG95ebPtNvoNVXhz,0,"['big room', 'dance pop', 'dutch house', 'edm', 'electro house', 'pop dance']",3993885,afrojack
+347, G-DRAGON,30b9WulBM8sFuBo17nNq9c,1,"['k-pop', 'k-rap']",2893633,g-dragon
+351, Leessang,0JGN9XIqm3vfg7hhPHjExI,0,['korean pop'],60715,leessang
+352, Kim Jin Pyo,57YbQhFBBDksLzX08lqVnw,0,['k-rap'],623,kim jin pyo
+354, Lena Park,7MNyflLAWpaH0EPw1fdORD,0,['korean pop'],35178,lena park
+356, Yoon Do Hyun,6KsmQPHXE3qhzNNBPSZ0eB,0,"['korean pop', 'korean singer-songwriter']",32961,yoon do hyun
+358, MC Hammer,2rblp9fJo16ZPTcKDtlmKW,0,"['hip hop', 'hip house']",577185,mc hammer
+359,BIGBANG,4Kxlr1PRlDKEB0ekOCyHgX,1,"['k-pop', 'k-pop boy group']",5097708,bigbang
+360, No Brain,6keuCA49b9am8lisSodCh7,0,"['k-rock', 'korean punk']",8603,no brain
+362,GD&TOP,3e3oLJehq4vQl2H0FAJnvn,1,"['k-pop', 'k-rap']",606471,gd&top
+363, Park Bom,3uHb6dRazmcaT15bMexUtt,1,['k-pop'],137063,park bom
+365,TAEYANG,6udveWUgX4vu75FF0DTrXV,1,"['k-pop', 'korean r&b']",1051292,taeyang
+369,MONSTA X,4TnGh5PKbSjpYqpIdlW5nz,1,"['k-pop', 'k-pop boy group']",4983585,monsta x
+370,Play-N-Skillz,7MP4jhYmFEgb0AtiOkw55s,0,['chicano rap'],24037,play-n-skillz
+372, Lil Jon,7sfl4Xt5KmfyDs2T3SVSMK,0,"['atl hip hop', 'crunk', 'dance pop', 'dirty south rap', 'old school atlanta hip hop', 'pop rap', 'southern hip hop', 'trap']",1413267,lil jon
+373, Bun B,45a6gCQWq61lIUDmr1tKuO,0,"['dirty south rap', 'houston rap']",854184,bun b
+374, Symba,06S3fr7xEES7e3QPXhu3ay,0,[],66557,symba
+378, Öwnboss,37czgDRfGMvgRiUKHvnnhj,0,['brazilian edm'],66831,öwnboss
+385, Jonasu,7u4ayw4QFEsolPxZgnPAMT,0,"['dutch edm', 'uk dance']",13796,jonasu
+389, Sebastian Yatra,07YUOmWljBTXwIseAUd9TW,0,"['colombian pop', 'latin pop', 'reggaeton', 'reggaeton colombiano', 'urbano latino']",21528453,sebastian yatra
+391, French Montana,6vXTefBL93Dj5IqAWq6OTv,0,"['hip hop', 'pop rap', 'rap', 'southern hip hop', 'trap']",5011607,french montana
+395, DVBBS,5X4LWwbUFNzPkEas04uU82,0,"['canadian electronic', 'dutch house', 'edm', 'electro house', 'pop dance', 'progressive electro house', 'slap house']",1039683,dvbbs
+399, Quintino,1V3VTM7VspiQjcmRhC010n,0,"['dutch edm', 'dutch house', 'edm', 'electro house', 'pop dance', 'progressive electro house', 'slap house']",624742,quintino
+404, Whee In,0BqRGrwqndrtNkojXiqIzL,0,"['k-pop', 'korean ost']",845224,whee in
+406, Yella Diamond) (Performed by JooHeon,5KnPgqPc7aCvEfXrCs4QjV,0,[],3,yella diamond) (performed by jooheon
+407,Kep1er,5R7AMwDeroq6Ls0COQYpS4,1,['k-pop'],1140149,kep1er
+410,LOONA,52zMTJCKluDlFwMQWmccY7,1,"['k-pop', 'k-pop girl group']",2318345,loona
+413, Kim Lip,1fsR8q6ObgP7rLBYdZZD7i,0,[],1825,kim lip
+415, HaSeul,5clV5I50OxxG9JGGxeW0C9,0,[],1229,haseul
+417, JinSoul,1rAZr0bwMTcobwrOFHhfJr,0,['korean ost'],10730,jinsoul
+418,Jessi,64k5e9kV9MdukXjFrR5R37,1,['k-pop'],1695211,jessi
+419,Ed Sheeran,6eUKZXaKkcviH0Ku9w2n3V,0,"['pop', 'uk pop']",111956794,ed sheeran
+421, SUNMI,6MoXcK2GyGg7FIyxPU5yW6,1,['k-pop'],2610558,sunmi
+423, BM,5lZV4z4dpX6IfTYlfUMvOE,0,[],39242,bm
+424, nafla (나플라),7ckGYpVRexH6vHHrBuKJs0,0,[],0,nafla (나플라)
+426, 朴宰範,2VrDFxXbEHomf7A8Q87uRA,0,[],18,朴宰範
+429, nafla,3Zn6C68VCosoQrxu4D2Btr,0,['k-rap'],169887,nafla
+431, Jay Park,4XDi67ZENZcbfKnvMnTYsI,1,"['k-pop', 'k-rap', 'korean r&b']",1941923,jay park
+433, ILLSON,1o3mKG33qvuXI2s3HXTkYd,0,['k-rap'],10725,illson
+436, Microdot,1ToWoFmtIc9NTPFy7lR690,0,['k-rap'],6392,microdot
+438, CHANGMO,3hvinNZRzTLoREmqFiKr1b,1,"['k-rap', 'korean r&b']",295854,changmo
+440, TAE JIN A,7Hm7HaPth1NwFOU9BJXbhG,0,['trot'],65,tae jin a
+442, Hanhae,1CjHzclPOS2unF1vRtgurF,0,['k-rap'],25876,hanhae
+443, DJ Juice,0bJKaJ5AdUz5nDFDRGfKPJ,0,[],891,dj juice
+445, Kim Young-Im,2fhbmyZNyWccDt37X5asgX,0,"['joseon pop', 'korean minyo']",336,kim young-im
+446, Crispi Crunch,10ec6gfQc8j9tzB8yq7MGF,0,['k-rap'],922,crispi crunch
+448, KATIE,2nDC4PH8XE1gHeeAxVLXRO,0,['korean r&b'],235038,katie
+449, WOOGIE,7C0lSOS41UnTbnF7bMSEWN,0,"['k-rap', 'korean r&b']",89261,woogie
+451,Lewie,7tvCXmeh7MlNtmfKMN2H8Q,0,[],1939,lewie
+454, Hwa Sa,7bmYpVgQub656uNTu6qGNQ,1,"['k-pop', 'korean talent show']",4013680,hwa sa
+457, Paloalto,2Yv0nlRtzgPl6u0dsS2hFv,0,['k-rap'],44738,paloalto
+458, Nucksal,6v5cGuRCZKq08nLI4WXJuB,0,['k-rap'],40841,nucksal
+459, CRUCiAL STAR,4vdAgNz4vrUZVvS0CaVvGJ,0,"['k-rap', 'korean r&b']",70227,crucial star
+460, Khundi Panda,32wJE7JooXm59HxYhy7caU,0,['k-rap'],18757,khundi panda
+461, SUPERBEE,0Q5XzDpn7DCI5jlubok4xb,0,['k-rap'],84986,superbee
+462, Juvie Train,2CEVA02kVlfCD2ASpvadw4,0,[],155,juvie train
+463, KAMBO,2LE4iuwlb4vZMWKTw68g4i,0,[],264,kambo
+464, Fana,4mUsQKPUlPpTe2C1MPW1QT,0,"['k-rap', 'korean old school hip hop']",5093,fana
+465, QM,0wMU0ruU41VLCAdBaWBo1j,0,"['k-rap', 'korean underground rap']",6139,qm
+468, Blase,6XsOOgLCtnkkOv2uhZXuB0,0,['k-rap'],25776,blase
+469, 365LIT,65LSFEqRhq074aUBF1zF2e,0,"['k-rap', 'korean trap', 'korean underground rap']",5242,365lit
+470, JUPITER,09KeT4dkVIveN5OpVOCPeU,0,[],257,jupiter
+471, KHAN,13jYpBHek9LD68d1ZwWmu5,0,[],5854,khan
+472, XINSAYNE,4yY3FsmWRwMIFXRDkMpnBS,0,[],1391,xinsayne
+473, Roh Yun Ha,4F0KZ0SXe4z5xrgX6TXAPy,0,['k-rap'],12009,roh yun ha
+474, sokodomo,23LskvW8ErKu8v1teU7xFZ,0,['k-rap'],50213,sokodomo
+475, 코알라 KOALA,57FiLkWeGzNVMLggMZLYiZ,0,[],663,코알라 koala
+476, JAMBINO,1lcuNfp7bo4LCAHWrjAR9K,0,[],4824,jambino
+477, Lee Young Ji,0Y2AcMPMpeuPXtPQGVvRBq,0,['korean trap'],154588,lee young ji
+478, Chillin Homie,5f48MQLr5eOXHcR4lFE1BM,0,"['k-rap', 'korean trap']",13953,chillin homie
+479, NSW yoon,6xlIFpRmRNDoVuFUqzuMFE,0,[],9059,nsw yoon
+484, toigo,5tTstLTFQFGb2dBb6h9zeG,0,[],2520,toigo
+485, J'Kyun,0WIKW2eVuPbK5vQ0AIDtMQ,0,"['k-rap', 'korean underground rap']",9566,j'kyun
+487,Maliibu Miitch,5J1JcdYCPj44YKz6kVA5wx,0,['trap queen'],140718,maliibu miitch
+490, pH-1,2u7CP5T30c8ctenzXgEV1W,0,"['k-rap', 'korean r&b']",372581,ph-1
+491, 李大奔,5sF2WUeEL2qiV03Vym3727,0,['chinese hip hop'],8126,李大奔
+496, Spray,08yoNApAYvtzOK5P3qZKw8,0,['korean underground rap'],3475,spray
+497, lIlBOI,25wMXkplvEHJpJHX8A6Ved,0,['k-rap'],67074,lilboi
+501, Wiz Khalifa,137W8MRPWKqSmrBGDBFSop,0,"['hip hop', 'pittsburgh rap', 'pop rap', 'rap', 'southern hip hop', 'trap']",11032776,wiz khalifa
+504, GroovyRoom,29HqjVbJr3vsc2l6BTI4eB,0,"['k-rap', 'korean r&b']",132104,groovyroom
+506,YULTRON,3n2H1XlCyS1WQ0vyVUFEma,0,['speed house'],34860,yultron
+509,GEMINI,67IWlRdLy3UcfY3q968euj,0,['korean r&b'],156622,gemini
+513, Paul Blanco,2fiGm496AG7ePURQiSSJIw,0,[],48038,paul blanco
+515,ShiGGa Shay,3vYlOrtxEjNzvUPhacOdoV,0,"['singaporean hip hop', 'singaporean pop']",5693,shigga shay
+518,DJ Wegun,7p552gLGzaDKXB5sETgTEP,0,['k-rap'],13768,dj wegun
+536,Jay Loud,2zlYZjumfIxajIKfk41H9A,0,['indiana hip hop'],10422,jay loud
+539, Kirin,3dFiM806dnbA7YUIgOHDBc,0,['korean city pop'],7151,kirin
+541,$tupid Young,0h0C8mMT21p0Ixq6qO1UMH,0,"['asian american hip hop', 'cali rap']",121523,$tupid young
+542, B.A.R.S,1ahnpDxkjOKgm9VydpzCKr,0,[],262,b.a.r.s
+545,Mozart La Para,0odliLZMTk45CEVzF3Zocl,0,"['dembow', 'rap dominicano']",406458,mozart la para
+548, Hit-Boy,6q3p11nP1p80Ey6LrOOSed,0,['drumless hip hop'],68444,hit-boy
+560,Simon Dominic,57W9ikVc6O2wLDtmclSjvN,0,"['k-pop', 'k-rap', 'korean r&b']",442764,simon dominic
+561, RYNO,5rIOZ6g7qSlq60wITUUle2,0,[],265,ryno
+562, sogumm,50x9jHrP6wy9fo3jK5pNqS,0,['k-indie'],51852,sogumm
+563, YELLA D,4D139q2zdOGkNdWHeFmIog,0,"['k-rap', 'korean r&b']",5500,yella d
+565,Part Time Cooks,51e7K2KFkHECVO460ruq8L,0,[],1771,part time cooks
+566, MBA,0c6EF9zv5mQX7pkyrPawKS,0,"['k-rap', 'korean trap']",6799,mba
+567, MELOH,5Qb6QmI6WUeGFaJeGB5fdg,0,[],50673,meloh
+569,Choi Seo Hyun,45MYCJEVTetzK6k2UeuHv0,0,[],775,choi seo hyun
+570, Maddox,7KieZTca53gfdVzwdODV2L,0,['korean r&b'],54590,maddox
+571, Seungrae,7g5FyggODL4LruwJvqx4yh,0,[],526,seungrae
+581, Sik-K,5DIi2JWfQPTKffaVBlIYRn,1,"['k-rap', 'korean r&b']",431030,sik-k
+586, HAON,2krUNMgFZYm5s4Nn0g91W9,0,['k-rap'],131910,haon
+589, Plastic Kid,2qhiSvpf8YlPqaNGfnzWnA,0,[],80,plastic kid
+592, DeVita,5PS3ZZE5bBiZ3Ct9HiRG2B,0,['korean r&b'],91442,devita
+595, Ugly Duck,0Qr4St9aCOLu41Nt5QZIz1,0,['k-rap'],9671,ugly duck
+599, DJ Light,08Wl6RGRGdv6gj5Xwq0N2b,0,[],122,dj light
+605, YUMDDA,0su5mZ6qhvOUhz7ckEx8rR,0,['k-rap'],49124,yumdda
+607, Crush,6aLdhHUqgdKE86xbtNmY8g,1,"['k-pop', 'korean r&b']",1125870,crush
+609, Woo,5a8EJtOEbUJDF4RX3mKK02,0,['k-rap'],148233,woo
+612, Woodie Gochild,6iLGJqxVgxxWsJe5bW4dxt,0,"['k-rap', 'korean r&b']",144187,woodie gochild
+614, 28AV,5DgTf0BW3LgzGNnKTqupVf,0,['seattle hip hop'],3302,28av
+617,Ill Chris,38YDLPHNjiIcGosZ240Han,0,['asian american hip hop'],3478,ill chris
+621, Jvcki Wai,4bjcB3ZKiHgPzJvY2S2FLN,0,"['k-rap', 'korean r&b']",102694,jvcki wai
+623, GASHI,0JOxt5QOwq0czoJxvSc5hS,0,[],235666,gashi
+624, Rich The Kid,1pPmIToKXyGdsCF6LmqLmI,0,"['atl hip hop', 'melodic rap', 'plugg', 'rap', 'trap']",3051503,rich the kid
+626, VIC MENSA,27w1NoOLMX7tJMYqcetPyG,0,"['canadian hip hop', 'chicago rap', 'conscious hip hop', 'rap', 'underground hip hop']",607196,vic mensa
+637, GRAY,3kPEBSt7qgVoRZSbIXMr7W,0,['k-rap'],282549,gray
+646, Kim Petras,3Xt3RrJMFv5SZkCfUE8C1J,0,"['alt z', 'pop', 'transpop']",917324,kim petras
+651, Hoody,7lXgbtBDcCRbfc5f8FhGUL,0,['korean r&b'],371230,hoody
+658, Boi B,7MJnvH71CgBGCN9obN4aY5,0,['k-rap'],8826,boi b
+662, Bone Thugs-N-Harmony,5spEJXLwD1sKUdC2bnOHPg,0,"['gangster rap', 'hardcore hip hop', 'hip hop', 'ohio hip hop', 'rap']",2679395,bone thugs-n-harmony
+668, Dok2,0rW6fVd3yuW2CF2sLYWQtE,0,"['k-rap', 'korean old school hip hop']",121208,dok2
+681, Far East Movement,698hF4vcwHwPy8ltmXermq,0,"['asian american hip hop', 'dance pop', 'pop rap']",1147578,far east movement
+686, Loco,2e4G04F77jxVuDYo44TCSm,1,"['k-pop', 'k-rap', 'korean r&b']",379142,loco
+687, Dayday,2M6pSBXyVDYo0IjlbW8Jj2,0,['k-rap'],5673,dayday
+698, AOMG,4jI1sm5mTNOWw6ea5Cmslp,0,[],240,aomg
+705, The Quiett,2qI1pO64eYqGUiv1XTw4cy,0,"['k-rap', 'korean r&b', 'korean trap']",107398,the quiett
+709, KANG MINKYUNG,15Dv0lqpiL5zD6OqqwUEP4,0,['korean pop'],6339,kang minkyung
+712,HA SUNG WOON,3OBkZ9NG8F0Fn4oNpg0yuU,1,[],239354,ha sung woon
+716, Rauas,1ogGHXBZD13CHeAbt2su66,0,[],6,rauas
+718, Punch,2FgZrgTMX6Sk0VNcOsEPmm,0,[],301148,punch
+720, Gaeko,0tkHE1pQ5ZCgQb8WZ0ba79,0,"['k-rap', 'korean r&b']",121350,gaeko
+722, PARK JI HOON,0tBYMeHDDJCzRuREuCTWi7,0,['k-pop'],318820,park ji hoon
+725,Girls' Generation,0Sadg1vgvaPqGTOjxu0N6c,1,"['k-pop', 'k-pop girl group']",2406447,girls' generation
+726, Matisse & Sadko,2QMCcKIPHnjQaPPgoEst88,0,"['dutch house', 'edm', 'electro house', 'pop dance', 'progressive electro house', 'progressive house', 'russian edm', 'sky room']",133078,matisse & sadko
+728, Aiobahn,3AMFQZ3Tt549kShRG2IBYT,0,['kawaii future bass'],58681,aiobahn
+730, Mar Vista,52jyvbzmj80qTr2NEWhczo,0,[],673,mar vista
+734, Lil Playy,1d5znoU7LGiCy3H8TMtLWg,0,[],1586,lil playy
+736, Suzi,3ImHydeN8Sciy5cLgeDtOR,0,[],306,suzi
+738, ONEW,7sZ5ipSoboWdqXkdj6AXHo,0,['k-pop'],417428,onew
+739, Jessica,7jPVuaaHLs4QVSuN561jZt,0,['k-pop'],384624,jessica
+740,MAMAMOO,0XATRDCYuuGhk0oE7C0o5G,1,"['k-pop', 'k-pop girl group']",6722664,mamamoo
+741, SEULGI,2QM5S4yO6xHgnNvF0nbZZq,0,['k-pop'],892653,seulgi
+744, CHEETAH,6ftZYkensUYXNiMM7nFwhE,0,['k-rap'],41049,cheetah
+748, Moon Byul,1eTft3tXynrKdo6XD7QHLL,0,['k-pop'],1118183,moon byul
+751, Jeff Bernat,2vVT4qoxWje0gVD2FiWZ4u,0,"['chill r&b', 'popping']",451863,jeff bernat
+752, B.O.,5zMKnGCFow1P0wm4J2if8t,0,['fussball'],3589,b.o.
+754, Hash Swan,3yVEZNS0ateVfoj8FuazKg,0,['k-rap'],95344,hash swan
+756, Solar,5cYcI546S8Lf97m4mNdYLD,0,['k-pop'],913045,solar
+762, eSNa,2jfAd4z4B5dR7yhhwTOulQ,0,[],4704,esna
+769, Geeks,5VxfguafjfSdJcN10ACVZe,0,"['k-rap', 'korean pop']",29416,geeks
+773, BUMKEY,3vhZuZdMksbnJwoE3AwpXq,0,"['k-rap', 'korean pop']",97324,bumkey
+775,K.Will,1XNC9ksvgXeD1xRJruSA5t,0,"['k-pop', 'korean pop']",358766,k.will
+777, Realslow,7luxe2wCwtDtkKSP8ZhPLn,0,"['classic k-pop', 'korean pop']",39552,realslow
+778,NAYEON,1VwDG9aBflQupaFNjUru9A,1,['k-pop'],969377,nayeon
+779, Felix of Stray Kids,40zyx4iztMjRbIIoI802r4,0,[],27582,felix of stray kids
+781, Wonstein,5o615XColiSVMPDWlslKSk,0,[],108199,wonstein
+785,BIBI,6UbmqUEgjLA6jAcXwbM1Z9,1,"['k-pop', 'korean r&b']",922020,bibi
+786, Princesa Alba,3hvDAraTidCTjQHIc4m8P3,0,['trap chileno'],190278,princesa alba
+787, Baby Tate,3IJ21966TwNZI24MwZHMu4,0,['trap queen'],330308,baby tate
+789,88rising,1AhjOkOLkbHUfcHDSErXQs,0,['asian american hip hop'],894357,88rising
+791, MILLI,1eVPKI2R4NlX6P5FIuMXis,0,"['thai hip hop', 'thai pop', 'thai trap']",274520,milli
+795, 347aidan,0bBz5bRBkExaej2HxtVfCw,0,['sad rap'],421360,347aidan
+800,Lolo Zouaï,2qDIR2WlcW3llkGqJWg9VJ,0,[],210312,lolo zouaï
+803, Tiger JK,11S00dFcvNvJahis8MTGMD,0,['k-rap'],35923,tiger jk
+805,Jinho,181zIaSqvjAgUXxn7DkM3e,0,['korean ost'],858,jinho
+808, Kim Seungmin,31VffPWiL2AAwNIMODB9qZ,0,"['k-rap', 'korean r&b', 'korean trap']",49921,kim seungmin
+812,Yoon Mirae,1Do4bSzfUl0KWL9r1fITu0,0,"['k-pop', 'korean ost', 'korean pop', 'korean r&b']",281646,yoon mirae
+815,BLACK NINE,1ADmxFIIuFl44lr14SZLoI,0,"['k-rap', 'korean trap']",1881,black nine
+817,GOT7,6nfDaffa50mKtEOwR8g4df,1,"['k-pop', 'k-pop boy group']",6559387,got7
+818, HYOLYN,78sJswwVn4P8aEhkF4K6fQ,1,"['k-pop', 'korean r&b']",769346,hyolyn
+819,LeeHi,7cVZApDoQZpS447nHTsNqu,1,['k-pop'],1498012,leehi
+822, B.I,0UntV1Bw2hk3fbRrm9eMP6,0,['k-pop'],646199,b.i
+824, G.Soul,0fLesFHNsJpalRtqzSYxnd,0,[],358,g.soul
+826, 최현석,7ywGEr53ogVxLibBcb82JV,0,[],909,최현석
+828, Tablo,3NdOtTPPaXrCyC7Lpmzyhv,0,"['k-pop', 'k-rap', 'korean r&b']",227765,tablo
+830, BOBBY,7ieMQQDR0bdBPz572mtxwS,1,['k-pop'],879008,bobby
+832, MINO,3ytV7vc4ZuwGgwaOuWvkk8,0,['k-pop'],1081045,mino
+834, 인크레더블,0YhDHW8UkDzlw6ZNJtZZXk,0,[],130,인크레더블
+837,DPR IAN,2o8gT0fQmFxGNbowbdgeZe,1,['k-rap'],772089,dpr ian
+838, DPR LIVE,0siBQaURCli5wn2lqv8WZg,1,['korean r&b'],935289,dpr live
+839, CL,0tzSBCPJZmHTdOA3ZV2mN3,1,['k-pop'],1122400,cl
+840,JEON SOMI,7zYj9S9SdIunYCfSm7vzAR,1,['k-pop'],1874446,jeon somi
+841,Eric Nam,2FLqlgckDKdmpBrvLAT5BM,1,['k-pop'],2115017,eric nam
+843,CHUNG HA,2PSJ6YriU7JsFucxACpU7Y,1,['k-pop'],2084004,chung ha
+844,Christopher,3zDRCqOhJXJfS2YWOEwGMC,0,['danish pop'],255888,christopher
+847, Colde,3VQDqjQ4wJyw8PzpGdlZpB,0,['korean r&b'],392032,colde
+849, Guaynaa,0BqURncJM5B1BBu7UM51eq,0,"['reggaeton', 'reggaeton flow', 'urbano latino']",798926,guaynaa
+857,Paul Kim,4qRXrzUmdy3p33lgvJEzdv,0,['korean pop'],239891,paul kim
+861, Rich Brian,2IDLDx25HU1nQMKde4n61a,0,['indonesian hip hop'],2157153,rich brian
+864, Mommy Son,5xWKWXamxbujIdti9xpnI1,0,['k-rap'],9549,mommy son
+866,Grizzly,5Egus6b1x9pYOnqsG7y1f4,0,['korean r&b'],14451,grizzly
+869,YESUNG,4hyF8Vtc73RYJr3RgTE2Zf,0,['k-pop'],350216,yesung
+874, HALO,295glUeBYb1uqpNrSeYs1d,0,['k-pop boy group'],42707,halo
+875,MOMOLAND,5RR0MLwcjc87wjSw2JYdwx,1,"['k-pop', 'k-pop girl group']",3839289,momoland
+876, NATTI NATASHA,1GDbiv3spRmZ1XdM1jQbT7,0,"['latin pop', 'rap latina', 'reggaeton', 'urbano latino']",9054412,natti natasha
+878,DJ SODA,6wcoqJ63l11D2yV9ViqIZA,0,['korean electronic'],68519,dj soda
+879, Lost Chameleon,4ct0Lml9CSOcrehSHHJArO,0,[],1565,lost chameleon
+881, Ahin of MOMOLAND,4nzWj1u4IslWFr3B5f7HfY,0,[],474,ahin of momoland
+883, CHROMANCE,0fEj1fYIQwWj1bzzAto9rp,0,['modern indie pop'],33229,chromance
+885, ERIK,1L1VfizWn4DkFt602yD80U,0,['v-pop'],811685,erik
+886,SHINee,2hRQKC0gqlZGPrmUKbcchR,1,"['k-pop', 'k-pop boy group']",2964523,shinee
+887, Fox Stevenso,3msitL77yg0GifOf5jvd23,0,[],1,fox stevenso
+888, Fox Stevenson,2BQWHuvxG4kMYnfghdaCIy,0,"['dancefloor dnb', 'electro house']",212680,fox stevenson
+890, ESAI,1mv8s2gObjHHdnlSGVW1pE,0,[],800,esai
+892, LUNA,56HZvtrzD82YKMGGJTlIG2,0,['k-pop'],83690,luna
+895, Kim Yeon Woo,4vsTrZ8Y7nKqQM0BJQ6Dvd,0,['korean pop'],32345,kim yeon woo
+896,WINNER,5DuzBeOgFwViFcv00Q5PFb,1,"['k-pop', 'k-pop boy group']",2502055,winner
+897, HOONY,3d3m8vJE5Vr38UTAMWs66v,0,[],97,hoony
+899, Yoon,2vnR3mxGF1X2Q8D5ichEWP,0,[],700,yoon
+901,MINO,3gc3OYh4QZJzbsi2KNyHFK,0,[],5663,mino
+902, TAEHYUN,0ojbIKPNnbwRqKpAJxcIaP,0,[],18384,taehyun
+908, Nam Tae Hyun,2LQ4Ay1ClURp2tX1eFJiWh,0,[],2779,nam tae hyun
+909,SUPER JUNIOR,6gzXCdfYfFe5XKhPKkYqxV,1,"['k-pop', 'k-pop boy group']",2369370,super junior
+910, Reik,0vR2qb8m9WHeZ5ByCbimq2,0,"['latin arena pop', 'latin pop', 'mexican pop', 'reggaeton']",8246474,reik
+912, Leslie Grace,6BeO1KuAWBqFriL1mLHtNc,0,"['bachata', 'latin viral pop']",1189806,leslie grace
+917,TVXQ!,6nVMMEywS5Y4tsHPKx1nIo,1,"['k-pop', 'k-pop boy group']",809088,tvxq!
+925,NCT,48eO052eSDcn8aTxiv6QaG,1,"['k-pop', 'k-pop boy group']",5778435,nct
+926,NCT U,3paGCCtX1Xr4Gx53mSeZuQ,0,"['k-pop', 'k-pop boy group']",3993953,nct u
+927, Wuki,6Se1y4vDcu9fVHLqdj1N3q,0,[],88267,wuki
+929,YERI,4xzwjGxzfKglU0cNW4q4l1,0,['k-pop'],321836,yeri
+932, BE'O,5NUVwRESNqYBUTRbiATjy7,0,['k-rap'],207567,be'o
+934,J.Y. Park,1TTx0YcbKUtJIZY1HEnh9B,1,['classic k-pop'],113444,j.y. park
+937, Lena,0EmA3wlv6dnf3Pc9SINsvA,0,[],4978,lena
+939, 유빈 of Wonder Girls,1eaKmXYQ1g9M2DPXpnD6sY,0,[],63,유빈 of wonder girls
+941, Jackson Wang,1kfWoWgCugPkyxQP8lkRlY,0,['k-pop'],3838840,jackson wang
+942,DEAN,3eCd0TZrBPm2n9cDG6yWfF,1,"['k-pop', 'korean r&b']",1331240,dean
+943, Rad Museum,6UdKtISMXYKSR8jcgtFePo,0,['korean r&b'],147419,rad museum
+944, Mokyo,1kRGgLBLwdQ16TxyfN1YgP,0,['korean r&b'],93480,mokyo
+946, SULLI,1OjcBoc71FwlzD5cJGx7xk,0,['k-pop'],260315,sulli
+949, Syd,3jk39CGeaaSO3FPKNx1RUx,0,"['alternative r&b', 'lgbtq+ hip hop']",537169,syd
+951, Yerin Baek,6dhfy4ByARPJdPtMyrUYJK,0,['korean pop'],543767,yerin baek
+956, ZICO,4XpUIb8uuNlIWVKmgKZXC0,1,"['k-pop', 'korean r&b']",1293881,zico
+960, Anderson .Paak,3jK9MiCrA42lLAdMGUZpwa,0,"['escape room', 'hip hop', 'indie soul', 'neo soul']",2344970,anderson .paak
+962, Eric Bellinger,7ibAWtDtmEfaVhc1FJ3Vl9,0,"['pop r&b', 'r&b']",798474,eric bellinger
+963,PENTAGON,1wKpMkucynaTfG8lyPprYV,1,"['k-pop', 'k-pop boy group']",2123414,pentagon
+964, Yuto,3lrs0Ve7aYxPovY3SDjVFd,0,[],214,yuto
+965, E,45tZVD9vAd4R6zl9D82kmt,0,[],468,e
+966, Hui,4R0tSGcVRQ8ZXPzttU8mHy,0,['korean pop'],31905,hui
+967, WOOSEOK,1JVVY2kKddJ0JkDkbEZk4V,0,[],15881,wooseok
+968,EXID,1xs6WFotNQSXweo0GXrS0O,1,"['k-pop', 'k-pop girl group']",1506840,exid
+969, PINKMOON,55xtxQ2rygRTBGJTYFLweP,0,[],596,pinkmoon
+970,KARD,2JhAlkmukNvarUpGhTFXUQ,1,['k-pop'],1747369,kard
+971, Alok,0NGAZxHanS9e0iNHpR8f2W,0,"['electro house', 'pop nacional', 'sertanejo universitario', 'slap house']",12128452,alok
+973, ASTER,6Jt9U8bJ56jqNdEKdLZ7Yw,0,[],1617,aster
+975, JERIDE,0GGPhh2cCGEIQAQbQXBd0c,0,[],197,jeride
+977, J.seph,1LCD1ZKF5V4lWQKf5810yx,0,[],467,j.seph
+978, Jeon So Min,1J3BfBC9Z9VRIpEUB64Rbw,0,[],639,jeon so min
+980, HUR YOUNG JI,0FUmt6iMoB9sJpxZuWkOI5,0,[],987,hur young ji
+984, ROSÉ,3eVa5w3URK5duf6eyVDbu9,0,['k-pop'],3915869,rosé
+986, Kim Yuna,5jiscb6yxuu9hj4BoW5Wea,0,"['k-indie', 'k-pop', 'k-rock', 'korean pop', 'korean singer-songwriter']",27415,kim yuna
+988, Kim Jong Wan of NELL,7ksQJtsXSRSrI5306UwIgH,0,"['korean ost', 'korean pop']",37511,kim jong wan of nell
+991,JONGHYUN,5rGgflnIpRNizTCozbYBuY,1,['k-pop'],801662,jonghyun
+992, 헤리티지(Heritage),3lTYYNwaDmW0rrsAz5aG8o,0,[],37,헤리티지(heritage)
+994, Youngbae,2C1SxKeWmKCAiTqSxvP6BI,0,[],144,youngbae
+996, TAEMIN,13rF01aOogvnkuQXOlgTW8,1,['k-pop'],2677268,taemin
+997,HyunA,3UwlejyX2b458azZ7eCnHb,1,['k-pop'],2194990,hyuna
+998, DAWN,3aB96WIPKUzvJmoctWCrjb,0,['korean r&b'],3747,dawn
+1000, DAWN 던,7DxCK6bwfQC3F2ajZ02R2F,0,['k-pop'],208583,dawn 던
+1008, Isle Qim,44qnpSp6VbJ48R4YXiv7LW,0,[],30,isle qim
+1010, HANHE,2WOhTblwhbLSjWTVn94rQf,0,[],36,hanhe
+1014,Gina,0yLJhwFVWO6K7sDah3PUdL,0,[],248,gina
+1017, ILHOON,7sJo6hfTWCOyvr4aRbAgeG,0,[],5,ilhoon
+1019, Yuk Jidam,3oO2KBxuGdaUP5SikvEWWB,0,[],5459,yuk jidam
+1021, Il Hoon Jung,38msH2cFK8ui3GvbWqumqk,0,[],1183,il hoon jung
+1023, Ji Dam Yook,0q5mCOaqzgDnmthha6f4W7,0,[],129,ji dam yook
+1025, Jung Yeol Kwon,6WymcE59cneCq28juiL850,0,[],44,jung yeol kwon
+1027, ELLY,5h0QnpgJxd77A8UXYrcvhy,0,[],321,elly
+1029, LE,04JxNGSux7QdmrCvnQowyr,0,[],42,le
+1031, Maboos,2uch5GhXkpT561NB95OYBL,0,[],151,maboos
+1035, Ri Won,2CkiqYnM6fBO2y13a1FFpO,0,[],7,ri won
+1039, Il Hoon Jung of BTOB,4viqH5lDwLHQSeDIZTJCK7,0,[],74,il hoon jung of btob
+1043, Ji Yoon Jun,6jNj6Y6sIxigyIX0gmYg35,0,[],14,ji yoon jun
+1045, G.NA,3hzcooxMtbApMTvvn6XKVA,1,['k-pop'],174058,g.na
+1046, Yong Jun Hyung,4drjiBRSqZoTD67xgZCmNo,0,['korean pop'],50475,yong jun hyung
+1055,강동우,3cu8lZj0TEzbvT99tlJ9J6,0,[],7,강동우
+1061,2NE1,1l0mKo96Jh9HVYONcRl3Yp,1,"['dance pop', 'k-pop', 'k-pop girl group']",2392750,2ne1
+1062, m-flo,4UhiMIdxKqQxmzdE9nYe6O,0,['j-pop'],331726,m-flo
+1070, SUMIN,0K4MGKGmjtdIE0W3GkGmyU,0,"['korean city pop', 'korean electropop', 'korean r&b']",56190,sumin
+1072, KAI,6iVo62B0bdTknRcrktCmak,0,['k-pop'],1039112,kai
+1076, Beenzino,7IrDIIq3j04exsiF3Z7CPg,0,"['k-rap', 'korean r&b']",214276,beenzino
+1078, BRYAN CHA$E,21pdFXVgEujpnjqKDCy6BL,0,[],363,bryan cha$e
+1080, 토끼,76JVW7YYK3nRTVvRxUalpI,0,[],2,토끼
+1082, Shockbit,4aMRtytJy7sCCjvcSnq666,0,[],13,shockbit
+1084, TEDDY,2QDHZGfyq70z6T4e4Dr2t0,0,[],197,teddy
+1086, KUSH,4OiLGOExR5sXyMtyKccRgY,0,[],643,kush
+1090, Lee So Ra,58BWh3yJrluDugLv0QF0eC,0,"['k-pop', 'korean pop', 'korean singer-songwriter']",43666,lee so ra
+1092, 尹美萊,7BrydByY8Q9MZjovkvRsCP,0,[],150,尹美萊
+1102, Devin Morrison,4AgZVM5339ZoMyg38nYyYW,0,"['indie r&b', 'neo r&b']",28329,devin morrison
+1104,Hareem,5WWxAYrskMnRaWLDUbuY20,0,[],3322,hareem
+1107, JOY,0sYpJ0nCC8AlDrZFeAA7ub,0,['k-pop'],695104,joy
+1112, Joyce Wrice,24Cf1irKt7kcewb9OOkPum,0,['alternative r&b'],166819,joyce wrice
+1117, PENOMECO,1MAUqH0haKBYbjpknTfreY,0,"['k-rap', 'korean r&b']",306719,penomeco
+1118, punchnello,5enwJ9yOnKlCP91ov4Dqhv,0,"['k-rap', 'korean r&b']",146016,punchnello
+1124, CIFIKA,0OK6Xs5X1kHs07y68n65CQ,0,"['k-indie', 'korean electropop']",26206,cifika
+1125, Byung Un,6eJNQPPFPPuiLl0K35mptS,0,[],497,byung un
+1127, Band Wonderlust,6FCcThPLoyy5q23FUEDYKp,0,[],201,band wonderlust
+1135, Han Sang Won,1FvLMWYal74XUTRzfaUAc9,0,[],112,han sang won
+1139, Miso,04xEkodoWyFji8icX911jM,0,"['korean electropop', 'korean r&b']",79729,miso
+1148,GARY,5myBH2YqzOgyWoTKCsydAi,0,"['korean old school hip hop', 'korean pop']",21787,gary
+1149, 태완,6OK3Lf8Ws6A4UdRw3lMNZo,0,[],57,태완
+1152, Swings,6F5tPDq3TIduDv2ki6O1Oq,0,['k-rap'],86064,swings
+1154, TAKEWON,31jg46rtB7MyrVPXZATmsa,0,"['k-rap', 'korean underground rap']",6394,takewon
+1156,vaultboy,0K87f3owemzI8NUCoEIXOB,0,[],164486,vaultboy
+1159,Armaan Malik,4IKVDbCSBTxBeAsMKjAuTs,0,"['desi pop', 'filmi', 'modern bollywood']",17936953,armaan malik
+1161, KSHMR,2wX6xSig4Rig5kZU6ePlWe,0,"['big room', 'dutch house', 'edm', 'electro house', 'indian edm', 'pop dance', 'slap house']",1723368,kshmr
+1163,Sarah Barrios,0HJsX1aTdgG1VDIRDiseSJ,0,['alt z'],30547,sarah barrios
+1166, Naeun,16Jm6AxcL9XKkwOemxmbXc,0,[],562,naeun
+1168,Steve James,2rYFy6vVM1YiECVIAHaJBY,0,['pop edm'],35174,steve james
+1173,Gallant,7wFDo161xYdeaiLz3KIHoM,0,[],302064,gallant
+1176, Raiden,4YXNoMVTHRt01jYaKXTumJ,0,['korean electronic'],68654,raiden
+1182, Timbaland,5Y5TRrQiqgUO4S36tzjIRZ,0,"['dance pop', 'pop', 'pop rap']",2506674,timbaland
+1186,KOLAJ,0hhL0iOf9ebHlwxWQyeH2w,0,['indie poptimism'],7398,kolaj
+1189,WENDY,0FRUZvZNPzM3YJMABJxf2K,0,"['k-pop', 'korean pop']",827651,wendy
+1192,Park Boram,6tvrEIVX5eKJlipdzt11wi,0,"['k-pop', 'korean pop']",143197,park boram
+1195, JAMIE,2YXlVLKq3X3soXd2aXUtIT,0,['k-pop'],684509,jamie
+1197, HOYA,3bGzcepRQ7Zu1J6JDDAq1T,0,[],22605,hoya
+1199,HONNE,0Vw76uk7P8yVtTClWyOhac,0,['uk pop'],1507637,honne
+1201, BEKA,1ClmHgLorY9RUCIvsTdT7A,0,['uk pop'],15404,beka
+1203, Wale,67nwj3Y5sZQLl72VNUHEYE,0,"['pop rap', 'r&b', 'rap', 'southern hip hop', 'trap']",4126755,wale
+1204,CHANYEOL,6jV25rzTKQ2zMgrqHha1V5,1,['k-pop'],1779602,chanyeol
+1209, Blinders,26JVnujQQ3lEML8t9p3X1J,0,"['dutch house', 'louisville underground', 'progressive electro house', 'sky room']",39093,blinders
+1218, SEHUN,79R17q4kiPsimHDtdOlN2L,0,[],184818,sehun
+1222,Junggigo,6zTIxEXFWjoNu2VXauDITb,0,['korean r&b'],100063,junggigo
+1227, Mabel Yuan,3ficuQjD88VCXfTMEGFND8,0,['chinese drama ost'],304,mabel yuan
+1229,CHEN,0UEP2XBR9aC5NBKcAKnBIq,1,['k-pop'],1545156,chen
+1231,BOL4,4k5fFEYgkWYrYvtOK3zVBl,1,['k-pop'],1740067,bol4
+1232, HWANG MIN HYUN,7BwZlhJRHC1oVJr8lTxSLf,0,[],62364,hwang min hyun
+1234, BAEKHYUN,4ufh0WuMZh6y4Dmdnklvdl,0,['k-pop'],2580536,baekhyun
+1236, WH3N,4MSCkKz4xskCrvx49wOneF,0,[],8501,wh3n
+1238, 20 Years of Age,0KaZcu3pEVHfYOnB62eLFp,0,"['k-indie', 'korean pop']",30121,20 years of age
+1242, Zior Park,4gkSpcyfxtm5OFoZCYWTeD,0,[],36646,zior park
+1244, Rain,5L4EafeXwZ0stGuPtGr5Tz,0,['classic k-pop'],117346,rain
+1250, KANGDANIEL,5vGoWnZO65NBgiZYBmi3iW,1,['k-pop'],846308,kangdaniel
+1254, Dvwn,6WWUJGBY4ETAE22tRmgJ8b,0,['bedroom r&b'],202828,dvwn
+1256, JeHwi,269A1U75KOCFyPAiXq4sjT,0,[],11565,jehwi
+1265, GSoul,4oEXworvhegyK83rZwVyWL,0,['korean r&b'],213280,gsoul
+1267, Fanxy Child,1CBjkH9nDLzLdyjXnwsXyv,0,[],4314,fanxy child
+1278, SURAN,1mORehSVEd7lcaT2d7Sl2K,1,"['k-pop', 'korean r&b']",1069174,suran
+1280, Babylon,3P16F9giedxmc5238b66bo,0,"['k-rap', 'korean r&b']",31891,babylon
+1282, J-Tong,70DqoppP3xK7LgtYiccxfZ,0,[],1105,j-tong
+1293,Basick,7pXKdkQsYFCMG2omRxheJ2,0,['k-rap'],42240,basick
+1294, Gummy,0hRHbwZ0xSwfVHl4FTv7jq,1,"['k-pop', 'korean pop']",306410,gummy
+1297, B-Free,5xHC23kCM6goKp7bDDXE3T,0,['k-rap'],23340,b-free
+1308, Sojin,6oqIg9s1R1rEP5VsSqK0mw,0,[],689,sojin
+1310, Ja Mezz,1q1Fe4tXiu1Weq4U0uhqPi,0,['k-rap'],25696,ja mezz
+1312, Don Mills,6bIsFWNkjQvSm5P4rqlxKn,0,['k-rap'],13809,don mills
+1313,HEIZE,5dCvSnVduaFleCnyy98JMo,1,"['k-pop', 'korean pop', 'korean r&b']",1108442,heize
+1318, Kim Feel,4EPYWwU4c8eG2GzD7MenUA,0,['korean pop'],98370,kim feel
+1320, Ahn Ye Eun,0qQQYIK5Sxnzt72fGyTcvs,0,"['joseon pop', 'korean singer-songwriter']",48030,ahn ye eun
+1324, ASH ISLAND,7IEhlwWQA7pCkEvzwwHehE,0,['k-rap'],241263,ash island
+1326, Ji Chanel,48iTyl4MallIyN0R89N8u3,0,[],210,ji chanel
+1332, GIRIBOY,2MtHuR0W2idZdF7x4wddqq,0,"['k-rap', 'korean r&b']",340161,giriboy
+1336, DAVII,7qvsi3nQ5V6Np0MdEpdmoc,0,[],9507,davii
+1340, Shin Yong Jae,2frFGmni9tkRgXYdXmzQvR,0,"['korean ost', 'korean pop']",58792,shin yong jae
+1342, Han Suji,3QKm0ZXXUBD9Gc3PUo2mor,0,[],5110,han suji
+1344, Ko Youngbae,135TOw1jqM2Bolkngy62nS,0,[],382,ko youngbae
+1347, dj friz,0js3wKXyi7RL11sfOykRt1,0,['k-pop'],2520,dj friz
+1351,Vanilla Acoustic,57xPD2CfuwxN6Ld7rf2iLG,0,"['k-indie', 'korean pop']",62121,vanilla acoustic
+1356,VIBE,68ym0sOo7MazZxScbm1wtI,0,['korean pop'],22921,vibe
+1363, monokim,448KDzQJZ1p8UkDKtgIzus,0,[],137,monokim
+1366,VIXX,5BkB3rXc0qIdUtuEnhbK0A,1,"['k-pop', 'k-pop boy group']",965402,vixx
+1367, OKDAL,43qbEc59aqLydrvuWsrNoE,0,"['k-indie', 'korean pop']",33254,okdal
+1370,BTOB,2hcsKca6hCfFMwwdbFvenJ,1,"['k-pop', 'k-pop boy group']",1472641,btob
+1371,LEE MINHYUK (HUTA),4fgfmrBHIWsUuHxeOPhv61,0,['korean pop'],79184,lee minhyuk (huta)
+1372, PENIEL,21EUYgHJLDUeG72eDEmTx4,0,[],33031,peniel
+1373, JUNG ILHOON,7McwKT2tZl8LMXUQRH3YDM,0,['k-rap'],47866,jung ilhoon
+1375,SEO EUNKWANG,6Uug3azJYNwnLkO82CTTY2,0,['korean pop'],41477,seo eunkwang
+1376, LEE CHANGSUB,1rp5HzWaNwgauM5W5YmZ3U,0,['korean talent show'],46324,lee changsub
+1377, Lim Hyunsik,0SA2I3s4t7hmv1XVvky9Po,0,['korean singer-songwriter'],45679,lim hyunsik
+1378, YOOK SUNGJAE,7mFGOWJEkdlJBCXcJ5EWi9,0,"['korean pop', 'korean r&b']",64449,yook sungjae
+1380,LEE MINHYUK (BTOB),6KIjwPp994JQ2LJ8IBvZPc,0,[],648,lee minhyuk (btob)
+1388, YOOK SUNGJAE (BTOB),2KbOz7b91wiUpnv34Twd9f,0,[],119,yook sungjae (btob)
+1392, Joo,5DKI4lr414kDPDuIU2BDR7,0,[],372,joo
+1402, Ha Yeon Su,5mKdz6Mcx2sor5hY9A8Rg4,0,[],18,ha yeon su
+1406, YOO SUNGEUN,7M5YdBeK8dsO39SHHvOYy8,0,[],34,yoo sungeun
+1407,AKMU,6OwKE9Ez6ALxpTaKcT5ayv,1,['k-pop'],1297305,akmu
+1408, Lee Sun Hee,4ZQVfuvon3XnGYkjTSey1O,0,"['classic korean pop', 'korean pop']",44700,lee sun hee
+1416, CHOI JUNG HOON of JANNABI,5Fa7oN67rqbrgxbRVux7F4,0,[],1682,choi jung hoon of jannabi
+1420, Sam Kim,4BBN286rBKyCWsSPq2cxYO,0,"['k-pop', 'korean r&b']",424221,sam kim
+1422,Yang Hee Eun,0BD74hBusWzcPz44wFskYb,0,"['classic korean pop', 'korean singer-songwriter']",10962,yang hee eun
+1425, Jooyoung,1vct46rBqLNRbE9wCibXUH,0,['korean r&b'],211243,jooyoung
+1429, KIM DONG HAN,1iGenyJQdF1y4bV4GAvNmW,0,['k-pop'],114971,kim dong han
+1431, IN SEONG,0JxQHl0AkdY6GI3C5gtFeo,0,[],1174,in seong
+1433, XIA,0ZHbYuRbvC4tWW0iOdybwi,0,['korean pop'],83185,xia
+1435, TAEIL,2Xd4Jvq6x4z1K1Z4dKpWcI,0,[],5473,taeil
+1437, DASOM,6xxFNpc17jiiVZzOCgdLyv,0,[],1482,dasom
+1439, Mad Clown,0dX6tgZKWpamoFHFuXFhwd,0,"['k-pop', 'k-rap', 'korean pop']",119695,mad clown
+1442,$ÜN,1pKLKBc699vwGpEWRii5eb,0,[],8481,$ün
+1443, Moon Kim,3tMdam5THEApdjXRDH9g5N,0,[],2016,moon kim
+1446, Xydo,0vcbn6MqAvgM8Gh6wh8d6X,0,['korean r&b'],38107,xydo
+1455, Kisum,1CArfopvfCxakFJHup55FW,0,['korean pop'],78667,kisum
+1463, JOOHONEY,4rpOWirhzqN7NPgRX76l1k,0,['k-pop'],267060,joohoney
+1465,Yang Da Il,5DnjOSzLCfn4hDbLECq8pt,0,['korean pop'],137657,yang da il
+1472, Geegooin,6i47wcSLvsZ9M01UO7zsua,0,"['k-rap', 'korean trap']",2226,geegooin
+1474,San E,61MMiylth1injW39oZBuYB,0,"['k-pop', 'k-rap']",85905,san e
+1479, Iron,42dy8y24lMURTr4RjATpYS,0,[],2815,iron
+1480,Block B,4RnezwRV7VBJUCI1S0AE5u,1,"['k-pop', 'k-pop boy group', 'korean r&b']",998108,block b
+1483, Keita,4Sp0k5cY12SKnOGUghMljj,0,[],164,keita
+1485, KEN THE 390,1tcHKxlx0TZ6MkHGO4QYv3,0,[],41316,ken the 390
+1487, Naoko Tanaka,2CfxaAgevavjDFRRghjSVt,0,[],175,naoko tanaka
+1489,B-BOMB,7KC0o9xFJZXim13nVLNH4c,0,[],844,b-bomb
+1490, U-KWON,1dpFCgmBpElH7pcsfSfXqG,0,[],24065,u-kwon
+1492, Jo Hyun Ah,7aVeZFWXIC3g4b0Tn68ZtI,0,[],5342,jo hyun ah
+1496, RAVI,42xj5mBLvrFdW6tYns6mxs,0,"['k-pop', 'k-rap']",224363,ravi
+1497, NewKidd,1ASod2UqIYzO1NGvj1zTgW,0,['k-pop boy group'],39408,newkidd
+1498, Aizat Amdan,2sS4H2xFvWaxaixeVZC4Vu,0,['malaysian pop'],122134,aizat amdan
+1499, Chillies,2xvW7dgL1640K8exTcRMS4,0,"['indie viet', 'v-pop']",817810,chillies
+1500, PAM ANSHISA,5Y84b3jX9aGpTr4F1CMNnP,0,[],4129,pam anshisa
+1501, Quest,4N7VMCvYd9Reh5bJLnRVzY,0,['pinoy rock'],35789,quest
+1502, Rahmania Astrini,0e5blBgpur3Y18wS1bzXQC,0,"['indonesian pop', 'indonesian r&b', 'indonesian singer-songwriter']",177496,rahmania astrini
+1507, Jung Seung Hwan,7l8rOFwZFQ3G0sgZ7gjGng,0,['korean pop'],231042,jung seung hwan
+1516, TAK Of BAECHIGI,42twmGoaap5jDxznYNoxjE,0,[],0,tak of baechigi
+1518, Truedy,38G7epclTfu3wgkiVVLjCV,0,[],5286,truedy
+1523, Dynamicduo,4nvFFLtv7ZqoTr83387uK4,0,"['k-rap', 'korean r&b']",152234,dynamicduo
+1528, 2LSON,2AMTVJeuaSJHOatQS448YY,0,['korean pop'],2134,2lson
+1530, Yiruma,0fauHpmSHwodVYIjTqOGHz,0,"['korean instrumental', 'neo-classical', 'new age piano']",1030635,yiruma
+1536, Simon D,4FWUEoOMXHOsbnMED8UqgV,0,['korean old school hip hop'],3453,simon d
+1537,SISTAR,2wTLheTmMcFCA4hdY8hZJP,1,"['k-pop', 'k-pop girl group']",978022,sistar
+1538, Giorgio Moroder,6jU2Tt13MmXYk0ZBv1KmfO,0,['disco'],223313,giorgio moroder
+1548, BOYFRIEND,2Pw8E6zZoeuksVWtyZPnzd,0,"['k-pop', 'k-pop boy group']",324734,boyfriend
+1554, Brave sound,1uEmHEZ4LdKTArYrXk09bP,0,[],0,brave sound
+1556, B2K,51d3rUlLuMh7EW09aMe7yj,0,"['boy band', 'contemporary r&b', 'hip pop', 'r&b', 'urban contemporary']",771759,b2k
+1557,Epik High,5snNHNlYT2UrtZo5HCJkiw,1,"['k-pop', 'k-rap', 'korean old school hip hop']",696250,epik high
+1564, JUSTHIS,0Ch0t9gI47Lkal71uQnmV3,0,['k-rap'],121300,justhis
+1568,End of the World,0b59cVa1STVENq3i7wkcHV,0,[],52195,end of the world
+1570, Digital Farm Animals,5fyDppLDl1juIu1BcUT5zh,0,['uk dance'],67497,digital farm animals
+1578,Apink,2uWcrwgWmZcQc3IPBs3tfU,1,"['k-pop', 'k-pop girl group']",1193361,apink
+1579,Huh Gak,49vOeJAPxAz6YmVZPNM7ys,0,['korean pop'],87414,huh gak
+1581, VICTON,0ziR2zN0NFcB4x1G3P8cW3,0,"['k-pop', 'k-pop boy group']",886212,victon
+1582,CLC,6QyO41KctzGc70mVaVnXQO,1,"['k-pop', 'k-pop girl group', 'korean city pop']",1232715,clc
+1583, Yeeun,4hMhbcPHd2nsZFhY1TNp8Y,0,[],13842,yeeun
+1584, SEUNGYEON,2Uv2OMwSDN0lfqnpqBx1UD,0,[],192,seungyeon
+1585, OH SEUNGHEE,4oIE2ZAuPXuOyHNPwjc2Ku,0,[],442,oh seunghee
+1592,E SENS,6a8cUmqOsXmjzq1aWKiVpH,0,['k-rap'],26955,e sens
+1604, Lee Moon Sae,2eVlgLy3Aym09gM3dqx6cq,0,"['classic korean pop', 'korean pop']",111140,lee moon sae
+1608,KUSH,6KifG2XLmMlQTAlPEyy2o4,0,[],288,kush
+1618, DPR CLINE,4Z6fYh9ANGOfOSylYE5gZz,0,[],1615,dpr cline
+1626, eaJ,0kX41bvrBQtgqSEXbmTzMN,0,['game mood'],135414,eaj
+1628, DPR CREAM,7bPplWv4cZ1q26UY2Wmcvw,0,['korean r&b'],91569,dpr cream
+1632, Dumbfoundead,7LTShHcq1KdTrWeLvWoYed,0,"['asian american hip hop', 'battle rap', 'k-rap']",130449,dumbfoundead
+1633, G2,4ueZwsEtcqcO0IZywqgk66,0,['k-rap'],22007,g2
+1634, Keem Hyo-Eun,59KuGY6nfY3w39O0qYVA7p,0,['k-rap'],24091,keem hyo-eun
+1637,AOA,54gWVQFHf8IIqbjxAoOarN,1,"['k-pop', 'k-pop girl group']",710318,aoa
+1638, Takanori Nishikawa T.M.Revolution,0pPQ5V1o6LrB7wdt9yzUkM,0,[],626,takanori nishikawa t.m.revolution
+1639,BoA,4muJrGMndyYWqZtfk8OWy4,1,['k-pop'],798933,boa
+1640, 劉雨昕,3lxD7OESQHk5ESvrad8IGg,0,['chinese singer-songwriter'],16959,劉雨昕
+1646, Siedah Garrett,7EVlecngyrLHfQUqFMpwkT,0,['freestyle'],8537,siedah garrett
+1652, VERBAL,6eyG54lvijivzcKqSjZTtB,0,[],1848,verbal
+1654, Sean Garrett,4aWpJudn4ljEWahx6cPEGu,0,['hip pop'],41116,sean garrett
+1656, Crystal Kay,3yzQHdj9G34CVZ5rVUDrOM,0,"['j-pop', 'japanese r&b']",299670,crystal kay
+1659, Yutaka Furukawa,3Iu2yVQq5dCVmmAaAOQ6S1,0,[],4847,yutaka furukawa
+1664,Kumi Koda,2mGYHril2LuZodRtTX06BC,0,['j-pop'],569284,kumi koda
+1669, CODE KUNST,4WnO2VmlwdTX77ANsThWLQ,0,"['k-rap', 'korean r&b']",248061,code kunst
+1677,TYTAN,5fTJwRSBleAeLkLivVLDZ4,0,[],2432,tytan
+1680, george,2pRZp2WxvnWWiSPcSSYkNV,0,['korean city pop'],88924,george
+1682, Lee sung kyung,7AqcQSFPIpFD44ZNRm22m4,0,[],1736,lee sung kyung
+1691, Svng,1CQSDDqF3X7UBkeOTowhxA,0,[],167,svng
+1696,РИНО,2vwVg0iMlMsT2l0EvKGczq,0,[],6,рино
+1699, U Sung Eun,15UyjlO0ZuDaSjXUGytDbI,0,['korean pop'],19309,u sung eun
+1719, Thur,1LvNe813XqkhzNmZH0UHLO,0,[],15,thur
+1723,D.O,4X7RCrqaJpKMoeyeH5NPvj,0,['korean r&b'],2844,d.o
+1732, ELO,15KDb2KpZRvX1updtyinK1,0,"['k-rap', 'korean r&b']",30898,elo
+1734, Cha Cha Malone,7632p5JJi58r3q9GfhqSyF,0,['seattle hip hop'],8141,cha cha malone
+1736,CRUSH,0i9GLyWskCOnpircpYwvg5,0,[],134,crush
+1742, C JAMM,2ZT3bnHPOdErwCLdP5aHqR,0,['k-rap'],52138,c jamm
+1746, DJ Pumkin,6FzmP3yuDErhGqZ3CP6Fz0,0,[],416,dj pumkin
+1748, YUJU,7Bu0r4MCDX3sbhcFD5IXyx,0,['korean ost'],164576,yuju
+1754, 박나래,3oBO24qfRYkz2F0IeFg5k4,0,[],12,박나래
+1756, HavyT,0n0aXN4cGCEJnKuOhYsYUB,0,[],4,havyt
+1764, REDDY,69H1Ooj2eBJXLTk3IEBV0v,0,['k-rap'],43355,reddy
+1766,m-flo loves Sik-K & eill & 向井太一,072YnMT5EniZhvDssXL2VB,0,[],864,m-flo loves sik-k & eill & 向井太一
+1769, eill,3AiES4wyTOfJvNgqz9baDn,0,"['anime', 'japanese r&b']",116978,eill
+1770, Taichi Mukai,2oNStf3CKKLM5lnzELWMcH,0,['japanese r&b'],131217,taichi mukai
+1771, kamome sano,0XraR5DqW6Vpp86omsB88K,0,['kawaii future bass'],14009,kamome sano
+1778, “Toshihiro”,77E2NPxvVwvJIFCylUOLL1,0,[],3,“toshihiro”
+1785, AYUMIC,50ciJ9NoLUai0b65vZfjOK,0,[],10,ayumic
+1808, Coogie,0IznZPMUyaPGdqfP4oqBja,0,['k-rap'],168400,coogie
+1827, Moon Sujin,36MQil20hjOpG5f52NQ4du,0,['korean r&b'],65422,moon sujin
+1829, Herr Nayne,3ymSmqDdFN1kfZyVJ4HWse,0,[],181,herr nayne
+1836, Loopy,3l9s67pOK4Stw9yW1wr0Bg,0,['k-rap'],87488,loopy
+1840, Ye Ali,0Maq4Nk8ZM6keGZjTCXGIH,0,"['indiana hip hop', 'trap soul']",45979,ye ali
+1865, Mac Kidd,3uezMpoFc84nQ6qU2mliqr,0,"['k-rap', 'korean trap', 'korean underground rap']",1158,mac kidd
+1873, Supreme Boi,6sBiS0iWcCyMMgiYrEOxbt,0,[],7969,supreme boi
+1874, ELLES,5tGfeyiQ8hWOJ1RtsFI6GN,0,[],120,elles
+1877, Taylor,7FYjn4nNgjskhNaWoWl8uy,0,[],399,taylor
+1879, Donutman,2xH4dYFMVhdOGIhgIWonbc,0,['k-rap'],8632,donutman
+1882, Peder Elias,56zJ6PZ3mNPBiBqglW2KxL,0,['norwegian pop'],44990,peder elias
+1893, BIG Naughty,7cEaNXXTHx3LokbjUUyHal,0,[],286344,big naughty
+1897, dress,72b1XZ6SmDRgHEOB7ypw9z,0,"['k-indie', 'k-rap']",17088,dress
+1899,"Car, the garden",7c1HgFDe8ogy5NOZ1ANCJQ,0,"['k-indie', 'korean pop']",137239,"car, the garden"
+1901, Relax Beer,04BxwccHO4U2wMwVLvYTLO,0,[],2,relax beer
+1906,Sunwoojunga,04L3elxyr0XFua2Ek3domW,0,"['k-indie', 'korean pop']",94884,sunwoojunga
+1917, Jo Jung Chi,21fdDnBuLfUeBngh4yAyZJ,0,[],385,jo jung chi
+1927,HA:TFELT,3Mrp5B6JdfoiObgY0WR8lF,0,['korean r&b'],110354,ha:tfelt
+1928, Kim Bo Hyung,374BqLVt4zpEYsa1Em7X7x,0,['korean pop'],11576,kim bo hyung
+1935, Yankie,3EuteIwWAP4mLq0kvLML99,0,['k-rap'],10344,yankie
+1936,DAVICHI,4z6yrDz5GfKXkeQZjOaZdq,1,['k-pop'],720549,davichi
+1940,Cao Lu,2onoO0N62qYqnHJjTi0g0k,0,[],251,cao lu
+1941, Linzy,6m9EewCnInHNApDOMhlwxM,0,[],30,linzy
+1942, YEZI,6LPOT9C3gvGQHxlZtMLHHg,0,['k-pop'],132987,yezi
+1948,T-ARA,1R52cwGf75yTf7I3Q0Irf8,1,"['k-pop', 'k-pop girl group']",787163,t-ara
+1950, Skull,1HfJjGC8yehGygj5MDj4P0,0,[],190,skull
+1954,yangpa,5Qr33OZrOzmTJwxpUVZI7m,0,[],89,yangpa
+1956, Hanna,3PD0VSypOTIzOWHW1FmVba,0,[],13,hanna
+1962,SeeYa,3Mbxr8TL0Sny7dUNicKWm2,0,[],4225,seeya
+1965, 백찬,3b84FwOBHtfdyimyNJ1i59,0,[],6,백찬
+1990, 10cm,6zn0ihyAApAYV51zpXxdEp,0,['korean pop'],470045,10cm
+1992,SUHO,5zkf2Na8DKKJmtWX5Xrx3m,0,['k-pop'],1267564,suho
+2003, XIUMIN,5t0Js3X9t4wpgXGlaiTFe6,0,['k-pop'],953217,xiumin
+2006,B.A.P,6kxCoNfY6U1eP0Yc88phvk,1,"['k-pop', 'k-pop boy group']",750929,b.a.p
+2007,Young Jae (B.A.P),54JXhmpGDN8NdAIq44z4gt,0,[],4541,young jae (b.a.p)
+2008, Zelo,7F204LAlfQltTujbEj9wvu,0,[],3004,zelo
+2010,JONG UP (B.A.P),0sSAFVekiDtX7PXDQvHnlK,0,[],5853,jong up (b.a.p)
+2013,DAE HYUN (B.A.P),1htPJUlogkZBjbKp86uuLF,0,[],6874,dae hyun (b.a.p)
+2016, Song Ji Eun,0D40an6y5Cv6sRzMGsRRQ8,0,"['k-pop', 'korean pop']",104467,song ji eun
+2017,f(x),3wRA5UYoo08BBKJnzyKkpF,1,"['k-pop', 'k-pop girl group']",1268166,f(x)
+2018,Lee Pil Ho,1uEtbyROUf6Za2kJKzm4DZ,0,[],12,lee pil ho
+2019, PARK JONG MI,5wimNWpsT10n1YQcgkgCUK,0,[],4,park jong mi
+2023,EXO-K,6wPBIyIIMxoqgux29bGF8I,1,"['k-pop', 'k-pop boy group']",1903847,exo-k
+2024, KEY,6XXKPxRX2WWPPtfodzpc2v,0,['k-pop'],587376,key
+2025,HENRY,1sjw4xq2pAWy5Vdgba5QAt,1,['k-pop'],483629,henry
+2026, Yuna,3kHVioJpVxlazAAKQ64pC1,0,['malaysian pop'],429341,yuna
+2028, MOTi,1vo8zHmO1KzkuU9Xxh6J7W,0,"['dutch house', 'edm', 'electro house', 'pop dance', 'progressive electro house', 'progressive house']",256801,moti
+2030,2FK,6RSlOhY5eAxezyo6cObiFd,0,[],7,2fk
+2031, DAIAN,64TcjwY8J5UMIgQUEIWdP5,0,[],4,daian
+2037, 박진우,5PznNJBhiSwaZ0m8It9hYO,0,[],22,박진우
+2039, Ha Ji Won,34BjXjDtgOGJYIdvCxr7LU,0,[],1218,ha ji won
+2043, GRAY,1L5vdS8COg1qMNhs4BAiQH,0,[],2,gray
+2044, KIM GO EUN,4G0khHYSAyq05njsT39Vp5,0,['korean musicals'],2157,kim go eun
+2045, PARK NA RAE,1KazuhqoAgXY7FXbiEZ93B,0,[],21,park na rae
+2046, Joon Park,7bAEUNjhgSKLTp5dos6Pcb,0,[],92,joon park
+2048, Jeon Hyun Moo,1B4Fp50pmqvpiAZYJ23PMx,0,[],12,jeon hyun moo
+2050, Han Hye-Jin,5WIOBJxSEU4So79GH9kV6h,0,[],10,han hye-jin
+2052,Sohyang,2TCV57G47ttyy1JsVyucXg,0,"['korean ost', 'korean pop']",58608,sohyang
+2057, AlunaGeorge,2VAnyOxzJuSAj7XIuEOT38,0,"['electropop', 'house', 'tropical house', 'uk dance']",433918,alunageorge
+2059, ROCOBERRY,0Mt9IxntWHsf793bLZhQ9P,0,"['k-indie', 'k-pop', 'korean pop']",55935,rocoberry
+2063, MARK,70DFixYAFPv4Pf9kgSfR9O,0,[],509054,mark
+2065, SOYOU,3b4kLCI0ZJW47TFsNRqgCb,1,['k-pop'],362401,soyou
+2069, Hoya,6wHxm6F9OLLYTqtg8Zcbex,0,[],156,hoya
+2073, KYUHYUN,0il5ZP3xYOECtONJtZ38Ln,0,['k-pop'],374400,kyuhyun
+2075,HYUKOH,57okaLdCtv3nVBSn5otJkp,1,"['korean indie folk', 'korean r&b']",483553,hyukoh
+2076, Sunset Rollercoaster,7BqRcZsHYYQeqMAOp7e532,0,['taiwan indie'],377661,sunset rollercoaster
+2078, IDIOTAPE,0OmQCkk1rR3DJ0Y2NRxp6Z,0,"['k-indie', 'k-rock', 'korean electronic', 'korean electropop']",8246,idiotape
+2080, Chang Kiha,2kppzekGp379T3M56GYd7d,0,"['k-indie', 'k-rock']",13551,chang kiha
+2082, Superorganism,0Wkm45quqfx3NepJpXDvwE,0,['art pop'],234200,superorganism
+2084,HYUKOH OHHYUK x INWOO,1RUonXSUvmmDfQOp2CQuCH,0,[],5,hyukoh ohhyuk x inwoo
+2085, Jay Marie,4yqfRusFEyn5ml2Xm5pd0Z,0,[],116,jay marie
+2090,Suzy,4U80LJd8sG6U9YTFP5izka,1,['k-pop'],460816,suzy
+2100,PARK WON,1XujSdsxykPhP3dn6HaT4l,0,['korean pop'],108543,park won
+2107,덕원,4Hi2B8GkX7IZWsuZyd8Cdc,0,[],63,덕원
+2109,4Minute,6cdC1cwqh3eJAXaxXJt2jv,1,"['k-pop', 'k-pop girl group']",1094391,4minute
+2110, Manager,7o4KDqFA1r5ddafrK5hgmt,0,[],101,manager
+2112,DONGHAE,5X9KszkeEZd6c9wxRhucbV,0,[],1705,donghae
+2113, RYEOWOOK,0fwfMuz3AmWRy2pyM5fDRo,0,"['k-pop', 'korean pop']",204424,ryeowook
+2115, Omega Sapien,46KQM3HJyONaKRTbcfNPlU,0,['korean underground rap'],15095,omega sapien
+2117, Lil Cherry,523GImBnBoIvcq0n8BZIv4,0,['korean trap'],38024,lil cherry
+2120, Riff Raff,31IZdHrCZ5pRhLz4zBxN3o,0,[],179063,riff raff
+2121, OG Maco,0nvvVQhPQGkYTJlThLbJeu,0,['atl hip hop'],147714,og maco
+2122,Urban Zakapa,1dOMFM5wDNsENQQW0nl0K8,1,['korean pop'],202564,urban zakapa
+2129, 젓가락형제,0tCF3alKq0KqzEn0iaEqIP,0,[],27,젓가락형제
+2131, Eb,2eUiUWPlCfSEuRuPTVeRf5,0,[],6,eb
+2133, Shannon,3hi7ew4Y6Lr9lWS1E3lDBX,0,['freestyle'],18883,shannon
+2134, 건지,79xtZ56bsMOQwiTe5Ob1jD,0,[],79,건지
+2136,JooHyun Oak,22GsBXoNH88NIr7Rl8k7oz,0,['korean musicals'],308,joohyun oak
+2137, SG Wannabe,2c3IakpImjWyeXNvyyGsdn,0,"['korean ost', 'korean pop']",180908,sg wannabe
+2140, 초신성,0buWcDodnGf3u36oAQPHzW,0,[],161,초신성
+2149, Jukjae,7bWYN0sHvyH7yv1uefX07U,0,['korean pop'],80824,jukjae
+2151, Jung Yong Hwa,6zhAP0FoDccL9kuETOC20q,0,['korean pop'],206116,jung yong hwa
+2158,MC MONG,6gEWl778wJTkq4Uk5eBvgD,0,"['k-rap', 'korean pop']",39153,mc mong
+2161,Melotic,2O9yKxcDexzQAEtFvaK4ft,0,[],65,melotic
+2164, IZ*ONE,5r1tUTxVSgvBHnoDuDODPH,0,"['k-pop', 'k-pop girl group']",1793888,iz*one
+2172, Francis,7zzvUdZZP6wcZ1gD3SpmDl,0,[],148,francis
+2174, OVAN,4FuRHFtCeoYaeeVDKyyvbS,0,"['k-rap', 'korean r&b']",77456,ovan
+2180,Ha Hyun Woo,5EXYPAGnOxvyTstoykxKd3,0,['korean ost'],24420,ha hyun woo
+2194, MoonMoon,1LOeaOZCreokgQaauWT5rV,0,['k-indie'],86233,moonmoon
+2198,Louie,6c1vY77ByWunDNlvE77OJS,0,[],1165,louie
+2201,Letter flow,19jNQxmNBaXJlXdvLHtrHY,0,[],468,letter flow
+2208, BrotherSu,3fmAXFX05DFTaTkreemfxB,0,['korean pop'],6148,brothersu
+2210, Kwon Jeong Yeol,0hQlsGzFtLvitALhayW7HD,0,[],260,kwon jeong yeol
+2213, KIHYUN,52MWHSohXVqTyGhBPRJepS,0,"['korean ost', 'korean pop']",176277,kihyun
+2215, Kwon Soonil(Urban Zakapa),3LcvhSx1kL5VwaOHhAN1B5,0,[],4,kwon soonil(urban zakapa)
+2216, Park Yong In,3xPgiFdFWb1jR4hOyEzTgH,0,[],1310,park yong in
+2225,B1A4,3sxWOFw4MSN54SIQ8np6iG,1,"['k-pop', 'k-pop boy group']",570953,b1a4
+2226, OH MY GIRL,2019zR22qK2RBvCqtudBaI,1,"['k-pop', 'k-pop girl group']",1681264,oh my girl
+2227, ONF,0eEhOgZ2x6kv8kLz77WO7b,0,"['k-pop', 'k-pop boy group']",609743,onf
+2233,Eddy Kim,1sVSMPPNMMSZ7cQNfbvMOe,1,"['k-pop', 'korean pop', 'korean singer-songwriter']",362061,eddy kim
+2234, Bray Of Skooby Doo,0HsHzgPuTPNiTVMfCz23kw,0,[],4,bray of skooby doo
+2238, DALsooobin,0ZjVwJw2cFymrcIwmGuVEl,0,['korean electropop'],14368,dalsooobin
+2240, Lee Sung-kyung,71GtNPltMLFyPOXCfZf0TF,0,[],50,lee sung-kyung
+2246,LIM KIM,4kGuk6HkL6hwuQrgSWISBv,0,['k-indie'],63585,lim kim
+2248,SEUNGRI,20j1uz7iDOtIvIzCr5S8nx,1,['k-pop'],478054,seungri
+2250, 태양,0BeIulKOpcvsabwlt4u8qp,0,[],8010,태양
+2252, JENNIE,250b0Wlc5Vk0CoUsaCY84M,0,['k-pop'],3376368,jennie
+2257,Roy Kim,3ErHVJMsxTq2lLSmnONBm9,1,"['k-pop', 'korean pop']",247396,roy kim
+2258, EZ Kim,5WJOZ5N4iegy9XdltTo8os,0,['korean pop'],32361,ez kim
+2260, BaeDaHae,5UECuqBGwtN9NxHFOnQny5,0,[],21,baedahae
+2262, SOLE,6naXFodImN2DwRmKCQHAUt,0,['korean r&b'],104749,sole
+2266, Mako,0Ye4nfYAA91T1X56gnlXAA,0,['pop edm'],113249,mako
+2267, The Glitch Mob,3a9qv6NLHnsVxJUtKOMHvD,0,"['glitch', 'glitch hop', 'indietronica']",549969,the glitch mob
+2268, The Word Alive,1CF8aEN939swnuIZGFI7Hk,0,"['melodic metalcore', 'metalcore', 'trancecore']",312397,the word alive
+2270,BILL STAX,459tVR1zPUmVwOROer0adD,0,['k-rap'],20780,bill stax
+2271, Kim Na Young,4dvmLXorXADxVq8EcySEWk,1,['korean pop'],186269,kim na young
+2276, Olltii,1l1VfoWjli9N3MJH2tAWCA,0,"['k-rap', 'korean trap']",5707,olltii
+2282,Wonder Girls,3Cv2vi3WTl8VZOTdrBkKdM,1,"['k-pop', 'k-pop girl group']",718881,wonder girls
+2283, Akon,0z4gvV4rjIZ9wHck67ucSV,0,['dance pop'],3743787,akon
+2285, School Gyrls,4zfTcqK4VudzZgd0T8g1Fi,0,['deep dance pop'],31670,school gyrls
+2292,miss A,1BEohdSWSBggmO979tzRwW,1,"['k-pop', 'k-pop girl group']",900313,miss a
+2293, Tacyeon,0Ko62GQsAMXCNCKNUTmfWz,0,[],13,tacyeon
+2295, Newport Mix,2q4mR2JpYQJWQnr45yiFjy,0,[],2,newport mix
+2296,KARA,7aZ221EQfonNG2lO9Hh192,1,"['k-pop', 'k-pop girl group']",540113,kara
+2297,Park Gyu Ri,3eDTXcjpFF1Wxa4e7ZZICA,0,[],142,park gyu ri
+2301, Han Seung Yeon,5kUgUgo1jFoAOiaiv8OP0o,0,[],2108,han seung yeon
+2302,Brown Eyed Girls,2GEPtT5RDxrmdi0A4mbDi7,1,"['k-pop', 'k-pop girl group']",257345,brown eyed girls
+2303,CHO PD,5kpASLmaTCY83YeHWs23Bc,0,[],13,cho pd
+2308, Bobby Kim,2pIicUMaKL2mgq8qrZ5K53,0,[],182,bobby kim
+2310, Jo PD,5vQNUEPwDQboBgAHhX6EZn,0,[],2,jo pd
+2312, Lee Jae Hoon,3TiQECvFFvnqd5hs6viUsK,0,[],48,lee jae hoon
+2317, 조PD,0XJH7kCmbiKeYfAFSHpYuN,0,[],24,조pd
+2321, MC 몽,0St0PvgohErtWfC6qnJHpN,0,[],0,mc 몽
+2322,After School,1loWI8jVk9btgJXHgqHXPD,1,"['k-pop', 'k-pop girl group']",342444,after school
+2323, Blackpink,1Gf3SzkXoUvEbixB7LUw6v,0,[],21092,blackpink
+2324, Tara,24JAAnBviO3vTMZ5N9taj8,0,['cook islands pop'],2649,tara
+2332,Son Dam Bi,3cCbcs6r1Lma7MfEjyfCGU,0,['classic k-pop'],13160,son dam bi
+2334, Ara,2jhwupQ3q8a1NbwfFhnszE,0,[],38,ara
+2335, Dong Ho,7JlxObEsleDXA54OFIl9zj,0,[],1,dong ho
+2336, Hye Rim,37qp8U9zJIHh4UseRqcqX2,0,[],54,hye rim
+2337, Jung Hyun,2t6BljQxB8MLiky7GjkLYd,0,[],8,jung hyun
+2341, KAHI,04C0MPapc1HXpTbspJhmWg,0,[],0,kahi
+2342, Jung AH,1SYHnHX97OjM7hHhxlAq1T,0,[],0,jung ah
+2343,TEEN TOP,3offPqpKAKmpQkIdWnjzkc,1,"['k-pop', 'k-pop boy group']",388950,teen top
+2345,Beast,1Pr9gT0veB2tgcisQeIGoC,1,"['k-pop', 'k-pop boy group']",469465,beast
+2346, BTOB,4pjFNcqv916MlWsAXaHAHe,0,[],11,btob
+2348,YOON DU JUN,0bjyZMw6TzPhXSp2PoKXx7,0,[],9922,yoon du jun
+2349, Son Dong Woon,5UzpNJd6zHGN9syxBN8fRY,0,[],13347,son dong woon
+2352, YANG YO SEOP,1fwMtpwCEJovQuyxSuHcAd,0,"['k-pop', 'korean pop']",55145,yang yo seop
+2354,ABLE,0Y669kGV5Gru5RaumXTxtV,0,[],17699,able
+2355, LEE GI KWANG,3CC7p9QM4VjO62rmcaRP3z,0,['k-pop'],69513,lee gi kwang
+2356,SS501,6rmMpoeu2SIV4OLURCOn2e,1,"['k-pop', 'k-pop boy group']",246690,ss501
+2357, Jisun,1FY6b8FV3KmqbQnY07T1f0,0,[],2737,jisun
+2359, Mellow,0UxCpjmjcmJUWcRGmd8BZk,0,[],126,mellow
+2360,SE7EN,14yLuCwlBqteUdBqx9soJV,1,['k-pop'],160379,se7en
+2361, Q'Glizzy,4Xse32nqeF4fEIruan7K9P,0,[],6,q'glizzy
+2363,Mid Darth,1BTWuxfuMUSRMzVQ6qTtWF,0,[],22,mid darth
+2368, Masta Wu,2khkWoTMvYG7wLHg6iicIz,0,[],0,masta wu
+2370, Kim Seong Dae,4H00h50rGk6Hk6MwuYPjsK,0,[],0,kim seong dae
+2372, T.O.P.,4yiB30K5scGkjmAgHGIH8Y,0,[],61928,t.o.p.
+2374, Lil' Kim,5tth2a3v0sWwV1C7bApBdX,0,"['dance pop', 'east coast hip hop', 'gangster rap', 'hip hop', 'hip pop', 'pop rap', 'r&b', 'rap', 'southern hip hop', 'trap queen', 'urban contemporary']",1593343,lil' kim
+2378, BOM,6R832bzzF3r6K5AsVsOwnF,0,[],2451,bom
+2380,Pixie Lott,3EBRANWwnViQuBrImN61Z1,0,"['dance pop', 'post-teen pop', 'talent show']",972097,pixie lott
+2381, Gd,5Kz0D3cSiukDkDEnUNGmDl,0,[],41168,gd
+2382, T.O.P,1zL2FNzZEsXy5tzEhaQCFP,0,[],1434,t.o.p
+2384,Girl's Day,13kJgvU22LHMsJtGWLmx7W,1,"['k-pop', 'k-pop girl group']",706600,girl's day
+2385, David Kim,6fqoFU6NahjZYW1m5HBub1,0,[],284,david kim
+2387, Tae Woo Kim,1b5dXQjWYLpMLY5VXElc8P,0,[],8,tae woo kim
+2389, Kim Tae Woo,5OFQZvle7HH55LvauNmUIi,0,['korean pop'],90330,kim tae woo
+2391,Trouble Maker,0ztjVBmFk6OuHq6XBBwMI9,0,['k-pop'],192102,trouble maker
+2393, RYU HYUNJIN,1q05ZqOVRRBnsbhAB1FDdL,0,[],44,ryu hyunjin
+2403, Sanchez (of Phantom),76EfJwRQeOeQ5aMh3FF7z4,0,[],15,sanchez (of phantom)
+2407, Sang Chu,7huWrzf0u8uNCNY5yoe0Ko,0,[],20,sang chu
+2412, JC Ji IEun,7cdcW3AcUmDFc04gzypFjL,0,[],15,jc ji ieun
+2424,2am,5SnaL8SsjGMHQNyqpa8Zos,1,['k-pop'],216756,2am
+2425,The Chosen,4zaS9mItqCC5OQpML2VDu2,0,[],12577,the chosen
+2426, Siilva,1Ju0lsag81P0VNBByS6R23,0,[],1313,siilva
+2428,Secret,503DjcVO5Ku1NgLPhVuNg7,1,"['k-pop', 'k-pop girl group']",196553,secret
+2430,MBLAQ,14f1WN9TUDVBK4sHUStmLG,1,"['k-pop', 'k-pop boy group']",296769,mblaq
+2431, 혜미,76yPSQzTmeCY5fCsrMFoSw,0,[],2,혜미
+2432,JINUSEAN,4WItSECPefckW11qSnZXyv,1,"['classic k-pop', 'k-rap']",28481,jinusean
+2433, 장한나,6hIrFuDMvnr5nNGqmwrB3V,0,[],30,장한나
+2434,AB6IX,4y0wFJ5jmCUNRLZfsw1I7g,1,"['k-pop', 'k-pop boy group']",539311,ab6ix
+2435, Reiley,1nHcGkMVml7a44TVwfrAN8,0,[],13811,reiley
+2437,JEON WOONG,7HkRTmxvjlJxL3lEOSxpqN,0,[],47053,jeon woong
+2440,KIM DONG HYUN,6NuAIYZptWXWUCAInxX6PU,0,[],31845,kim dong hyun
+2443,LEE DAE HWI,5j4ZfrjfKJhMBbDgTFxIwB,0,[],83706,lee dae hwi
+2446,LIM YOUNG MIN,7s72t76jrvQLHUiYraBSZ0,0,[],36545,lim young min
+2449,PARK WOO JIN,0kS1oLtVdBidgH2aKloRKR,0,['k-pop'],131048,park woo jin
+2453, ZENE THE ZILLA,1MMbv4LTpwbh2APtXuwaZN,0,"['k-rap', 'korean hyperpop', 'korean trap', 'korean underground rap']",28528,zene the zilla
+2454, ChaMane,2jyURAEr7r2UfWMpFQDOQd,0,['k-rap'],1379,chamane
+2456, Damndef,4jFOzswJGUdE6LFx1ZbOjS,0,[],370,damndef
+2458, northfacegawd,620Vx5hEMowoa71wXk4bu1,0,"['k-rap', 'korean underground rap']",5887,northfacegawd
+2463, Uneducated Kid,08KbKkPqaYNFYM9R5eMjuM,0,['k-rap'],31588,uneducated kid
+2466, Hwanhee,4ezpY3tmP9KtaOOnWpDmIp,0,"['korean ost', 'korean pop']",25283,hwanhee
+2477,Stormzy,2SrSdSvpminqmStGELCSNd,0,"['grime', 'uk hip hop']",2755703,stormzy
+2479, Burna Boy,3wcj11K77LjEY1PkEazffa,0,"['afrobeats', 'dancehall', 'nigerian hip hop', 'nigerian pop']",5503433,burna boy
+2486, Zoorumpug,4hYxfPWn0RnlwJS2faYvjB,0,['korean city pop'],647,zoorumpug
+2518, myunDo,7wqsGqGaU61FzNh62mbWXz,0,['k-rap'],8211,myundo
+2521,Crayon Pop,0ODX6aegsZkBmBeMA5qqwi,1,"['k-pop', 'k-pop girl group']",155750,crayon pop
+2522, Robin,0vOvj6PPR7vcw2oMCHjW9Z,0,[],2,robin
+2524,Kim Jang Hoon,1dXv5kexTtGYeykDWAnTCg,0,[],229,kim jang hoon
+2526,Dalshabet,10xsuRNvidaOLxWd3fRIel,1,"['k-pop', 'k-pop girl group']",173823,dalshabet
+2527, 정일훈,61EYHe0PuimYflGWAJaptk,0,[],0,정일훈
+2529, Bigtone,2UewyNNIcmy697ZLp6us78,0,[],6,bigtone
+2531, KOONTA,5T8LKv9A1vEnwMCO4dMo3c,0,['k-rap'],10303,koonta
+2532,December,6WiANXryTQJOTCM3z8jENM,1,['korean pop'],9675,december
+2533, Lee JinE,3JwZljJCipGfpbftNdQaeX,0,[],43,lee jine
+2535, J-Cera,3MhLDkENRwJOmFU5MSeLjZ,0,['korean pop'],2682,j-cera
+2536, IRIN,1vttSluVztvILtXVXVeqtu,0,[],3,irin
+2537, Yunmi,5cMhtkjEpkxbB3anjR027M,0,[],11,yunmi
+2539, Zick Jasper,3xtHMz3z0Km6qXV3yhcfQP,0,[],390,zick jasper
+2541, Black Belt,0jiiP0IU9wLNybrIucmB6T,0,[],232,black belt
+2545, 이로울,2vArxtLc9TRXTiwfKNX2RK,0,[],2,이로울
+2546, 아이린,1KI2jxgNu5JCizqylCSFj5,0,[],5,아이린
+2554,EVERGLOW,3ZZzT0naD25RhY2uZvIKkJ,1,"['k-pop', 'k-pop girl group']",1780644,everglow
+2555,TheFatRat,3OKg7YbOIatODzkRIbLJR4,0,['speedrun'],1627153,thefatrat
+2559,F.CUZ,6UrHKmUKaKUnF7WiScbG6G,1,[],32478,f.cuz
+2560, hyeon seo park,3ikV9ZwFZz1DDiTc6xbMAW,0,[],437,hyeon seo park
+2562, 한겨울,1WLp3CeL7X1Ic7DTu67CCP,0,[],0,한겨울
+2563,FTISLAND,6KhH771vq2X2Aom91nNzpZ,1,"['k-pop', 'k-pop boy group', 'k-rock']",464106,ftisland
+2564, Yuna,0kBGpEdFPbsrVkFgUQ1RQv,0,['korean ost'],6767,yuna
+2571, Sojeong,3tguePgWKGvSKBrRZYs5lP,0,['korean pop'],8437,sojeong
+2572, Rothy,0jUn8CXobOt0IixyR72una,0,['korean pop'],190034,rothy
+2573, Sion,2dEBKqLtvdFTnPcwpWEw0r,0,[],45921,sion
+2574, J.UNA,7oppHhvVWHX7WeGYjEOL6y,0,[],14290,j.una
+2584,JUNGKEY,6fTEkjuuZ3hH6fdeBxxbA2,0,"['k-indie', 'korean pop']",32396,jungkey
+2586, Sisqo,6x9QLdzo6eBZxJ1bHsDkjg,0,"['contemporary r&b', 'dirty south rap', 'hip pop', 'r&b', 'urban contemporary']",892928,sisqo
+2588,Kim eun young,49XEW1qNZPAeucXHu8zIeg,0,[],100,kim eun young
+2591, P-Type,7ngC61jtmmjDi2vbJRG3yq,0,"['k-rap', 'korean old school hip hop']",8223,p-type
+2593, Young Ji,2QbyHFJW5QoKsUYx96SiEy,0,[],40,young ji
+2595, Park Yu Chun Of JYJ,6iWOraHWSUnNDVXLPEytfZ,0,[],2,park yu chun of jyj
+2599, D-LITE,1OQxmfKN9UG5C7nr4MkasO,0,[],139334,d-lite
+2603, Bobby Kim,5s5g2cVTox2dzQE65XOD4z,0,['korean singer-songwriter'],5867,bobby kim
+2605, 빅톤,5O0XmPyzOOTKMWEpwpMbJU,0,[],4,빅톤
+2606,HELLOVENUS,3TW9U1f93tpGBsEtCSf7JG,1,"['k-pop', 'k-pop girl group']",256772,hellovenus
+2610, Park Woo Sang,4b1h7TeHuzi1lOTJswql6f,0,[],17,park woo sang
+2612,KINDA BLUE,264XvBSD6pFn1eDvWSWMI8,0,[],4854,kinda blue
+2624,220 KID,4Euia7UzdRshy1DJOSMTcs,0,['uk dance'],20910,220 kid
+2625, Willim,5bp5XaFz8Py4UFEhQ6FZRk,0,[],1625,willim
+2628, MIYAVI,7sBtBCNVRujQhaHDODkfTN,0,['visual kei'],285385,miyavi
+2632, ANYUJIN (IVE),3schR1HLbYu3RqqPDiDFrE,0,[],1924,anyujin (ive)
+2633, YUNA KIM,5wBTXLKoAsiWsKn3ijyGPo,0,[],87,yuna kim
+2637, Chancellor,0u06YeydlBk3awnk5KgdBx,0,['korean r&b'],37425,chancellor
+2645,inverness,17aCDXnpzF1XYVe0QrsRvs,0,[],11553,inverness
+2646, Anthony Russo,6PFcrRZezCL5p9A0nwb7ki,0,"['chill pop', 'indie pop rap']",74267,anthony russo
+2655,KIM HOJOONG,4T9AuhR3YqSqaPgXzPiAuH,1,['trot'],6238,kim hojoong
+2656, Park Gabin,4RchfpgrrMpxq0eQv63jqx,0,[],0,park gabin
+2658, Lee Sangwon,2cDX5eSW1ia5fwMbqplMbT,0,[],0,lee sangwon
+2660, 오현우,1PQQMG99o0K7BBYAwVpTqf,0,[],51,오현우
+2661,KIM JAE HWAN,7LdZwtnhfB1GoC9SE9tvyb,1,[],152673,kim jae hwan
+2662, HYNN,64jfAecBriamQmMs0WAKtj,0,['korean pop'],33777,hynn
+2664,Onestar,6EmgTIhhXGtfAmYYTfdtlz,0,['korean pop'],27372,onestar
+2676, Stella Jang,2Y9AUayH5pyZpVfkDYDfJV,0,['korean city pop'],192426,stella jang
+2678,M. Monnot,5raaWCPidQVOFLtpM5CCvI,0,[],2,m. monnot
+2681,Luigi Boccherini,2l4vGfFV7e46yO8lxfxR76,0,"['classical', 'classical era', 'early music']",102460,luigi boccherini
+2684,Dmitri Shostakovich,6s1pCNXcbdtQJlsnM1hRIA,0,"['classical', 'compositional ambient', 'russian modern classical']",360113,dmitri shostakovich
+2694, DINDIN,63cvWayCvPbWYNDi537w0z,0,['korean r&b'],30763,dindin
+2699,Monday Kiz,24jJXZRz3aGvjVvZ4OoerD,0,['korean pop'],112961,monday kiz
+2705,SONG YUVIN,5bO0Iy0ozHhSelVBOttCyT,0,['korean ost'],14152,song yuvin
+2708, Eunha Lee,2hOvcsM1Zu4d9srPgglhat,0,[],4,eunha lee
+2710, 트리키,7fCSy7Had5Fs540ilzxV20,0,[],103,트리키
+2712,신종욱,3cxWvvIqZGNyWsgmdi0wsf,0,[],7,신종욱
+2716,Jang Won Ki,0O8LdVYrZzNAClMUdQhyGA,0,[],15,jang won ki
+2718,Lee Hyori,4FjoOJAndC0s9ZJUo6VGc5,1,['classic k-pop'],60465,lee hyori
+2719, Lee Sang Soon,2k5qXj4B0cMlBbLJOVQMUJ,0,['korean singer-songwriter'],9902,lee sang soon
+2721, LEE CHANHYUK,4RkTSLr5Qf79FfUkeaDKbl,0,[],11791,lee chanhyuk
+2723,YOON GUN,15dggb3DQ4suwIfBmqb3nm,0,[],2205,yoon gun
+2726, 이준기,0Fi1eTFqrg9XXYFPWwx2aw,0,[],264,이준기
+2727,Lee Seung Gi,12AUp9oqeJDhNfO6IhQiNi,1,['korean pop'],167135,lee seung gi
+2728, Captain Planet,4gUzVXtJJ6UWTWobd18HqJ,0,[],248,captain planet
+2730, Han Hyo Joo,5ycLZztc53MN3TlzAsr1Yj,0,[],93,han hyo joo
+2731, Ra.D,6zPbaYJp7itQ8p0gPLqf2S,0,['korean pop'],28298,ra.d
+2733, Yuna Kim,4wAssbReFLMBLkLCORabCM,0,[],708,yuna kim
+2737, Bizniz,1VZmQVn38jR2UG7QSWNoYw,0,['k-rap'],900,bizniz
+2738,Lovelyz,3g34PW5oNmDBxMVUTzx2XK,1,"['k-pop', 'k-pop girl group']",437151,lovelyz
+2739, Golden Child,5zShiwTHlygdfsXj6eavTu,0,"['k-pop', 'k-pop boy group']",633867,golden child
+2740,Mighty Mouth,2akjyFVLS8J29MeknQggyK,1,[],2,mighty mouth
+2741, KCM,2cijK40RWU3ouFUnwW8v3K,0,['korean pop'],35601,kcm
+2743, Aki,7m8uqplhTME9fSFztWBjNV,0,[],1,aki
+2744,NU'EST,1iQfn1B8V25iQoolQakyAZ,1,"['k-pop', 'k-pop boy group']",1008715,nu'est
+2745, YOOARA,5iAn0QrNJEo8uYvHPfdYzi,0,[],25,yooara
+2747, Yoon Han (Pop Pianist),5bRCVFekTRnptEuJ0ZxTtf,0,[],4,yoon han (pop pianist)
+2749,Orange Caramel,2QHTtUsN6Q13w3QHdfRqsK,0,"['k-pop', 'k-pop girl group']",310123,orange caramel
+2752,HYOJUNG,6seuyGQ3Fq56sS06YVPsOk,0,[],2309,hyojung
+2753, YooA,4ur1jCwyNlhgd0viJkOtcQ,0,[],91613,yooa
+2754, Jiho,5k4usYTOytsTDumir9NDEb,0,[],202,jiho
+2756, Keanu Silva,1zLMhO4zzzxt5PMV4wMS3y,0,['future house'],39163,keanu silva
+2757, Mougleta,4gmndqcVVyxmzgOunTiuAD,0,[],6325,mougleta
+2761,Haha,3lY2yvsj2BSiYSA8PcPGqF,0,[],13787,haha
+2763, M.TySON,4t7tfZEW6bMW5LVX06JwMx,0,[],49,m.tyson
+2765,SKULL,7qKWQnE3S7v8m3rLwMVdGg,0,[],2671,skull
+2766, Tarin,4UEKXXZ65FBcAJPVerQjtO,0,"['k-indie', 'korean pop']",7132,tarin
+2768,King Kong,6kDCaFSkqskhFf9agShfSY,0,['old school dancehall'],7320,king kong
+2769, Nuol,0ZYQRDQ7V5rIbzg565VHAh,0,['k-rap'],3235,nuol
+2770, Satbyoel,5oKvwuq4kKQZrYgFw2gWFh,0,[],4,satbyoel
+2772,Kingston Rudieska,78Je3yBmtLZlk0Uf8R5bWw,0,['korean indie rock'],6038,kingston rudieska
+2773, Yeo-Eun (MelodyDay),2oG0hcbCfRofbtKnuS1fWF,0,[],27,yeo-eun (melodyday)
+2775, Kim MinSeok,3CHn74oCO6xiThDGQcDMeA,0,['korean pop'],26303,kim minseok
+2779, Sai Sai Kham Leng,7yVauL0WNAnLDBz8SF8JXa,0,['burmese pop'],20991,sai sai kham leng
+2783, Sandara Park,3LKVw6XQYcot0OZMFmf4IP,0,[],29795,sandara park
+2800, Bernard Park,53Yqe3arWNbYQCw4kk1Qmv,0,[],11049,bernard park
+2805, Lee Jin Ah,4SzO3ea2qcjg1uLyNJAWnM,0,"['k-indie', 'korean r&b', 'korean singer-songwriter']",39674,lee jin ah
+2807,Kenji Bunch,44DPjVo7zPKN3Ejvx34xhR,0,['american 21st century classical'],691,kenji bunch
+2809, Ahn Trio,30pbA4VKv3CuflgeJ8Diq0,0,['classical piano trio'],2285,ahn trio
+2810,RAINBOW,7xDyxRXgFgOZhdtLtkYR1y,1,['k-pop girl group'],24101,rainbow
+2811,Gbabson,70r4aIjcz5L3w0eVQXuDrY,0,[],62,gbabson
+2812, Dotairs,5G2JpnSKByAUJJltANwwyc,0,[],0,dotairs
+2814,SEO IN YOUNG,6UaKk8mT8NH0BuUTFIhxN7,1,['korean pop'],1573,seo in young
+2815, 이건,3CeAc3273SCbu4WQHeCorc,0,[],9,이건
+2821, Kanto,1Pr77yszl1ikj6k9sy4Cju,0,['k-rap'],10477,kanto
+2827, Remix,3K4oXctZt90sjH2u6zLXYe,0,[],3,remix
+2829, Crown J,14D73AR7J5qqIzJwplkcda,0,['koligeet'],45408,crown j
+2830,Spica,5lvNsrcLos9vZpLQCJk4YK,1,"['k-pop', 'k-pop girl group']",89807,spica
+2831,Spott,0gQWoLdyMfjBGGITOMhTh8,0,[],430,spott
+2839, KaiKai Kim,75hyzstWgEHVhzaYda0gou,0,[],0,kaikai kim
+2849,THE BOYZ,0CmvFWTX9zmMNCUi6fHtAx,1,"['k-pop', 'k-pop boy group']",2479199,the boyz
+2852,Untouchable,2HDRkPTO5A59sFcC2ROGbw,1,['k-rap'],7477,untouchable
+2853, Outlaw,3NPCPm4joO9YgPf8jXPSF3,0,[],0,outlaw
+2857, Vasco,3z6WtIVxUiLNKDrUchJGrX,0,['danish electropop'],748,vasco
+2860, Mayson The Soul,6cbHT70yhbyGwTQKJOH2iY,0,[],1107,mayson the soul
+2864, Do Hee,6amUcIkH1FzHNdazkXPJfu,0,[],1,do hee
+2866, Andrew Choi,7JBaynR7JFeniONqbnn1U4,0,[],252,andrew choi
+2868, Hwayoung,79bfJJgSFky7U35QruEWMV,0,[],8,hwayoung
+2870, 이현,5Lz362V3wxefNeMeCFeVMm,0,[],0,이현
+2874, NARSHA,1OWVHV30ai3o8cgOTBVd72,0,[],13682,narsha
+2876, HWAYOUNG,4zVPLQ7lxEfEb3YTkymd7L,0,[],1,hwayoung
+2878, Hwayoung,11yBes7jdmXosQVHbbR8Py,0,[],0,hwayoung
+2880, 김화영,1pEirsoHYEMB0rxhzNkXeU,0,[],0,김화영
+2882, Jun Hyo Seong,73RRzEpK7IQexOhC0CuTRZ,0,['k-pop'],86578,jun hyo seong
+2883, Han sun hwa,3zfGhm4kLXQ8o4xJewVGO5,0,[],0,han sun hwa
+2885, Park Hwayobi,5oihNt5Zntgh1XIsDqOGq5,0,"['korean pop', 'korean singer-songwriter']",15980,park hwayobi
