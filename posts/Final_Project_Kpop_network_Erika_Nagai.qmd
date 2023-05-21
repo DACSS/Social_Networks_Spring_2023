@@ -10,24 +10,19 @@ format:
     code-tools: true
 # editor: visual
 editor: visual
-
 ---
 
 # Overview
 
 The phenomenon of K-pop has recently emerged as a prominent cultural force, gaining significant attention and popularity not only in South Korea and other Asian nations but globally as well, particularly among the younger generation. An interesting aspect of K-pop is that many K-pop artists collaborate with other artists, often those who are not based in South Korea. In this analysis, my objective is to delve into the dynamics of such collaborations within the K-pop industry and beyond, across various musical genres, and to investigate how these collaborative patterns have evolved over time. To achieve this goal, I aim to examine the social network of K-pop collaborations, with a view to gaining a better understanding of the underlying trends and structures shaping this phenomenon.
 
-# Literature review and hypothesis 
-During the 1990s, Seo Taiji gained significant popularity in the K-pop industry by pioneering a fusion of hip-hop and euro-pop-inspired songs (Kyung, 2021). Subsequently, from the late 1990s to the mid-2020s, K-pop experienced a surge in popularity in other Asian regions, particularly China and Japan (Kyung, 2021; Shin, 2009). The notable global success of Psy's "Gangnam Style" in 2012 served as a pivotal moment, propelling K-pop into the U.S. market and instilling hope within the industry for accessing a broader international audience (Kyung, 2021). Based on these historical developments, I hypothesized: 
-H1. K-pop started to collaborate on songs with international artists, particularly those from Western countries, following the impact of "Gangnam Style" in 2012."
+# Literature review and hypothesis
 
+During the 1990s, Seo Taiji gained significant popularity in the K-pop industry by pioneering a fusion of hip-hop and euro-pop-inspired songs (Kyung, 2021). Subsequently, from the late 1990s to the mid-2020s, K-pop experienced a surge in popularity in other Asian regions, particularly China and Japan (Kyung, 2021; Shin, 2009). The notable global success of Psy's "Gangnam Style" in 2012 served as a pivotal moment, propelling K-pop into the U.S. market and instilling hope within the industry for accessing a broader international audience (Kyung, 2021). Based on these historical developments, I hypothesized: H1. K-pop started to collaborate on songs with international artists, particularly those from Western countries, following the impact of "Gangnam Style" in 2012."
 
 # Methods of studies
 
-To analyze the K-pop music landscape, the following steps were taken:
-First, the name of K-pop artists were gathered by prompting ChatGPT on famous K-pop artists for the last 20 years (specifically, as of 2005, 2010, 2012, 2015, 2018, and 2020) and by extracting all the artists' name from Spotify official playlists "Top-KPop Artists of 2022," "Millenium K-Pop," "Best of 2008: K-Pop". 
-Then, all the songs who are sung by these artists were gathered using Spotify API and only collaboration songs, which are sung by more than one artist were used for this analysis. This resulted in 1123 songs by 962 artists/groups. (Refer to "Preparation_SpotifyID.ipynb" and "K-Pop Social Network ANalysis.ipynb" for the process of data collection.)
-
+To analyze the K-pop music landscape, the following steps were taken: First, the name of K-pop artists were gathered by prompting ChatGPT on famous K-pop artists for the last 20 years (specifically, as of 2005, 2010, 2012, 2015, 2018, and 2020) and by extracting all the artists' name from Spotify official playlists "Top-KPop Artists of 2022," "Millenium K-Pop," "Best of 2008: K-Pop". Then, all the songs who are sung by these artists were gathered using Spotify API and only collaboration songs, which are sung by more than one artist were used for this analysis. This resulted in 1123 songs by 962 artists/groups. (Refer to "Preparation_SpotifyID.ipynb" and "K-Pop Social Network ANalysis.ipynb" for the process of data collection.)
 
 # Read in & Describe data
 
@@ -434,7 +429,6 @@ The necessary columns are as follows
 # collab_songs
 ```
 
-
 # Exploratory Data Analysis
 
 ### How many K-pop collaboration songs are released by year?
@@ -484,6 +478,7 @@ artists %>%
 # Data Processing
 
 ## Convert the data in an edgelist format
+
 To analyze this data in a perspective of social network, I need to convert this data into an edgelist where from_nodes are K-pop top artists, to_nodes are artists who collaborated with them, and edges are songs.
 
 ```{r}
@@ -519,7 +514,6 @@ edgelist <- edgelist %>%
   left_join(song_detail, by = c("song_id" = "id")) %>%
   select(c("From", "To", "song_id", "song_name", "From_artists", "To_artists", "Collab_region1", "Collab_region2", "release_year", "popularity"))
 ```
-
 
 ```{r}
 # convert edgelist into a graph
@@ -573,6 +567,7 @@ igraph::edge_attr_names(collab.net)
 ```
 
 # (Total) Overview of K-pop collaboration network
+
 This is the graph of the last 20 years' K-pop collaboration.
 
 ```{r}
@@ -602,17 +597,22 @@ legend(
   )
 
 ```
+
 # Network overview
 
 ## Nodes and Edges
+
 As mentioned, this network consists of 962 nodes (artists) and 1519 edges. The number of edges and the number of songs are not the same because one song can have more than 2 artists.
 
 ```{r}
 print(vcount(collab.net))
 print(ecount(collab.net))
 ```
+
 ## Density and transitivity
-Density and transitivity of K-pop collaboration network is not high. 
+
+Density and transitivity of K-pop collaboration network is not high.
+
 ```{r}
 # Density
 igraph::edge_density(collab.net)
@@ -621,8 +621,10 @@ igraph::edge_density(collab.net)
 transitivity(collab.net)
 
 ```
+
 ## Degree
-This is analysis on nodes. 
+
+This is analysis on nodes.
 
 ```{r}
 nodes <- data.frame(
@@ -642,13 +644,16 @@ nodes %>% melt %>%
 ```
 
 ## Dyad Census
+
 It is expected that there is no asymmetry dyad because collaboration network is NOT directed. There are quite many null dyads, meaning that there are many artists that don't work together.
 
 ```{r}
 dyad.census(collab.net)
 ```
+
 ## Triad Census
-Most triads are empty because when artist A works with artist B, they don't work with the same artists. 
+
+Most triads are empty because when artist A works with artist B, they don't work with the same artists.
 
 ```{r}
 triad.labels <- c("A,B,C, the empty graph.",
@@ -684,6 +689,7 @@ melt(nodes) %>% filter(variable == 'transitivity' | variable == 'weighted.transi
 ```
 
 ## Component Structure
+
 There are more than 110 components in this network. Most of them have members less than 25.
 
 ```{r}
@@ -694,13 +700,9 @@ nodes$member <- member
 table(member) %>% melt %>% ggplot + geom_bar(aes(x = reorder(member, - value), y = value, fill = factor(member)), stat = 'identity')
 ```
 
+# Closer look
 
-
-# Closer look 
-
-Since the graph of 20 years doesn't give information about how K-pop collaboration has evolved so I analyzed the graph by year.
-There are few collaboration songs before 2005, so from here I will limit my analysis to the time span from 2005 till present (as of May 17, 2023).
-
+Since the graph of 20 years doesn't give information about how K-pop collaboration has evolved so I analyzed the graph by year. There are few collaboration songs before 2005, so from here I will limit my analysis to the time span from 2005 till present (as of May 17, 2023).
 
 ```{r}
 
@@ -799,7 +801,6 @@ graph_stats
 
 ```
 
-
 ```{r}
 # Create a plot with a bar chart and a line chart
 graph_stats %>%
@@ -816,16 +817,12 @@ graph_stats %>%
 
 
 ```
-This graph shows that around 2012, the number of collaboration songs among K-pop artists was limited, with few international collaborations. The network is sparse In 2014, the number of K-pop collaborations started increasing with more Western collaborations. Between 2015 and 2020, K-pop experienced significant growth in terms of the number and types of
-collaborations. The collaborations werenot limited to the US-based artists, but to small numbers of Latino, East-Asian, South East Asian, and Europe based artists. After 2021, the number of collaborations per year is decreased, and the
-proportion of collaborations involving K-pop artists with artists from the US or countries other than Korea has been
-increasing.
 
-# (By regime) 
+This graph shows that around 2012, the number of collaboration songs among K-pop artists was limited, with few international collaborations. The network is sparse In 2014, the number of K-pop collaborations started increasing with more Western collaborations. Between 2015 and 2020, K-pop experienced significant growth in terms of the number and types of collaborations. The collaborations werenot limited to the US-based artists, but to small numbers of Latino, East-Asian, South East Asian, and Europe based artists. After 2021, the number of collaborations per year is decreased, and the proportion of collaborations involving K-pop artists with artists from the US or countries other than Korea has been increasing.
+
+# (By regime)
+
 The graph above illustrates that collaborations in K-pop have different characteristics depending on the era. Taking into account the aforementioned features and significant milestones in the history of K-pop, such as the 2012 breakout with "Gangnam Style" and the major advancement in the American market by BTS in 2017, I have decided to divide the period from 2005 to 2023 into four eras: 2005-2011, 2012-2016, 2017-2020, and 2021-2023.
-
-
-
 
 ```{r}
 
@@ -843,6 +840,7 @@ edgelist
 #E(collab.net)$period <- edgelist$period
 
 ```
+
 ```{r}
 
 # Split the edgelist dataframe into 4 groups based on "period"
@@ -913,7 +911,6 @@ for (i in 1:length(graphs)) {
 
 4.  In 2021, the number of collaboration songs is not as large as that of 2016-2020 due to the shorter time span, but the proportion of international collaborations appears to be higher.
 
-
 ```{r}
 
 collab_by_regimes <- edgelist %>% 
@@ -929,7 +926,6 @@ collab_by_regimes <- edgelist %>%
     Unknown = sum(Collab_region1 == "Unknown")
     )
 ```
-
 
 ```{r}
 edgelist
@@ -1003,9 +999,6 @@ graph_stats_regimes %>%
 #   mutate(song_per_kpop_artists = num_songs/`K_Pop`)
 
 ```
-
-
-
 
 ```{r}
 # Define the 3-year spans
@@ -1125,7 +1118,6 @@ One of the hypotheses is that as K-pop had established its international popular
 
 In Regime 3 (2017-2020) and Regime 4 (2021-), the relationship between K-pop artists and international artists in collaborations has changed. In Regime 3, K-pop artists often collaborated with internationally renowned artists. However, in Regime 4, this trend has shifted, and compared to Regime 3, there seems to be an increasing tendency for more popular K-pop artists to collaborate with relatively less famous non-Korean-based artists. This can be observed in the right graph above, where the slope becomes gentler, with the y-axis representing the popularity of international artists and the x-axis representing the popularity of K-pop artists.
 
-
 ```{r}
 analysis <- edgelist %>% 
   filter(regime == "2017-2020" | regime == "2021-" & Collab_region2 == "International") %>%
@@ -1149,11 +1141,10 @@ analysis %>%
 
 
 ```
-In order to confirm this hypothesis more quantitatively, a regression model was used to examine the popularity of collaboration songs involving K-pop artists, the popularity of the K-pop artists themselves (measured by the number of followers on Spotify), and the popularity of international artists. (popularity of songs ~ popularity of K-pop artists who participated in the collaboration + popularity of international artists who participated in the collaboration).
 
+In order to confirm this hypothesis more quantitatively, a regression model was used to examine the popularity of collaboration songs involving K-pop artists, the popularity of the K-pop artists themselves (measured by the number of followers on Spotify), and the popularity of international artists. (popularity of songs \~ popularity of K-pop artists who participated in the collaboration + popularity of international artists who participated in the collaboration).
 
-The results showed that the influence of the popularity of K-pop
-artists and international artists on the popularity of collaboration songs was 2.9 and 3.9 (significant with p = 0.05), respectively, from 2017 to 2020. However, from 2021 onwards, these values became 4.8 and 3.08 (significant with p = 0.05), respectively, indicating a reversal in the impact of the popularity of K-pop artists and international artists on the popularity of collaboration song.
+The results showed that the influence of the popularity of K-pop artists and international artists on the popularity of collaboration songs was 2.9 and 3.9 (significant with p = 0.05), respectively, from 2017 to 2020. However, from 2021 onwards, these values became 4.8 and 3.08 (significant with p = 0.05), respectively, indicating a reversal in the impact of the popularity of K-pop artists and international artists on the popularity of collaboration song.
 
 ```{r}
 lm.pop_reg3 <- lm(popularity ~ Followers_of_Kpop_artists + Followers_of_Intl_artists, data = analysis %>% filter(regime == "2017-2020"))
@@ -1163,18 +1154,16 @@ lm.pop_reg4 <- lm(popularity ~ Followers_of_Kpop_artists + Followers_of_Intl_art
 print(summary(lm.pop_reg3))
 print(summary(lm.pop_reg4))
 ```
+
 # Summary of evoluation of K-pop collaborations for last 20 years.
 
-In summary, K-pop artists gained international popularity and a
-global audience partially due to collaborations with international artists starting in the mid-2010s. Since 2021,the number of collaboration songs has decreased. Besides, there has been a shift where artists outside of Korea are now collaborating with K-pop artists, leveraging their global popularity, to reach a broader audience.
-
+In summary, K-pop artists gained international popularity and a global audience partially due to collaborations with international artists starting in the mid-2010s. Since 2021,the number of collaboration songs has decreased. Besides, there has been a shift where artists outside of Korea are now collaborating with K-pop artists, leveraging their global popularity, to reach a broader audience.
 
 # Additional analysis
+
 ## (Artists-based analysis) Who are the key artists?
 
-The below are the top 10 artists with the highest eigenvector centrality. 
-It is interesting that they are not necessarily the most popular artists. For example BTS, BLACKPINK, or other more popular K-pop artists are not listed here. 
-8 of them are K-Pop artists and the rest of them are Yultron, DJ based in Los Angeles, and Gray, a New York base band.
+The below are the top 10 artists with the highest eigenvector centrality. It is interesting that they are not necessarily the most popular artists. For example BTS, BLACKPINK, or other more popular K-pop artists are not listed here. 8 of them are K-Pop artists and the rest of them are Yultron, DJ based in Los Angeles, and Gray, a New York base band.
 
 ```{r}
 
@@ -1210,7 +1199,9 @@ nodes %>% arrange(desc(eigen_cent)) %>% head(10)
 
 
 ```
+
 Most nodes have a small eigenvector centrality, whch is less than 0.1. The nodes with a relatively bigger eigenvector centrality are K-pop artists and do not have many followers.
+
 ```{r}
 nodes %>% 
   filter(eigen_cent < 0.4 & followers < 4000000) %>% #excluding outliers
@@ -1224,7 +1215,9 @@ nodes %>%
                                 "Europe" = "#ABD7E6", 
                                 "US or Other" = "#010087",                                      "Unknown" = "darkgrey"))
 ```
+
 There is not a clear correlation between the number of collaboration songs and the artist's popularity.
+
 ```{r}
 nodes %>% 
   filter(followers < 4000000) %>% #excluding outliers
@@ -1238,8 +1231,6 @@ nodes %>%
                                 "Europe" = "#ABD7E6", 
                                 "US or Other" = "#010087",                                      "Unknown" = "darkgrey"))
 ```
-
-
 
 ```{r}
 
@@ -1340,8 +1331,8 @@ nodes %>%
 
 ```
 
-
 # Discussion
+
 This network analysis was conducted to illustrate the general characteristics and changes in K-pop over the past roughly 20 years. The analysis revealed that K-pop has increased the number of collaborations, particularly with Western artists, since the mid-2010s. In the late 2010s, K-pop expanded its collaborations to include a diverse range of artists from Asia, Europe, and Latin America, reaching its peak in the number of collaborations in 2020. This suggests that K-pop aimed to approach markets outside of Asia and increase its international popularity, especially after the massive success of "Gangnam Style" in 2012. There is no evidence to prove, however, the increase in the number of collaborations with Latino artists after 2018 may be due to the huge hit of "Despacito" by Luis Fonsi in 2017.
 
 From 2021, the number of collaborations decreased, but the proportion of international collaborations surpassed collaborations between K-pop artists themselves. This indicates the presence of relatively less popular artists who are not based in Korea, but collaborate with internationally renowned K-pop artists to reach a wider audience.
@@ -1354,9 +1345,6 @@ The findings proposed by this analysis are believed to be worth researching furt
 
 # Source
 
-KIM, K. H. (2021). Short History of K-Pop, K-Cinema, and K-Television. In Hegemonic Mimicry: Korean Popular Culture of the Twenty-First Century (pp. 35–84). Duke University Press. https://doi.org/10.2307/j.ctv1xrb6s6.5
+KIM, K. H. (2021). Short History of K-Pop, K-Cinema, and K-Television. In Hegemonic Mimicry: Korean Popular Culture of the Twenty-First Century (pp. 35--84). Duke University Press. https://doi.org/10.2307/j.ctv1xrb6s6.5
 
-Shin, H. (2009). Have you ever seen the Rain? And who’ll stop the Rain?: The globalizing project of Korean pop (K-pop). Inter-Asia Cultural Studies, 10(4), 507–523.
-
-
-
+Shin, H. (2009). Have you ever seen the Rain? And who'll stop the Rain?: The globalizing project of Korean pop (K-pop). Inter-Asia Cultural Studies, 10(4), 507--523.
