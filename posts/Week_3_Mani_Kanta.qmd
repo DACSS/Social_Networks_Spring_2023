@@ -1,0 +1,148 @@
+---
+title: "Week 3 Challenge Instructions"
+author: "Mani Kanta Gogula"
+description: "Degree and Density of a Network"
+date: "03/06/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+# editor: visual
+categories: 
+  - challenge_3
+  - instructions
+  # - railroads
+  # - faostat
+  # - wildbirds
+---
+
+```{r}
+#| label: setup
+#| include: false
+#| 
+```
+
+```{r}
+library(igraph)
+library(network)
+library(tidyverse)
+```
+
+
+
+
+
+```{r}
+library(readr)
+got_marriages <- read_csv("_data/got/got_marriages.csv")
+head(got_marriages)
+got_marriages.ig <-graph_from_data_frame(got_marriages, directed = TRUE)
+```
+
+
+```{r}
+
+# number of edges
+ecount(got_marriages.ig)
+
+# number of vertices
+vcount(got_marriages.ig)
+
+# vertex and edge attributes
+vertex_attr_names(got_marriages.ig)
+edge_attr_names(got_marriages.ig)
+
+# network features
+is_directed(got_marriages.ig)
+is_bipartite(got_marriages.ig)
+is_weighted(got_marriages.ig)
+
+
+# dyad census
+igraph::dyad.census(got_marriages.ig)
+
+
+# triad census
+triad_census(got_marriages.ig)
+
+```
+
+This network has 255 edges and 20 vertices. The vertex attribute is 'name' and edge attributes are "Type", "Notes", "Generation". 
+
+```{r}
+
+# number of components
+igraph::components(got_marriages.ig)$no
+
+# size of components
+igraph::components(got_marriages.ig)$csize 
+```
+
+
+
+
+
+Compute the density of the network. Is this a global or local measure? Does it have a relationship with average degree? 
+
+```{r}
+# network density
+graph.density(got_marriages.ig)
+
+# density without loops
+graph.density(got_marriages.ig, loops=TRUE)
+
+```
+
+```{r}
+# average network degree
+igraph::degree(got_marriages.ig)
+
+```
+
+```{r}
+nodes_ig<-data.frame(name=V(got_marriages.ig)$name, degree=igraph::degree(got_marriages.ig,loops=FALSE))
+nodes_ig<-nodes_ig %>%
+    mutate(indegree=igraph::degree(got_marriages.ig, mode="in", loops=FALSE),
+           outdegree=igraph::degree(got_marriages.ig, mode="out", loops=FALSE))
+head(nodes_ig)
+```
+
+
+
+
+
+
+```{r}
+
+erdos_renyi.ig <- sample_gnm(103, 200, directed = TRUE, loops = FALSE)
+
+# density of random network
+graph.density(erdos_renyi.ig)
+
+# dyad census of random network
+igraph::dyad.census(erdos_renyi.ig)
+
+# triad census of random network
+igraph::triad.census(erdos_renyi.ig)
+
+```
+
+```{r}
+nodes_rand<-data.frame(degree=igraph::degree(erdos_renyi.ig))
+nodes_rand<-nodes_rand %>%
+    mutate(indegree=igraph::degree(erdos_renyi.ig, mode="in", loops=FALSE),
+           outdegree=igraph::degree(erdos_renyi.ig, mode="out", loops=FALSE))
+head(nodes_rand)
+
+```
+
+
+```{r}
+summary(nodes_rand)
+
+```
+
+
+
