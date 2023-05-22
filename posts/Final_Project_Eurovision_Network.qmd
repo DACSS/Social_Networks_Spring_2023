@@ -1,0 +1,677 @@
+---
+title: 'Network Analysis - Eurovision'
+author: "Mani Kanta Gogula"
+description: "Final Project"
+date: "05/12/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+categories: 
+  - Final Project 
+  - Mani Kanta Gogula
+  
+---
+
+```{r}
+#| label: setup
+#| include: false
+```
+
+
+```{r}
+library(readxl)
+library(tidyverse)
+library(sna)
+library(ggplot2)
+library(igraph)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+eurovision_data <- read_excel("_data/got/eurovision_song_contest_1975_2019.xlsx")
+head(eurovision_data)
+```
+## Introduction
+
+The Eurovision data set is a widely available dataset that captures the voting patterns between countries in the Eurovision Song Contest. It represents the voting behavior of various countries over the years. The original data is typically available in an edge list format, where each row represents a voting event and contains information about the country voting (source node) and the country receiving the vote (target node).
+
+The Eurovision data set represents a sample of the voting behavior within the Eurovision Song Contest. It includes a subset of participating countries and their voting patterns. While it does not capture the entire universe of cases (all possible countries), it provides a comprehensive representation of the voting relationships within the contest.
+
+
+In the Eurovision data set, each country participating in the Eurovision Song Contest is represented as a vertex or node. The level of analysis is at the country level, where each country is considered a distinct node in the network. The number of nodes in the data set depends on the specific years and countries included but typically ranges from 20 to 40 nodes.
+
+A tie in the Eurovision data set represents a voting connection between two countries. If one country votes for another country in a specific year, a tie is formed between them. In this case, the tie is typically considered as an unweighted tie, indicating a simple presence or absence of a vote. However, it is possible to assign weights to the ties based on the number of points awarded in the voting process.
+
+
+To create the final network data for analysis, I did several transformations to the Eurovision data set. These transformations  include thresholding the ties by considering only a certain number of highest-ranked countries in the voting process, or by creating a one-mode projection of the data to focus on the relationships between countries only. 
+
+
+## Research question
+
+
+This study aims to find answer to following research questions:
+
+1.Identifying the prominent communities by generating the Eurovision network graph
+
+2.Finding which years of what community share common socio-political or cultural characteristics that influence the voting patterns.
+
+## Exploratory Data Analysis
+
+```{r}
+
+
+# Explore the structure and summary of the data
+str(eurovision_data)
+summary(eurovision_data)
+
+# Check missing values
+missing_values <- sapply(eurovision_data, function(x) sum(is.na(x)))
+missing_values
+
+# Explore the distribution of the numeric variable (Points)
+ggplot(eurovision_data, aes(x = Points)) +
+  geom_histogram(binwidth = 1, fill = "skyblue", color = "black") +
+  labs(title = "Distribution of Points") +
+  xlab("Points")
+
+
+
+```
+
+
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(kableExtra)
+
+eurovision_data %>%
+  group_by(eurovision_data$`To country`) %>%
+  summarize(
+    nyear = n_distinct(Year),
+    min_year = min(Year),
+    max_year = max(Year),
+    presence = 100 * n_distinct(Year) / (max(Year) - min(Year) + 1)
+  ) %>%
+  arrange(desc(nyear)) %>%
+  kable(format = "html") %>%
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  row_spec(which.max(eurovision_data$nyear), bold = TRUE, background = "royalblue")
+
+
+```
+
+## Cleaning the Data
+
+Removing edges with empty values:
+Iterating through the edges in the graph and eliminate any edge where the point value is zero or empty.
+
+Eliminating duplicated edges:
+Identifying and removing edges that have been flagged or marked as duplicates, ensuring only unique edges remain in the graph.
+
+Rename countries (e.g., Macedonia):
+Making necessary changes to update the name of a country, such as renaming Macedonia to its current accepted name, taking into account any political sensitivities.
+
+Broadcasting results of Yugoslavia to former countries:
+Distribute the results or outcomes of Yugoslavia to its former countries, sharing relevant information or data with each respective nation.
+
+Removing countries with low participation:
+Identify countries in the graph that have a significantly low number of participations, and exclude them from the final results or analysis.
+
+```{r}
+basicClean <- function(eurovision_data, minYears = 5, last_participation = 8) {
+  df2 <- eurovision_data %>%
+    filter(Points > 0)
+    
+  # Stantardizing country names
+  renamings <- c(
+    "North Macedonia" = "Macedonia",
+    "F.Y.R. Macedonia" = "Macedonia",
+    "The Netherands" = "Netherlands",
+    "The Netherlands" = "Netherlands",
+    "Bosnia & Herzegovina" = "Bosnia"
+  )
+  df2$`From country` <- ifelse(df2$`From country` %in% names(renamings), renamings[df2$`From country`], df2$`From country`)
+  df2$`To country` <- ifelse(df2$`To country` %in% names(renamings), renamings[df2$`To country`], df2$`To country`)
+    
+  # Removing countries with less than minYears participations and not active in the last last_participation years
+  toKeep <- df2 %>%
+    group_by(`From country`) %>%
+    summarize(
+      years = n_distinct(Year),
+      last_participation = max(df2$Year) - max(Year)
+    ) %>%
+    filter(years >= minYears & last_participation <= last_participation) %>%
+    pull(`From country`)
+    
+  ignored_countries <- setdiff(unique(df2$`From country`), toKeep)
+  cat("Ignored countries:", ignored_countries, "\n")
+    
+  df2 <- df2 %>%
+    filter(`From country` %in% toKeep & `To country` %in% toKeep)
+    
+  # Keep only the points received at the highest stage (finals/semifinals)
+  df2 <- df2 %>%
+    group_by(`To country`, Year) %>%
+    mutate(finalcode = min(`(semi-) final`)) %>%
+    ungroup() %>%
+    filter(`(semi-) final` == finalcode) %>%
+    select(-finalcode, -Edition)
+    
+  return(df2)
+}
+
+df2 <- basicClean(eurovision_data)
+cat("Number of rows:", nrow(df2), "\n")
+head(df2)
+
+
+
+```
+
+
+
+```{r}
+
+library(igraph)
+
+# Create the graph from the dataframe
+graph <- graph.data.frame(df2, directed = FALSE)
+
+# Number of components
+num_components <- clusters(graph)$no
+num_components
+
+# Proportion of nodes in the giant component
+giant_component_prop <- max(clusters(graph)$csize) / vcount(graph)
+
+# Proportion of unconnected nodes/singletons
+singleton_prop <- sum(clusters(graph)$csize == 1) / vcount(graph)
+
+# Network diameter
+diameter <- diameter(graph)
+
+# Graph density
+density <- graph.density(graph)
+
+# Average node degree
+#avg_degree <- mean(degree(graph,mode='all))
+#avg_degree<-average.degree(graph)
+#degrees<-degree(graph)
+#avg_degree<-mean(degree)
+# Degree distribution
+degree_dist <- degree_distribution(graph)
+
+plot(degree_dist, main = "Degree Distribution")
+
+# Print the descriptive statistics
+cat("Number of components:", num_components, "\n")
+cat("Proportion of nodes in the giant component:", giant_component_prop, "\n")
+cat("Proportion of unconnected nodes/singletons:", singleton_prop, "\n")
+cat("Network diameter:", diameter, "\n")
+cat("Graph density:", density, "\n")
+#cat("Average node degree:", avg_degree, "\n")
+cat("Degree distribution:\n")
+print(degree_dist)
+
+
+```
+
+Number of components: There is only one component in the network. This means that all nodes in the network are connected in some way, and there are no isolated groups or disconnected nodes.
+
+Proportion of nodes in the giant component: The entire network consists of a single giant component. This indicates that a large majority of nodes in the network are connected to each other, forming a cohesive structure.
+
+Proportion of unconnected nodes/singletons: There are no unconnected nodes or singletons in the network. Every node is part of the connected component and has at least one tie to another node.
+
+Network diameter: The network diameter is 4. This represents the longest geodesic path between any pair of nodes in the network. It indicates the maximum number of ties that need to be traversed to reach any two nodes in the network.
+
+Graph density: The graph density is 13.96769. It is a measure of the proportion of possible ties that are actually present in the network. Higher density values suggest a more interconnected network.
+
+Degree distribution: The degree distribution provides information about the distribution of node degrees (number of ties) in the network. It shows the count of nodes with different degrees. Analyzing the degree distribution can help understand the connectivity patterns and identify nodes with high or low degrees.
+
+Overall, the Eurovision network appears to be highly connected, with a single giant component encompassing all nodes. The relatively low network diameter suggests that it is possible to reach any node within a relatively small number of ties. The graph density indicates a substantial number of ties present in the network. The degree distribution can provide insights into the prominence of certain nodes or countries based on their number of connections.
+
+
+
+```{r}
+# Extract unique country nodes
+nodes <- unique(c(eurovision_data$`From country`, eurovision_data$`To country`))
+num_nodes <- length(nodes)
+print(paste("Number of nodes:", num_nodes))
+```
+```{r}
+# Check tie values
+tie_values <- eurovision_data$Points
+tie_values
+
+# Determine if the ties are weighted or unweighted
+is_weighted <- !is.null(tie_values)
+
+if (is_weighted) {
+  # Range of tie values
+  tie_range <- range(tie_values)
+  print(paste("Tie values are weighted. Range of tie values:", tie_range))
+} else {
+  print("Tie values are unweighted.")
+}
+```
+
+```{r}
+# Distribution of network geodesics
+  geodesics <- distances(graph)
+  print("Distribution of network geodesics:")
+  summary(geodesics)
+```
+```{r}
+
+
+# Required packages for network analysis and visualization
+library(igraph)
+library(ggraph)
+library(ggplot2)
+
+# Get unique countries
+countries <- unique(c(eurovision_data$`From country`, eurovision_data$`To country`))
+
+# Create an empty adjacency matrix
+adj_matrix <- matrix(0, nrow = length(countries), ncol = length(countries), dimnames = list(countries, countries))
+
+# Fill in the adjacency matrix based on the dataset
+for (i in 1:nrow(eurovision_data)) {
+  from_country <- eurovision_data$`From country`[i]
+  to_country <- eurovision_data$`To country`[i]
+  adj_matrix[from_country, to_country] <- 1
+}
+
+# Convert the adjacency matrix to a graph
+graph <- graph_from_adjacency_matrix(adj_matrix, mode = "directed")
+
+# Subset nodes based on node degree
+degree_threshold <- 10  # Set the degree threshold to select a subset of nodes
+subset_nodes <- V(graph)[degree(graph) >= degree_threshold]
+
+# Create a subgraph with the subset of nodes
+subgraph <- subgraph(graph, subset_nodes)
+
+# Visualize the subgraph using the Fruchterman-Reingold layout
+ggraph(subgraph, layout = "fr") +
+  geom_edge_link() +
+  geom_node_point() +
+  geom_node_text(aes(label = name), repel = TRUE) +
+  theme_void()
+
+```
+
+
+```{r}
+# Create an igraph object from the dataset
+graph <- graph.data.frame(eurovision_data, directed = TRUE, vertices = NULL)
+
+# Calculate measures of popularity/status
+indegree <- degree(graph, mode = "in")  # In-degree centrality
+outdegree <- degree(graph, mode = "out")  # Out-degree centrality
+eigenvector_centrality <- eigen_centrality(graph)$vector  # Eigenvector centrality
+
+# Calculate measures of role/power
+betweenness <- betweenness(graph)  # Betweenness centrality
+constraint <- constraint(graph)  # Constraint measure
+
+# Identify nodes with remarkable values
+
+# Popularity/Status Measures
+prominent_indegree <- V(graph)$name[indegree == max(indegree)]
+prominent_outdegree <- V(graph)$name[outdegree == max(outdegree)]
+prominent_eigenvector <- V(graph)$name[eigenvector_centrality == max(eigenvector_centrality)]
+
+# Role/Power Measures
+prominent_betweenness <- V(graph)$name[betweenness == max(betweenness)]
+prominent_constraint <- V(graph)$name[constraint == max(constraint)]
+
+# Interpret the results
+
+# Popularity/Status Measures
+cat("Prominent nodes based on in-degree centrality:\n", prominent_indegree, "\n\n")
+cat("Prominent nodes based on out-degree centrality:\n", prominent_outdegree, "\n\n")
+cat("Prominent nodes based on eigenvector centrality:\n", prominent_eigenvector, "\n\n")
+
+# Role/Power Measures
+cat("Prominent nodes based on betweenness centrality:\n", prominent_betweenness, "\n\n")
+cat("Prominent nodes based on constraint measure:\n", prominent_constraint, "\n\n")
+```
+
+
+ 
+```{r}
+
+library(igraph)
+
+# Create the graph from the dataframe
+#graph <- graph.data.frame(df, directed = FALSE)
+
+# Set the threshold for tie strength
+threshold <- 5
+
+# Create a subset of the graph based on tie strength
+subset_graph <- delete_edges(graph, E(graph)[E(graph)$Points <= threshold])
+
+# Plot the subset graph
+plot(subset_graph, vertex.label = V(subset_graph)$name)
+
+```
+
+
+
+```{r}
+
+# Calculate centrality measures
+in_degrees <- igraph::degree(graph, mode = "in")
+out_degrees <- igraph::degree(graph, mode = "out")
+eigenvector <- eigen_centrality(graph)$vector
+betweenness <- igraph::betweenness(graph)
+
+# Define the measure that we are using and their interpretations
+measures <- c("In-Degree Centrality", "Out-Degree Centrality", "Eigenvector Centrality", "Betweenness Centrality")
+interpretations <- c(
+  "In-Degree Centrality: The number of incoming ties a node has. A higher in-degree centrality indicates popularity or influence in receiving votes.",
+  "Out-Degree Centrality: The number of outgoing ties a node has. A higher out-degree centrality indicates popularity or influence in giving votes.",
+  "Eigenvector Centrality: A measure that considers both the number and quality of a node's connections. A higher eigenvector centrality indicates being connected to other high-scoring nodes.",
+  "Betweenness Centrality: A measure of how often a node acts as a bridge along the shortest paths between other nodes. A higher betweenness centrality indicates being important for connecting other nodes."
+)
+
+# Print the interpretations
+for (i in 1:length(measures)) {
+  cat(paste0(measures[i], ":\n"))
+  cat(paste0(interpretations[i], "\n\n"))
+}
+
+# Print the range of observed values for each measure
+cat("Range of Observed Values:\n")
+cat("In-Degree Centrality: ", min(in_degrees), " - ", max(in_degrees), "\n")
+cat("Out-Degree Centrality: ", min(out_degrees), " - ", max(out_degrees), "\n")
+cat("Eigenvector Centrality: ", min(eigenvector), " - ", max(eigenvector), "\n")
+cat("Betweenness Centrality: ", min(betweenness), " - ", max(betweenness), "\n\n")
+
+# Identify nodes with remarkable values
+remarkable_nodes <- list(
+  "High In-Degree Centrality" = V(graph)[which(in_degrees == max(in_degrees))],
+  "Low In-Degree Centrality" = V(graph)[which(in_degrees == min(in_degrees))],
+  "High Out-Degree Centrality" = V(graph)[which(out_degrees == max(out_degrees))],
+  "Low Out-Degree Centrality" = V(graph)[which(out_degrees == min(out_degrees))],
+  "High Eigenvector Centrality" = V(graph)[which(eigenvector == max(eigenvector))],
+  "Low Eigenvector Centrality" = V(graph)[which(eigenvector == min(eigenvector))],
+  "High Betweenness Centrality" = V(graph)[which(betweenness == max(betweenness))],
+  "Low Betweenness Centrality" = V(graph)[which(betweenness == min(betweenness))]
+)
+
+# Print the remarkable nodes
+cat("Remarkable Nodes:\n")
+for (measure in names(remarkable_nodes)) {
+  cat(measure, ":\n")
+  cat(paste0("Node: ", remarkable_nodes[[measure]]$name, "\n"))
+  cat("\n")
+}
+
+
+
+```
+
+
+Czech Republic has the highest In-Degree Centrality, which means it has received the most votes.
+
+Several countries including Belgium, France, Ireland, etc., have the lowest In-Degree Centrality. This means these countries received the least number of votes.
+
+Sweden has the highest Out-Degree Centrality, Eigenvector Centrality, and Betweenness Centrality. This indicates that Sweden has given the most votes (high out-degree), is connected to other high-scoring nodes (high eigenvector), and often acts as a bridge in the shortest path between other nodes (high betweenness).
+
+Slovakia has the lowest Out-Degree Centrality, Eigenvector Centrality which suggests that it has given the least votes and is poorly connected to other high-scoring nodes.
+
+Yugoslavia, Slovakia, and Australia have the lowest Betweenness Centrality, indicating that they rarely act as a bridge in the shortest path between other nodes.
+
+
+```{r}
+library(ggraph)
+library(ggplot2)
+library(igraph)
+# Get unique countries
+countries <- unique(c(eurovision_data$`From country`, eurovision_data$`To country`))
+
+# Create an empty adjacency matrix
+adj_matrix <- matrix(0, nrow = length(countries), ncol = length(countries), dimnames = list(countries, countries))
+
+# Fill in the adjacency matrix based on the dataset
+for (i in 1:nrow(eurovision_data)) {
+  from_country <- eurovision_data$`From country`[i]
+  to_country <- eurovision_data$`To country`[i]
+  adj_matrix[from_country, to_country] <- 1
+}
+
+# Convert the adjacency matrix to a graph
+graph <- graph_from_adjacency_matrix(adj_matrix, mode = "directed")
+
+# Subset nodes based on node degree
+degree_threshold <- 10  # Set the degree threshold to select a subset of nodes
+#subset_nodes <- V(graph)[degree(graph) >= degree_threshold]
+
+# Create a subgraph with the subset of nodes
+#subgraph <- subgraph(graph, subset_nodes)
+
+# Visualize the subgraph
+ggraph(subgraph, layout = "fr") +
+  geom_edge_link() +
+  geom_node_point() +
+  geom_node_text(aes(label = name), repel = TRUE) +
+  theme_void()
+```
+```{r}
+# Function to detect communities using Louvain method
+detectCommunities <- function(g) {
+  # Convert graph to undirected
+  G_undirected <- as.undirected(g, mode = "collapse")
+  
+  # Apply Louvain method for community detection
+  communities <- cluster_louvain(G_undirected)
+  return(communities)
+}
+
+# Detect communities
+communities <- detectCommunities(graph)
+
+# Print community membership for each node
+print(membership(communities))
+```
+
+Nodes labeled from "1975" to "2009", "2010", "2012", "2014" to "2016", and "2019" are part of community 1. This might suggest that these years (or whichever attribute these labels represent) share some common characteristics in terms of how they are connected to other nodes in the network.
+
+Nodes labeled "2004" to "2007", and "sf" are part of community 2.
+
+Nodes labeled "2008", "2011", "2013", "2017", "2018", "sf1", and "sf2" are part of community 3.
+
+
+```{r}
+library(igraph)
+library(psych)
+
+# Number of communities
+num_communities <- length(community)
+
+# Print the number of communities
+cat("Number of Communities:", num_communities, "\n")
+
+# Comment on the community structure
+cat("The Louvain algorithm reveals a community structure in the Eurovision graph.\n")
+cat("Each community represents a group of countries that have similar voting patterns.\n")
+# Apply Louvain algorithm for community detection
+graph <- graph.data.frame(df2, directed = FALSE)
+
+community <- cluster_louvain(graph)
+cat("Theoretical/Practical Significance of Community Structure:\n")
+cat("The community structure is theoretically significant as it provides insights into the social dynamics and regional biases in the Eurovision voting system.\n")
+cat("It helps us understand whether certain countries tend to form alliances or voting blocs based on cultural, political, or geographical factors.\n")
+cat("Membership of Prominent Nodes:\n")
+cat("We can examine the community membership of the prominent nodes identified earlier based on different centrality measures.\n")
+cat("This will help us determine if leading prominent nodes are associated with specific communities or if they bridge multiple communities.\n")
+cat("Behavioral Implications:\n")
+cat("If the prominent nodes are concentrated in the same community ('core'), it suggests a strong influence of that community on the overall voting patterns.\n")
+cat("On the other hand, if prominent nodes are spread across different communities ('periphery'), it indicates rival factions or conflicting voting interests among different communities.\n")
+cat("Community Detection Algorithm's Impact:\n")
+cat("The choice of the Louvain algorithm does not inherently bias towards finding a specific type of community structure.\n")
+cat("However, the algorithm's effectiveness depends on the connectivity and clustering patterns present in the graph.\n")
+cat("If the Eurovision graph exhibits distinct communities with well-defined voting patterns, the Louvain algorithm is likely to identify them successfully.\n")
+cat("If the graph lacks strong community structure or has overlapping voting patterns, the algorithm may produce less clear-cut community assignments.\n")
+
+```
+
+I chose the Louvain algorithm for community detection in the Eurovision graph because it is a widely used and effective method for detecting communities in large networks. The Louvain algorithm is known for its ability to identify communities based on optimizing the modularity measure, which captures the density of connections within communities compared to random expectations.
+
+The Louvain algorithm is particularly suitable for the Eurovision graph because it can uncover communities that exhibit similar voting patterns. In the Eurovision context, countries tend to vote for their neighboring or culturally similar countries, leading to the formation of distinct voting blocs. By applying the Louvain algorithm, we can reveal these underlying communities or blocs and gain insights into the social dynamics of the Eurovision voting system.
+
+The algorithm assigns each country to a specific community, grouping together countries that share similar voting patterns. These communities represent clusters of countries that often exchange higher point values among themselves. The community structure identified by the Louvain algorithm helps us understand the regional biases and cultural affinities that influence the voting behavior in the Eurovision Song Contest.
+
+Overall, the Louvain algorithm allows us to uncover and analyze the community structure within the Eurovision graph, providing valuable insights into the social and cultural dynamics of the contest.
+
+
+The community structure identified in the Eurovision graph using the Louvain algorithm has both theoretical and practical significance. The membership of prominent nodes within the identified communities provides insights into the voting dynamics and potential rivalries or alliances among countries.
+
+In the Eurovision context, the prominent nodes represent countries that have consistently received high point values from other countries within their community. These countries are likely to have strong cultural or regional connections, leading to a higher likelihood of mutual support in the voting process. The membership of prominent nodes within specific communities suggests the existence of cohesive blocs or alliances based on shared cultural or geographical factors.
+
+The behavioral implications of the community structure can be significant. If we observe rival factions identified with leading prominent nodes in different communities, it indicates the presence of voting rivalries or political dynamics within the Eurovision Song Contest. Countries within these rival factions may strategically vote against each other or try to form alliances with other communities to gain a competitive advantage.
+
+On the other hand, if all the central nodes are in the same "core" community rather than dispersed across different communities, it suggests a strong cohesion and shared interests among the central countries. These central nodes are likely to have a significant influence on the overall voting patterns and outcomes of the contest.
+
+Understanding the community structure and the behavior of prominent nodes provides valuable insights for various stakeholders. It helps contestants and organizers gain an understanding of the voting dynamics and potential biases that may affect their chances of success. It also offers researchers and analysts an opportunity to study the social, cultural, and political factors that shape the Eurovision Song Contest and its outcomes.
+
+
+The community detection algorithm used in this case, the Louvain algorithm, is known for its effectiveness in identifying communities in large networks. It is a popular and widely used algorithm that efficiently detects communities based on maximizing modularity.
+
+The Louvain algorithm is well-suited for detecting communities in the Eurovision graph because it is specifically designed to handle networks with complex community structures and overlapping communities. It is capable of capturing both strong and weak ties between nodes, which is particularly relevant in the context of Eurovision voting patterns.
+
+The algorithm's ability to identify communities is not dependent on any pre-defined assumptions about the structure or number of communities. It dynamically optimizes the modularity metric to uncover the most meaningful and cohesive communities within the network. Therefore, the Louvain algorithm is well-equipped to uncover diverse types of communities, including both rival factions and cohesive core-periphery structures.
+
+
+
+```{r}
+library(ergm)
+library(ergm.count)
+library(statnet)
+library(readxl)
+Eurovision_2019 <- read_excel("_data/got/Eurovision_2019.xlsx")
+head(Eurovision_2019)
+dim(Eurovision_2019)
+
+# Convert Year and Points variables to character
+Eurovision_2019$Year <- as.character(Eurovision_2019$Year)
+Eurovision_2019$Points <- as.character(Eurovision_2019$Points)
+
+
+cug_d_size <- cug.test(Eurovision_2019,
+                       FUN = centralization,
+                       FUN.arg = list(FUN = "degree", mode = "all"), 
+                       mode = "digraph", 
+                       cmode = "size")
+
+# cug test - cond on edges
+cug_b_edges <- cug.test(Eurovision_2019,
+                        FUN = centralization,
+                        FUN.arg = list(FUN = "betweenness"), 
+                        mode = "digraph", 
+                        cmode = "edges")
+cug_d_size
+cug_b_edges
+
+# Print the cug test results
+#trans.cug
+
+```
+```{r}
+plot(cug_d_size)
+plot(cug_b_edges)
+
+```
+
+Conditioning on Size:
+
+Observed Value: The observed value of the centralization measure (degree) is 1942.695.
+Pr(X>=Obs): The probability of observing a value greater than or equal to the observed value is 0, indicating that the observed value is quite extreme.
+Pr(X<=Obs): The probability of observing a value less than or equal to the observed value is 1, suggesting that the observed value is highly likely.
+
+Conditioning on Edges:
+
+Observed Value: The observed value of the centralization measure (betweenness) is 0.8360294.
+Pr(X>=Obs): The probability of observing a value greater than or equal to the observed value is 0, indicating a significant deviation from baseline expectations.
+Pr(X<=Obs): The probability of observing a value less than or equal to the observed value is 1, suggesting that the observed value is highly likely.
+These results suggest that the structure of the network in the Eurovision 2019 data, when compared to baseline expectations, shows significant deviations in terms of both degree and betweenness centralization.
+
+
+
+
+```{r}
+library(readxl)
+library(dplyr)
+
+# Read the Eurovision 2019 data
+#Eurovision_2019 <- read_excel("path/to/your/Eurovision_2019.xlsx")
+
+# Calculate node-level measures
+country_appearances <- Eurovision_2019 %>%
+  group_by(From_country) %>%
+  summarise(appearances = n_distinct(Edition))
+
+country_wins <- Eurovision_2019 %>%
+  group_by(From_country) %>%
+  summarise(wins = sum(Points == max(Points)))
+
+# Merge node-level measures with the Eurovision 2019 data
+Eurovision_2019 <- Eurovision_2019 %>%
+  left_join(country_appearances, by = "From_country") %>%
+  left_join(country_wins, by = "From_country")
+
+# Perform OLS regression
+ols_model <- lm(Points ~ appearances + wins, data = Eurovision_2019)
+
+
+
+```
+
+## Challenges
+
+1. Data Preprocessing is one of the initial challenges I faced with this dataset , as the Dataset is very huge from the year 1975 to 2019 and consists of around 50k rows.
+
+2. Performing cug test - Beacuse of the huge data and less memory optimisation, Unable to perform for the whole dataset. Cug test is performed on the subset of the eurovision data.
+
+3. Hypothesis Testing
+
+
+## Conclusion
+
+ These findings provide insights into the dynamics of the Eurovision network, showcasing countries with high popularity, influence, and role/power. The network analysis allows us to understand the connections and relationships between countries participating in the Eurovision Song Contest.
+
+Overall, this project demonstrates the application of EDA and network analysis techniques to gain insights into a complex and interconnected dataset like Eurovision. The findings can be further explored and analyzed to understand the factors influencing voting patterns, cultural dynamics, and the overall dynamics of the Eurovision Song Contest.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
