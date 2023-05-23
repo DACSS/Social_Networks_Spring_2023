@@ -1,5 +1,5 @@
 ---
-title: "Week1_Challenge"
+title: "Week1_Challenge_Niharika Pola"
 author: "Niharika Pola"
 description: "Loading Data and Creating a Network"
 date: "02/13/2023"
@@ -9,7 +9,6 @@ format:
     code-fold: true
     code-copy: true
     code-tools: true
-# editor: visual
 categories: 
   - challenge_1
   - instructions
@@ -40,7 +39,7 @@ Read in one (or more) of the following data sets, using the correct R package an
 
 ```{r}
 library(readr)
-got_marriages <- read_csv("posts/_data/got/got_marriages.csv")
+got_marriages <- read_csv("_data/got/got_marriages.csv")
 head(got_marriages)
 ```
 

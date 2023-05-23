@@ -1,5 +1,5 @@
 ---
-title: "Week2_Challenge"
+title: "Week2_Challenge_Niharika Pola"
 author: "Niharika Pola"
 description: "Describing the Basic Structure of a Network"
 date: "02/22/2023"
@@ -68,7 +68,7 @@ Now use \`triad.census\` in order to do a triad census.
 
 Compute global transitivity using \`transitivity\` on \`igraph\` or \`gtrans\` on \`statnet\` and local transitivity of specific nodes of your choice, in addition to the average clustering coefficient. What is the distribution of node degree and how does it compare with the distribution of local transitivity?
 
-##### Path Length and Component Structure 
+##### Path Length and Component Structure
 
 Can you compute the average path length and the \_diameter\_ of the network? Can you find the component structure of the network and identify the cluster membership of each node?
 
@@ -82,7 +82,7 @@ library(igraph)
 ```{r}
 #Loading dataset
 library(readr)
-got_distances <- read_csv("posts/_data/got/got_distances.csv")
+got_distances <- read_csv("_data/got/got_distances.csv")
 head(got_distances)
 ```
 

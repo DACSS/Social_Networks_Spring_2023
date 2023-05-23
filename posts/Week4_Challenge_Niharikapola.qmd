@@ -37,7 +37,7 @@ Compute at least one measure of centrality for each node, adding them as attribu
 
 ```{r}
 library(readr)
-got_distances <- read_csv("posts/_data/got/got_distances.csv")
+got_distances <- read_csv("_data/got/got_distances.csv")
 head(got_distances)
 ```
 

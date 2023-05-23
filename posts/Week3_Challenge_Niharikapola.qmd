@@ -1,5 +1,5 @@
 ---
-title: "Week3_Challenge"
+title: "Week3_Challenge_Niharika Pola"
 author: "Niharika Pola"
 description: "Degree and Density of a Network"
 date: "03/10/2023"
@@ -29,7 +29,7 @@ library(readr)
 ```
 
 ```{r}
-got_distances <- read_csv("posts/_data/got/got_distances.csv")
+got_distances <- read_csv("_data/got/got_distances.csv")
 head(got_distances)
 got_distances.ig <-graph_from_data_frame(got_distances, directed = TRUE)
 ```
