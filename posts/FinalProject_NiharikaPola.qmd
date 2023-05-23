@@ -127,7 +127,6 @@ top_countries <- top_countries[top_countries != "Other"]
 df_fin$Q4_top <- ifelse(df_fin$Q4 %in% top_countries, df_fin$Q4, NA)
 
 df_fin <- df_fin[-1, ]
-df_fin
 ```
 
 Each of the ML based questions are categorized in to four columns and a dataframe called df_skills. The socio-demo graphic columns are grouped into df_socdem dataframe and these two are merged into the final data set df_fin.
