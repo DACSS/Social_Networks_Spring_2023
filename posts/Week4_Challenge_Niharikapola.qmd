@@ -1,0 +1,93 @@
+---
+title: "Week 4 Challenge"
+author: "Niharika Pola"
+description: "Centrality of a Network"
+date: "03/10/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+# editor: visual
+categories: 
+  - challenge_4
+  - instructions
+  # - railroads
+  # - faostat
+  # - wildbirds
+---
+
+```{r}
+#| label: setup
+#| include: false
+```
+
+#### Challenge Overview
+
+Describe the many measures of centrality of at least one network of your choice.
+
+##### Describe the Network Data
+
+If you have not done it before, always start by evaluating the basic structure of the network (number of edges and vertices, dyad and triad census, etc.). Create a data frame \`nodes\` with the corresponding local attributes such as degree or local transitivity.
+
+##### Centrality
+
+Compute at least one measure of centrality for each node, adding them as attributes to \`nodes\` in the form of extra columns: eigencentrality, betweenness, closeness, etc. Compute the distribution of at least one of those measures. What do we learn from comparing these measures of centrality with an equivalent random network (i.e. with the same number of edges and vertices)?
+
+```{r}
+library(readr)
+got_distances <- read_csv("_data/got/got_distances.csv")
+head(got_distances)
+```
+
+```{r, warning=FALSE}
+# Load the required package
+library(igraph)
+# Create the network from the dataset
+net <- graph.data.frame(got_distances, directed = FALSE)
+# Basic structure of the network
+edges <- ecount(net)
+vertices <- vcount(net)
+# Dyad and triad census
+dyads <- dyad_census(net)
+triads <- triad_census(net)
+# Create the nodes data frame with local attributes
+nodes <- data.frame(
+  vertex = V(net)$name,  # Assuming the vertices have a 'name' attribute
+  degree = degree(net),
+  transitivity = transitivity(net, type = "local")
+)
+```
+
+```{r}
+# Print the basic network structure
+cat("Number of edges:", edges, "\n")
+cat("Number of vertices:", vertices, "\n")
+print(dyads)
+print(triads)
+# Print the nodes data frame
+print(nodes)
+```
+
+```{r}
+in_net <- centr_degree(net, loops = FALSE, mode = "in")
+in_net
+out_net <- centr_degree(net, loops = FALSE, mode = "out")
+out_net
+net_total <- centr_degree(net, loops = FALSE, mode = "total")
+net_total
+```
+
+```{r}
+eigen <- eigen_centrality(net)$vector
+betweeness <- igraph::betweenness(net, directed = F)
+close <- igraph::closeness(net, mode = "out")
+```
+
+```{r}
+# Compute the distribution of one centrality measure (e.g., eigencentrality)
+eigen_dist <- table(nodes$eigen)
+# Print the distribution of eigencentrality
+print(eigen_dist)
+```
