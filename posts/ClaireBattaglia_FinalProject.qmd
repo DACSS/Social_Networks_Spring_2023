@@ -80,8 +80,8 @@ I'll begin by reading in my data and transforming it into a network object.
 
 ```{r data}
 # read in data
-nodes <- read.csv("food_system_network - nodelist.csv", header = T, as.is = T)
-links <- read.csv("food_system_network - edgelist.csv", header = T, as.is = T)
+nodes <- read.csv("_data/food_system_network - nodelist.csv", header = T, as.is = T)
+links <- read.csv("_data/food_system_network - edgelist.csv", header = T, as.is = T)
 ```
 
 ```{r preview}
