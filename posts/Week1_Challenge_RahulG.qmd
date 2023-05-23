@@ -1,0 +1,60 @@
+---
+title: "Week1_Challenge"
+author: "Rahul Gundeti"
+description: "Loading Data and Creating a Network"
+date: "02/13/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+# editor: visual
+categories: 
+  - challenge_1
+  - instructions
+---
+
+```{r}
+#| label: setup
+#| include: false
+```
+
+#### Challenge Overview
+
+This Challenge is to
+
+1\) Read a dataset, and
+
+2\) Create a network object
+
+#### Loading the data
+
+Read in one (or more) of the following data sets, using the correct R package and command.
+
+\- got_marriages.csv
+
+\- fish_encounters dataset (available in the \`tidyr\` package)
+
+\- got_like_dislike.csv
+
+```{r}
+library(readr)
+got_like_dislike <- read_csv("_data/got/got_like_dislike.csv")
+head(got_like_dislike)
+```
+
+#### Creating a network
+
+Load the package \`igraph\` and create an \`igraph\` object (i.e. a graph or network) in the form of an edge list. The command may vary whether the data is given as a list of connections or an adjacency matrix. Is the network directed or undirected; weighted or unweighted; unimodal or bipartite? Can you plot it?
+
+```{r}
+library(igraph)
+net.igraph <- graph_from_data_frame(got_like_dislike, directed = TRUE)
+
+# Check if the network is directed or undirected, weighted or unweighted, unimodal or bipartite
+is_bipartite(net.igraph)
+is_weighted(net.igraph) 
+is_directed(net.igraph) 
+plot(net.igraph)
+```
