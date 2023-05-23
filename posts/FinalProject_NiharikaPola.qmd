@@ -19,7 +19,7 @@ library(igraph)
 
 ```{r, warning=FALSE}
 #reading the raw data
-data_2022 <- read.csv("kaggle_survey_2022_responses.csv")
+data_2022 <- read.csv("DataFolder_NiharikaPola/kaggle_survey_2022_responses.csv")
 dim(data_2022)
 ```
 
