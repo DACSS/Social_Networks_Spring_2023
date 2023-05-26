@@ -1,0 +1,176 @@
+---
+title: "WK7Challenge_KDocekal"
+output: html_document
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+---
+
+```{r, message=FALSE}
+#| label: setup
+#| warning: false
+
+library(tidyverse)
+library(igraph)
+library(statnet)
+library(gssr)
+library(drat)
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+My dataset uses results from the 1985 General Social Survey. The 1985 GSS dataset is in edgelist format. There are 1534 observations with 622 variables.
+
+```{r}
+remotes::install_github("kjhealy/gssr")
+
+drat::addRepo("kjhealy")
+
+gss85 <- gss_get_yr(1985)
+
+head(
+gss85)
+
+dim(gss85)
+
+```
+
+We can first create the dataframe by selecting the ties variable. Here I use "talkto" which provides weighted edges based on members a respondent's group of contacts. Weights are based on respondents' perception of how much each contact talks to each other.
+
+```{r}
+
+ties <- gss85[,grepl("talkto", colnames(gss85))]
+head(ties)
+
+```
+
+A matrix and the igraph network can be created using the previous ties. There are 5 rows and columns corresponding to the number of respondent contacts, ties are undirected and weighted.
+
+```{r}
+mat = matrix(nrow = 5, ncol = 5)
+
+mat[lower.tri(mat)] <- as.numeric(ties[3,])
+
+mat[upper.tri(mat)] = t(mat)[upper.tri(mat)]
+
+na_vals <- is.na(mat)
+non_missing_rows <- rowSums(na_vals) < nrow(mat)
+mat <- mat[non_missing_rows,non_missing_rows]
+
+diag(mat) <- 0
+
+mat
+
+
+ig.net <- graph.adjacency(mat, mode = "undirected", weighted = T)
+
+
+```
+
+Edges represent the weight between contacts. Contacts are numbered 1-5, based on participants' response order. For example, Edge 1--2 indicates that contacts number 1 and 2 talk to each other.
+
+```{r}
+
+print(ig.net)
+
+head(ig.net)
+
+```
+
+Results show that there is 1 component and the median weight is 2.
+
+```{r}
+
+igraph::components(ig.net)$no
+
+
+summary(E(ig.net)$weight)
+
+
+```
+
+This network contains 5 vertices and 10 edges. Ties are not bipartite or directed but they are weighted.
+
+```{r}
+
+vcount(ig.net)
+ecount(ig.net)
+
+is_bipartite(ig.net)
+is_directed(ig.net)
+is_weighted(ig.net)
+
+
+```
+
+As an undirected graph we can use Fast and Greedy for community clustering.
+
+```{r}
+
+#Run clustering algorithm: fast_greedy
+comm.fg<-cluster_fast_greedy(ig.net)
+
+#Inspect clustering object
+names(comm.fg)
+
+```
+
+This identifies two groups; contact 3 and all other nodes.
+
+```{r}
+comm.fg
+```
+
+Examining the community membership vector shows membership distribution.
+
+```{r}
+
+comm.fg$membership
+
+```
+
+Plotting with coloring shows a visualization of these two communities.
+```{r}
+
+plot(comm.fg,ig.net)
+
+```
+
+
+Walktrap is another potential algorithm for community detection. 
+```{r}
+
+comm.wt<-walktrap.community(ig.net)
+
+
+igraph::groups(comm.wt)
+
+
+```
+
+
+Testing with steps ranging from 20 to 2000 all reveal the same, single community. 
+```{r}
+igraph::groups(walktrap.community(ig.net ,steps=20))
+
+igraph::groups(walktrap.community(ig.net ,steps=200))
+
+igraph::groups(walktrap.community(ig.net ,steps=2000))
+
+```
+
+Plotting the network with Walktrap shows a single community with all nodes connected. The walktrap community makes the most sense as the more representative graph as we already know nodes are connected through their association with the respondent. In this case changing the number of steps does affect theses results and confirms our expectations. 
+
+```{r}
+
+plot(comm.wt,ig.net)
+
+```
+
+
+
