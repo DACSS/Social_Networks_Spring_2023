@@ -1,0 +1,261 @@
+---
+title: "Challenge Four "
+author: "Cynthia Hester"
+description: "Centrality of a Network"
+date: "03/20/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+# editor: visual
+categories: 
+  - Cynthia Hester
+  - Challenge Four
+---
+
+```{r}
+#| label: setup
+#| include: false
+#| 
+library(igraph)
+library(network)
+library(statnet)
+library(tidyverse)
+library(readr)
+```
+
+## Challenge Overview
+
+Describe the many measures of centrality of at least one network of your choice.
+*******************************************************************************
+For  Challenge Four I will use the **GOT Location** data.
+
+```{r,results='hide'}
+
+
+#import the data
+got_locations <- "C:/Users/Bud/Desktop/DACSS_697E_Social Network Analysis_SP2023/Social_Networks_SP_2023/posts/_data/got/got_locations.csv"
+
+# Read the CSV file into a dataframe
+got_locations_data <- read.csv(got_locations)
+
+```
+
+
+
+checking out first few rows of data
+
+```{r,results='hide'}
+
+head(got_locations_data)
+```
+
+
+
+## Describe the Network Data
+
+If you have not done it before, always start by evaluating the basic structure of the network (number of edges and vertices, dyad and triad census, etc.). Create a data frame `nodes` with the corresponding local attributes such as degree or local transitivity.
+
+************************************************************************
+
+
+```{r,results='hide'}
+# Extracting matrix from data frame
+adj_matrix <- as.matrix(got_locations_data[, -c(1:3)])
+
+# Check if the matrix is square
+if (nrow(adj_matrix) == ncol(adj_matrix)) {
+  got_locations_data.ig <- graph_from_adjacency_matrix(adj_matrix, mode = 'directed', weighted = TRUE)
+} else {
+  print("Adjacency matrix is not square")
+}
+
+```
+
+
+
+
+
+
+```{r,results='hide'}
+
+
+
+if (ncol(got_locations_data) == 2) {
+  # The data is an edge list
+  got_locations_data.ig <- graph_from_edgelist(as.matrix(got_locations_data), directed = TRUE)
+} else {
+  print("The data format is not supported.")
+}
+
+```
+
+```{r,results='hide'}
+dim(got_locations_data)
+```
+
+```{r}
+got_locations_data
+```
+
+
+
+```{r,results='hide'}
+
+got_locations_data[1 : 4, 1 : 4]
+
+```
+
+
+```{r,results='hide'}
+
+edge_list <- combn(got_locations_data$place, 2)
+
+
+got_graph <- graph_from_edgelist(t(edge_list), directed = FALSE)
+
+# Get the adjacency matrix of the graph
+adj_matrix <- as_adjacency_matrix(got_graph)
+
+# Print adjacency matrix
+print(adj_matrix)
+
+
+```
+## Network Attributes
+
+edges
+
+```{r,results='hide'}
+
+ecount(got_graph)
+
+```
+
+
+nodes
+
+```{r,results='hide'}
+#  nodes of the graph
+#print(V(got_graph)$name)
+vcount(got_graph)
+
+```
+
+
+
+
+dyad census
+
+```{r,results='hide'}
+# Calculate dyad 
+dyad_census <- dyad_census(got_graph)
+
+# Print dyad 
+print(dyad_census)
+```
+
+
+triad census
+
+```{r,results='hide'}
+#  triad census
+triad_census <- triad_census(got_graph)
+
+# Print triad 
+print(triad_census)
+
+
+```
+
+
+
+****************************************************************************
+
+
+
+
+```{r,results='hide'}
+
+
+print(got_graph)
+summary(got_graph)
+
+```
+## transitivity
+
+```{r,results='hide'}
+transitivity(got_graph, type = 'local')
+```
+
+```{r,results='hide'}
+transitivity(got_graph, type = "global")
+```
+
+
+
+```{r,results='hide'}
+
+
+transitivity(got_graph, type = "localaverage")
+```
+
+
+```{r,results='hide'}
+#Directed or undirected edges verification 
+
+is_directed(got_graph)
+```
+
+
+```{r,results='hide'}
+
+#Bipartite or single mode network verification got locations
+
+is_bipartite(got_graph)
+
+```
+
+
+
+```{r,results='hide'}
+
+# Weighted or unweighted edges verification in got locations
+
+is_weighted(got_graph)
+```
+
+
+## Centrality
+
+
+
+```{r,results='hide'}
+library(igraph)
+
+ 
+
+# betweenness centrality
+V(got_graph)$betweenness <- igraph::betweenness(got_graph)
+
+# closeness centrality
+V(got_graph)$closeness <- igraph::closeness(got_graph)
+
+# eigenvector centrality
+V(got_graph)$eigen_centrality <- igraph::eigen_centrality(got_graph)$vector
+
+# data frame for centrality measures
+centrality_df <- data.frame(
+  Node = V(got_graph)$name,
+  Betweenness = V(got_graph)$betweenness,
+  Closeness = V(got_graph)$closeness,
+  Eigenvector = V(got_graph)$eigen_centrality
+)
+
+# Print the centrality table
+print(centrality_df)
+
+
+```
