@@ -1,0 +1,499 @@
+---
+title: "DACSS753: Political and Social Networks Final"
+author: "Kalimah Muhammad"
+description: "Evaluating the Exchange of Advice in Two Organizations"
+date: "05/20/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+# editor: visual
+categories: 
+  - final
+---
+
+```{r, warning=FALSE, include=FALSE}
+library(igraph) 
+library(statnet)
+library(sna)
+library(readxl)
+library(network)
+library(ggplot2)
+library(tidyverse)
+library(DT)
+```
+
+```{r, load data sets}
+#read in data sets
+#load consulting firm's advice edgelist
+cn_advice<- read_xlsx("_data/Consulting_Advice_Network.xlsx")
+
+#load research and development team's advice edgelist
+rd_advice <- read_xlsx("_data/R&D_Advice.xlsx")
+```
+
+
+## 1. Introduction: A Social Network Analysis of Advice Requests
+
+In the book, The Hidden Power of Social Networks: Understanding How Work Really Gets Done in Organizations, Rob Cross and Andrew Parker conduct social network analyses of 60 organizations around the world. Cross and Parker suggests managers do not understand how their employees get work done and reveal there are hidden social networks at play impacting an organization's performance.[1] 
+
+This project will focus on two companies, a consulting firm and a research and development team, and the frequency of advice exchanged within each network. The data was compiled from survey questions before and then compiled into two edge lists. You can find the source data and further details in the Resources section.[2] 
+
+For the consulting firm, participants were asked, "Please indicate how often you have turned to this person for information or advice on work-related topics in the past three months." Options= 0: I Do Not Know This Person; 1: Never; 2: Seldom; 3: Sometimes; 4: Often; and 5:Very Often. 
+
+For the research and development team, participants were asked, "Please indicate the extent to which the people listed below provide you with information you use to accomplish your work." Options= 0: I Do Not Know This Person/I Have Never Met this Person; 1: Very Infrequently; 2: Infrequently; 3: Somewhat Infrequently; 4: Somewhat Frequently; 5: Frequently; and 6: Very Frequently.
+
+This project analyzes the two networks to investigate trends in the frequency and concentration of advice exchanged. 
+
+```{r, warning=FALSE}
+#create igraph object for consulting firm
+cn_advice.ig <- graph_from_data_frame(cn_advice)
+
+#create statnet object for consulting firm
+cn_advice.stat <- as.network(cn_advice, loops = TRUE, multiple = TRUE)
+
+#create igraph object for research and development team
+rd_advice.ig<- graph_from_data_frame(rd_advice)
+#create statnet object for research and development team
+rd_advice.stat <- as.network(rd_advice, loops = TRUE, multiple = TRUE)
+
+```
+
+## 2. Data
+
+This project includes two edge lists with variables for the source listed as "From", the target node as "To", and an ordinal variable for frequency of advice as "Value."
+
+### Network Properties
+
+**Consulting Firm**
+
+```{r, consulting network properties}
+#size of the data set
+dim(cn_advice)
+
+#summarize consulting network attributes
+print(cn_advice.stat)
+
+#check if network is weighted
+print(str_c("Is the consulting network data set weighted? ", is_weighted(cn_advice.ig)," "))
+
+#check if network is multiplex
+print(str_c("Is the consulting network data set multiplex? ",is.multiplex(cn_advice.stat), " "))
+```
+
+The consulting firm includes 879 edges/ties representing a connection between nodes and 46 nodes/vertices representing individual employees. The ties are directed based on who received advice from who. The network is neither bipartite nor weighted and it is unclear from the source if this data is a sample or universal to the company. 
+
+**Research and Development Team**
+
+```{r, research network properties}
+#summarize consulting network attributes
+print(rd_advice.stat)
+
+#check if network is weighted
+print(str_c("Is the research and development network data set weighted? ", is_weighted(rd_advice.ig)," "))
+
+#check if network is multiplex
+print(str_c("Is the research and development network data set multiplex? ",is.multiplex(rd_advice.stat), " "))
+```
+
+The research and development team includes 2228 edges/ties and 77 nodes/ vertices. This network is also directed but not weighted or bipartite. It is unclear from the source if this data set is a sample or universal to this company. 
+
+## 3. Network-Level Statistics
+
+This section reviews descriptive statistics for each social network.
+
+### Degree and Degree Distribution
+
+**Consulting Firm**
+
+```{r}
+#create dataframe of node level stats
+cn_advice.nodes<-data.frame(totdegree=sna::degree(cn_advice.stat,gmode="digraph"))
+                            
+hist(cn_advice.nodes$totdegree, main = paste("Histogram of Consulting Firm's Total Degree Distribution"), xlab = "Count of Total Degrees", ylab = "Frequency")
+summary(cn_advice.nodes$totdegree)
+```
+
+The plot above show a mildly flat distribution except for nodes between 40-50 total degrees. This sharp increase may suggest certain roles or positions have increased connections such as middle managers or subject matter experts playing an important part in the exchange of information in the firm. 
+
+**Research and Development Team**
+
+```{r, rd histogram}
+#create dataframe of node level stats
+rd_advice.nodes<-data.frame(totdegree=sna::degree(rd_advice.stat,gmode="digraph"))
+
+#plot histogram of degree distribution
+hist(rd_advice.nodes$totdegree, main = paste("Histogram of R&D Team's Total Degree Distribution"), xlab = "Count of Total Degrees", ylab = "Frequency")
+
+#list summary of total degree distribution
+summary(rd_advice.nodes$totdegree)
+```
+
+The plot above show a slightly skewed distribution with the highest concentration of total degrees around 40. The exceptions are nodes with 90+ total degrees.This long tail on the right side suggests status and hierarchy may play a role in advice given/received. 
+
+### Centralization
+
+```{r, centralization}
+#get network centralization score for consulting firm
+centralization(cn_advice.stat, degree, cmode="indegree")
+centralization(cn_advice.stat, degree, cmode="outdegree")
+
+#get network centralization score for R&D team
+centralization(rd_advice.stat, degree, cmode="indegree")
+centralization(rd_advice.stat, degree, cmode="outdegree")
+```
+
+The centralization for requests received, represented by the in-degree, is fairly decentralized for both the consulting firm (0.29) and the R&D team (0.33). There is, however, more centralization for requests sent, represented by out-degree, for the consulting firm (0.59) and the R&D team (0.63). This suggest that at the network-level, both groups have distributed advice received, and a concentration of nodes sending advice requests.
+
+### Components and Density
+
+**Consulting Firm**
+
+```{r, components cn}
+#get number of components
+igraph::components(cn_advice.ig)$no 
+
+#get size of each component
+igraph::components(cn_advice.ig)$csize
+
+#network diameter
+diameter(cn_advice.ig)
+
+#get network density with loops: igraph
+graph.density(cn_advice.ig, loops=TRUE) 
+```
+
+There is one giant component containing all 46 nodes. The diameter or length of the longest geodesic is 3. The network density is also moderately low (0.42). This usually means there is less possibility of information to spread and is likely a contributor to the skewed degree distribution and influence in the network. 
+
+**Research and Development Team**
+
+```{r, components rd}
+#get number of components
+igraph::components(rd_advice.ig)$no 
+
+#get size of each component
+igraph::components(rd_advice.ig)$csize
+
+#network diameter
+diameter(rd_advice.ig, directed = TRUE)
+
+#get network density with loops: igraph
+graph.density(rd_advice.ig, loops=TRUE) 
+```
+
+There is one giant component in the research and development team's network including all 77 nodes. The diameter, the length of the longest geodesic is the same as the smaller consulting network suggesting the path connections is still short in a larger social network. The network density for the consulting firm has a moderately low (0.38) meaning many nodes have little social capital but a small number have much.
+
+### Dyads and Triads
+
+**Consulting Firm**
+
+```{r, network structure cn}
+#Dyad census, triad census
+#Classify all dyads in the network: statnet
+sna::dyad.census(cn_advice.stat)
+
+#Classify all triads in the network: statnet
+sna::triad.census(cn_advice.stat)
+```
+
+In the consulting firm's network, 55% of the total 880 observations are null/ absent (485). This is also reflected in the high unconnected triples in the triad census. Among mutual or reciprocal dyads, there are 327 ties followed closely by the asymmetrical dyads at 223. These findings may point towards a concentration of information with a subset group that is shared in a hierarchical manner. 
+
+**Research and Development Team**
+
+```{r, network structure rd}
+#Dyad census and triad census
+#Classify all dyads in the network: statnet
+sna::dyad.census(rd_advice.stat)
+
+#Classify all triads in the network: statnet
+sna::triad.census(rd_advice.stat)
+```
+
+In the research and development network, most of the 2228 ties were absent or null (1585). This trend is also reflected in the high number of unconnected triples in the triad census. 
+
+There are 887 mutual or reciprocal relationships suggesting a collaborative culture or work environment among those connected. This finding could also open up opportunity for more brokerage and collaboration among absent ties. Finally, there are 454 asymmetrical dyads, likely due to hierarchy in the organization, representing the remaining ties. 
+
+### Transitivity
+
+**Consulting Firm**
+
+```{r, transitivity cn}
+#transitivity
+#get global clustering coefficient: igraph
+transitivity(cn_advice.ig, type="global")
+
+#get average local clustering coefficient: igraph
+transitivity(cn_advice.ig, type="average")
+```
+
+The average local transitivity (0.80) is higher than the overall network transitivity (0.72) suggesting subgroups are more connected to each other than the group is to the whole organization. 
+
+**Research and Development Team**
+
+```{r, transitivity rd}
+#transitivity
+#get global clustering coefficient: igraph
+transitivity(rd_advice.ig, type="global")
+
+#get average local clustering coefficient: igraph
+transitivity(rd_advice.ig, type="average")
+```
+
+Similar to the consulting firm, the research and development team's average local transitivity (0.78) is higher than the overall network transitivity (0.67) suggesting once again that  subgroups are more connected to each other than the group is to the whole organization.
+
+## 4. Plot Networks
+
+**Consulting Firm**
+
+```{r, plot consulting network}
+
+#calculate degree for each node
+cn.deg <- degree(cn_advice.stat, gmode="digraph")
+
+#plot the consulting network based on degree size
+plot(cn_advice.ig, vertex.size=cn.deg*.3, edge.arrow.size = 0.5, edge.arrow.width = 0.5, arrow.mode=3, main="Network of a Consulting Firm's Internal Advice Requests", sub="Node Size Indicates Degree of Total Requests for the Employee")
+
+```
+
+On first glance, there are two/three relationships far from the other nodes but connected (15, 24 and 30). There is also a cluster of larger nodes towards the center with increasingly smaller nodes going outwards. This suggests a central position for nodes 2, 16, 20, 22, and 45. Finally, a cluster of nodes appears emerging on the bottom, perhaps from nodes 2, 20, 45's influence.
+
+**Research and Development Team**
+
+```{r, plot research network}
+
+#calculate degree for each node
+rd.deg <- degree(rd_advice.stat,gmode="digraph")
+
+#plot the consulting network based on degree size
+plot(rd_advice.ig, vertex.size=rd.deg*.3, edge.arrow.size = 0.5, edge.arrow.width = 0.5, arrow.mode=3, main="Network of a R&D Team's Internal Advice Requests", sub="Node Size Indicates Degree of Total Requests for the Employee", rescale=TRUE)
+
+```
+
+The research and development team has at least five clusters of relationships. The central nodes including 15, 28, 68, and 74 have the most ties and and node sizes decrease on the perimeter of the network. Like the consulting firm, there is also another prominent cluster emerging with more ties than the other clusters. 
+
+## 5. Prominent Roles: Node-Level Statistics
+
+**Consulting Firm**
+
+```{r, cn node level stats}
+#create dataframe of node level stats
+cn_advice.nodes<-data.frame(totdegree=sna::degree(cn_advice.stat,gmode="digraph"),
+        indegree=sna::degree(cn_advice.stat, cmode="indegree"),
+        outdegree=sna::degree(cn_advice.stat, cmode="outdegree"),
+        betweenness=sna::betweenness(cn_advice.stat, gmode="digraph"),
+        close=sna::closeness(cn_advice.stat, cmode="suminvdir"),
+        constraint=constraint(cn_advice.ig),
+        eigen=sna::evcent(cn_advice.stat, gmode="digraph", diag=TRUE)
+        )
+```
+
+Below is a summary of the average node degrees and degree distribution. 
+
+```{r, cn summarize node statistics}
+#get summary statistics for node attributes
+summary(cn_advice.nodes)
+```
+
+Most of the above metrics have a fairly normal distribution. In-/Out-degrees have similar averages but the maximum out-degree (45) appears much higher than the maximum in-degree (32). The betweenness scores appear skewed to a few high scorers and not reflective of the majority. Constraint is generally low among the nodes. Reflected centrality is low and derived centrality is high suggesting the nodes are primarily pure bridges. 
+
+The next section includes details on each node.
+
+```{r, echo=TRUE}
+cn.mat<-as.matrix(as_adjacency_matrix(cn_advice.ig))
+
+#create dataframe of node level stats
+cn.nodes<-data.frame(cn.mat)
+
+#square the adjacency matrix
+cn.matsq<-t(cn.mat) %*% cn.mat
+
+#Calculate the proportion of reflected centrality.
+cn_advice.nodes$rc<-diag(cn.matsq)/rowSums(cn.matsq)
+
+#Calculate the proportion of derived centrality.
+cn_advice.nodes$dc<-1-diag(cn.matsq)/rowSums(cn.matsq)
+#replace missing values with 0
+cn_advice.nodes$dc<-ifelse(is.nan(cn_advice.nodes$dc),1,cn_advice.nodes$dc)
+
+#view node details as a data table
+datatable(cn_advice.nodes)
+```
+
+Node #20 stands out with the highest total degree (65), in-degree (32), out-degree (32), degree weight (65), betweenness (97.92), closeness (0.87), and constraint (0.10). This would suggest that Node #20 has the highest efficiency or popularity based on the total degree and that this node's connections are fairly mutual with equal in-/out-degrees. The high between score show this node may be a gatekeeper or broker and the low constraint score show minimal redundant information between ties.Based  on this information, it's expected that Node #20 would be a central player within this network.
+
+Node #12 has the highest betweenness score (138.02) and one of the highest closeness metrics (1.0). This person may be a key gatekeeper within the network.
+
+Node #30 had the lowest metrics with total degree (4), in-degree (3), out-degree (1), degree weight (4), betweenness (0), closeness (0.02), and constraint (0.12). This may be due to the node being fairly isolated in the role.
+
+Note, nodes #12 and #16 had a connection with each node in the network.
+
+**Research and Development Team**
+
+```{r, rd node level stats}
+#create dataframe of node level stats
+rd_advice.nodes<-data.frame(totdegree=sna::degree(rd_advice.stat,gmode="digraph"),
+        indegree=sna::degree(rd_advice.stat, cmode="indegree"),
+        outdegree=sna::degree(rd_advice.stat, cmode="outdegree"),
+        betweenness=sna::betweenness(rd_advice.stat, gmode="digraph"),
+        close=sna::closeness(rd_advice.stat, cmode="suminvdir"),
+        constraint=constraint(rd_advice.ig),
+        eigen=sna::evcent(rd_advice.stat, gmode="digraph", diag=TRUE)
+        )
+```
+
+
+Below is a summary of the node-level degrees and statistics for the research and development team. 
+
+```{r, rd summarize node statistics}
+#get summary statistics for node attributes
+summary(rd_advice.nodes)
+```
+
+Once again, most metrics have a fairly normal distribution. The average  in-/out-degree is similar but the maximum out-degree (76) far exceeds the maximum in-degree (54). The constraint in the network is low.  Reflected centrality is low with derived centrality high suggesting all pure bridges in this network. 
+There is one extreme outlier (520) for the betweenness score. 
+
+The next section includes details on each node.
+
+```{r, echo=TRUE}
+rd.mat<-as.matrix(as_adjacency_matrix(rd_advice.ig))
+
+#create dataframe of node level stats
+rd.nodes<-data.frame(rd.mat)
+
+#square the adjacency matrix
+rd.matsq<-t(rd.mat) %*% rd.mat
+
+#Calculate the proportion of reflected centrality.
+rd_advice.nodes$rc<-diag(rd.matsq)/rowSums(rd.matsq)
+
+#Calculate the proportion of derived centrality.
+rd_advice.nodes$dc<-1-diag(rd.matsq)/rowSums(rd.matsq)
+#replace missing values with 0
+rd_advice.nodes$dc<-ifelse(is.nan(rd_advice.nodes$dc),1,rd_advice.nodes$dc)
+
+#view node details as a data table
+datatable(rd_advice.nodes)
+
+```
+
+Node #68 stands out with the highest total degree (130), in-degree (54), out-degree (76), degree weight (130), betweenness (520.39), closeness (1.0), and low constraint (0.05). This would suggest that Node #68 may be manager or other trusted colleague that has many connections within the organization and is often utilized for advice. Based on this information, it's expected that Node #68 is a broker, gatekeeper, or other highly skilled and respected employee that is well connected with the rest of the network giving more advice than he/she receives.
+
+Node #73 had the lowest metrics with total degree (18), in-degree (18), out-degree (0), degree weight (18), betweenness (0), closeness (0), and constraint (0.14). This shows an uncommon dynamic in this network, all the advice is coming to the node but none are directed outward as shown in the in-/out-degree. This node also has minimal connections between other nodes. Based on this, we may expect this node to be an independent contributing subject matter expert within the network. 
+
+Nodes 15, 28, 49, 68, and 74 have connections out to each other node in the network (76) making their positions more prominent and likely indicating they are at the top of their respective hierarchy. Advice received for this group is unremarkable except for #68 with the highest in-degree (54) in the network. This makes node 68 the most centralized, prominent node in the network.
+
+## 6. Community Detection
+
+To identify communities within each network, I used the conceptual approach of recognizing more connections within a subgraph than outside of it to determine the communities. The Walktrap algorithm was well suited for the directed, multiplex data.
+
+### Walktrap Community Detection
+
+**Consulting Firm**
+
+```{r, walktrap consulting}
+#Run clustering algorithm: walktrap
+cn.wt<-walktrap.community(cn_advice.ig)
+#Inspect community membership
+igraph::groups(cn.wt)
+
+#Run & inspect clustering algorithm: 20 steps
+igraph::groups(walktrap.community(cn_advice.ig ,steps=20))
+
+```
+
+In both cases of using defaulted steps and predetermined 20 steps, two distinct and equal sized communities (23 nodes) emerge. A plot of the subgraph communities is below. 
+
+```{r, CN Walkstrap}
+#calculate degree for each node
+cn.deg <- degree(cn_advice.stat,gmode="digraph")
+
+#plot the consulting network based on degree size
+cn.communityplot <- plot(cn.wt,cn_advice.ig, vertex.size=cn.deg*.3, edge.arrow.size = 0.5, edge.arrow.width = 0.5, arrow.mode=3, main="Community Detection of a Consulting Firm's Advice Requests", sub="Node Size Indicates Degree of Total Requests | Color Indicates Subgroup")
+
+cn.communityplot
+```
+
+Here we find two distinct communities detected highlighted and circled in orange and blue. Many ties appear within the same community color, however, there are other ties between the two communities as indicated by the red edges. This distinction may signal a hierarchy of communication in two ways. First, ties with a community may be between similar positioned employees as well as between management and employees. Second, ties between communities could indicate key collaborators between the two groups. 
+
+**Research and Development Team**
+
+```{r}
+#Run clustering algorithm: walktrap
+rd.wt<-walktrap.community(rd_advice.ig)
+#Inspect community membership
+igraph::groups(rd.wt)
+
+#Run & inspect clustering algorithm: 20 steps
+igraph::groups(walktrap.community(rd_advice.ig, steps=20))
+```
+
+The first Walktrap algorithm without a defined step shows six community clusters with varying numbers of node, while the second algorithm of 20 steps identifies only 3 subgraph groups. 
+
+A plot of the Research and Development communities is below.
+
+```{r, RD Walktrap}
+#calculate degree for each node
+rd.deg <- degree(rd_advice.stat,gmode="digraph")
+
+#plot the consulting network based on degree size
+rd.communityplot <- plot(rd.wt,rd_advice.ig, vertex.size=rd.deg*.2, edge.arrow.size = 0.5, edge.arrow.width = 0.5, arrow.mode=3, main="Community Detection of a R&D Team's Advice Requests", sub="Node Size Indicates Degree of Total Requests | Color Indicates Subgroup")
+
+rd.communityplot 
+```
+There are six distinct communities in the research and development network highlighted in green, yellow, orange, red, dark blue, and light blue. The dark blue and red communities clustered at the center displaying minimal ties within each group but frequent connections with other communities. This could signal a hierarchy of upper management and employees. Communities in green, yellow, and blue have far more connections within their community than outside perhaps signaling another commonality in node attributes.
+
+### Comparing Community Modularity from the Walktrap Algorithm
+
+```{r}
+#compare community partition modularity scores
+modularity(cn.wt)
+modularity(rd.wt)
+```
+
+Comparing the modularity scores of both networks, there is higher modularity between the research and development team (0.28). This suggests there are fewer edges in the community than the expected edges compared to the consulting firm whose score is 0.24. 
+
+Overall, community detection made it more likely to find communities within the larger network. This proves the authors point that internal social networks is a likely contributor to performance. Details on the nature of these communities is not evident however without information on node attributes.
+
+## 7. Network Inference and Hypotheses
+
+Potential social network hypotheses from this project could compare network structures using a CUG-test. 
+
+**Consulting Firm**
+
+```{r, inferential statistics}
+#create matrix from edgelist
+cn_advice.mat <- as.matrix(cn_advice)
+rd_advice.mat <- as.matrix(rd_advice)
+
+#compare network transitivity to null conditional on size
+trans.cug<-cug.test(cn_advice.stat,FUN=gden,mode="digraph",cmode="size", reps = 500)
+trans.cug
+
+#view plot of cug.test results
+plot(trans.cug)
+```
+
+First, I compared the network density of the consulting firm to a random network of the same network size. Here we see the observed value of network density (0.43) is lower than the simulated network (0.50) meaning the consulting firm network is less dense than we'd find in a random network. 
+
+**Research and Development Team**
+
+```{r}
+
+#compare network transitivity to null conditional on size
+trans.cug2<-cug.test(rd_advice.stat,FUN=gden,mode="digraph",cmode="size", reps = 500)
+trans.cug2
+
+#view plot of cug.test results
+plot(trans.cug2)
+
+```
+
+Once again, comparing the network density of the research and development team to a random network of the same network size, we see the observed value of network density (0.38) is lower than the simulated network (0.50) meaning the research and development team's network is less dense than we'd find in a random network. 
+
+Further research for this data set could add network attributes such as job position, geography, or gender for further analysis. 
+
+#### References
+[1]Cross, R., Parker, A., 2004. The Hidden Power of Social Networks. Harvard Business School Press, Boston, MA.  
+[2]Data Set: <https://toreopsahl.com/datasets/#Cross_Parker> 

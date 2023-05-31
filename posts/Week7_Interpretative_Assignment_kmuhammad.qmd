@@ -1,0 +1,306 @@
+---
+title: "Week 7 Interpretative Assingment"
+author: "Kalimah Muhammad"
+description: "Interpretative Assignment: Community Detection"
+date: "05/13/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+# editor: visual
+categories: 
+  - Week7_assignment
+---
+
+```{r}
+#| label: setup
+#| include: false
+```
+
+```{r, warning=FALSE, include=FALSE}
+library(igraph)
+library(statnet)
+library(readxl)
+library(network)
+library(ggplot2)
+library(tidyverse)
+```
+
+## Assignment Overview
+
+Briefly describe the dataset you are using: identify initial network format, describe and identify the nodes (including how many nodes are in the dataset), what constitutes a tie or edge (including how many ties, whether ties are directed/undirected and weighted/binary, and how to interpret the value of the tie if any), whether or not there are edge attributes that might be used to subset data or stack multiple networks (e.g., tie type, year, etc). The goal should be interpretation of the data, not simply reporting results.
+
+Calculate community clusters using various algorithms in the attached syntax.Which communities make sense, and why? Do some algorithms assign nodes to the “wrong’ communities. How does changing the number of expected clusters affect community membership? Any other comments or observations? Do we observe the type of behavior we would expect, given community assignment? 
+
+## Describe the Network Data
+
+```{r, results='hide'}
+#read in data sets
+#load consulting firm advice edgelist
+cn_advice<- read_xlsx("_data/Consulting_Advice_Network.xlsx")
+
+#load research and development firm advice edgelist
+rd_advice <- read_xlsx("_data/R&D_Advice.xlsx")
+```
+
+In the book, The Hidden Power of Social Networks: Understanding How Work Really Gets Done in Organizations, Rob Cross and Andrew Parker conduct social network analyses of 60 organizations around the world. Cross and Parker suggests managers do not understand how their employees get work done and reveal there are hidden social networks at play impacting an organization's performance.[1] 
+
+For this assignment I will focus on one of the two data sets, the consulting firm. The data was compiled from a survey question and then compiled into edge lists. You can find the source data and further details in the References section.[2] 
+
+For the consulting firm, participants were asked, "Please indicate how often you have turned to this person for information or advice on work-related topics in the past three months." Options= 0: I Do Not Know This Person; 1: Never; 2: Seldom; 3: Sometimes; 4: Often; and 5:Very Often. 
+
+This project analyzes the network to investigate trends in the frequency and concentration of advice exchanged. In the edge list, the variables for the source is listed as "From", the target node as "To", and an ordinal variable for frequency of advice as "Value." 
+
+```{r, wraning=FALSE, results='hide'}
+#create igraph object for consulting firm
+cn_advice.ig <- graph_from_data_frame(cn_advice)
+
+#create statnet object for consulting firm
+cn_advice.stat <- as.network(cn_advice, loops = TRUE, multiple = TRUE)
+
+```
+
+### Network Properties
+
+```{r, consulting network properties}
+#summarize consulting network attributes
+print(cn_advice.stat)
+
+#check if network is weighted
+is_weighted(cn_advice.ig)
+```
+
+The consulting firm includes 879 edges/ties representing a connection between nodes and 46 nodes/vertices representing individual employees. The ties are directed based on who received advice from who. The network is neither bipartite nor weighted. 
+
+### Plot Networks
+
+**Consulting Firm**
+
+```{r, plot consulting network}
+plot(cn_advice.ig, edge.arrow.size = 1)
+```
+
+On first glance, there are three nodes far from the other nodes but connected (15, 24 and 30). These nodes appear to have ties directed towards them but little to no ties directed outward. This would suggest these nodes receive advice requests but not solicit advice from others. Overall, the network appears fairly dense and connected initially. 
+
+### Network Structure
+
+```{r}
+
+#Dyad census, triad census
+#Classify all dyads in the network: statnet
+sna::dyad.census(cn_advice.stat)
+
+#Classify all triads in the network: statnet
+sna::triad.census(cn_advice.stat)
+```
+
+In this network, 55% of the total 880 observations are null/ absent (485). This is also reflected in the high unconnected triples in the triad census. Among mutual or reciprocal dyads, there are 327 ties followed closely by the asymmetrical dyads at 223. These findings may point towards a concentration of information with a subset group that is shared in a hierarchical manner. 
+
+```{r}
+#get number of components
+igraph::components(cn_advice.ig)$no 
+
+#get size of each component
+igraph::components(cn_advice.ig)$csize
+
+#get network density with loops: igraph
+graph.density(cn_advice.ig, loops=TRUE) 
+```
+
+There is one giant component containing all 46 nodes. The network density is also moderately low (0.42). This usually means there is less possibility of information to spread and is likely a contributor to the skewed degree distribution and influence in the network. 
+
+```{r}
+#get global clustering coefficient: igraph
+transitivity(cn_advice.ig, type="global")
+
+#get average local clustering coefficient: igraph
+transitivity(cn_advice.ig, type="average") 
+
+summary(E(cn_advice.ig)$value) 
+```
+
+The average local transitivity (0.80) is higher than the overall network transitivity (0.72) suggesting subgroups are more connected to each other than the group is to the whole organization. 
+
+### Network Degree and Centrality
+
+```{r}
+cn_advice.nodes<-data.frame(name=cn_advice.stat%v%"vertex.names",
+        degree=sna::degree(cn_advice.stat,gmode="digraph"),
+        degree.wt=strength(cn_advice.ig),
+        betweenness=sna::betweenness(cn_advice.stat, gmode="digraph"),
+        close=sna::closeness(cn_advice.stat, cmode="suminvdir"),
+        constraint=constraint(cn_advice.ig)
+        )
+
+datatable(cn_advice.nodes)
+```
+
+Node #20 stands out with the highest total degree (65), in-degree (32), out-degree (32), degree weight (65), betweenness (97.92), closeness (0.87), and constraint (0.10). This would suggest that Node #20 has the highest efficiency or popularity based on the total degree and that this node's connections are fairly mutual with equal in-/out-degrees. The high between score show this node may be a gatekeeper or broker and the low constraint score show minimal redundant information between ties.Based  on this information, it's expected that Node #20 would be a central player within this network.
+
+Node #12 has the highest betweenness score (138.02) and one of the highest closeness metrics (1.0). This person may be a key gatekeeper within the network.
+
+Node #30 had the lowest metrics with total degree (4), in-degree (3), out-degree (1), degree weight (4), betweenness (0), closeness (0.02), and constraint (0.12). This may be due to the node being fairly isolated in the role.
+
+Note, nodes #12 and #16 had a connection with each node in the network.
+
+## Community Clustering
+
+Calculate community clusters using various algorithms.
+
+### Fast and Greedy Algorithm
+```{r, CN fast and greedy}
+#Run clustering algorithm: fast_greedy
+cn.fg<-cluster_fast_greedy(cn_advice.ig)
+
+#Inspect clustering object
+names(cn.fg)
+cn.fg
+
+#retrieve list of nodes in communities
+igraph::groups(cn.fg)
+```
+
+Fast and Greedy algorithms only works on undirected graphs and thus are not applicable for this project. 
+
+### Walktrap Community Detection
+
+```{r}
+#Run clustering algorithm: walktrap
+cn.wt<-walktrap.community(cn_advice.ig)
+#Inspect community membership
+igraph::groups(cn.wt)
+
+#Run & inspect clustering algorithm: 10 steps
+igraph::groups(walktrap.community(cn_advice.ig, steps=10))
+#Run & inspect clustering algorithm: 20 steps
+igraph::groups(walktrap.community(cn_advice.ig ,steps=20))
+#Run & inspect clustering algorithm
+igraph::groups(walktrap.community(cn_advice.ig, steps=100))
+```
+
+For the defaulted Walktrap algorithm and steps 10 and 20, two communities were detected with the same distinction of nodes. When distinguishing 100 steps, five communities emerged. 
+
+```{r, CN Walkstrap}
+#plot network with community coloring
+plot(cn.wt,cn_advice.ig, edge.arrow.size = 0.5, edge.arrow.width = 0.5, arrow.mode=3, main="Walktrap Community Detection")
+```
+Here we find two distinct communities detected in the circled in red and blue. Many ties appear within the same community color, however, there are also numerous ties between the two communities. This distinct may signal a hierarchy of communication within the department between similar positioned employees as well as between management and non-management. 
+
+**Modularity Score Walktrap Algorithm**
+
+```{r}
+#collect modularity scores to compare
+mods<-c(walktrap=modularity(cn.wt))
+mods
+
+```
+
+
+### Leading Label Propagation Community Detection
+
+**Consulting Firm**
+
+```{r}
+#Leading label propagation
+cn.lab<-label.propagation.community(cn_advice.ig)
+
+igraph::groups(cn.lab)
+
+cn_advice.nodes$comm.lab<-cn.lab$membership
+
+plot(cn.lab,cn_advice.ig, edge.arrow.size = 0.5, edge.arrow.width = 0.5, arrow.mode=3, main="Leading Label Propagation Community Detection")
+
+mods<-c(mods, label=modularity(cn.lab))
+
+mods
+```
+
+Here we see one community detected. This algorithm is best suited for weighted edges and may not be appropriate for this data set. 
+
+### Edge Betweenness Community Detection
+```{r}
+#edge betweenness community detection
+cn.edge<-edge.betweenness.community(cn_advice.ig)
+igraph::groups(cn.edge)
+
+cn_advice.nodes$cn.edge<-cn.edge$membership
+
+plot(cn.edge,cn_advice.ig, edge.arrow.size = 0.5, edge.arrow.width = 0.5, arrow.mode=3, main="Edge Betweenness Community Detection")
+
+mods<-c(mods, edge=modularity(cn.edge))
+
+mods
+```
+
+Seventeen communities were detected using the edge betweenness algorithm. Here communities 3-17 only include one node.
+
+### Eigenvector Community Detection
+```{r}
+#consulting firm eigen community detection
+cn.eigen<-leading.eigenvector.community(cn_advice.ig)
+
+igraph::groups(cn.eigen)
+
+cn_advice.nodes$cn.eigen<-cn.eigen$membership
+
+plot(cn.eigen,cn_advice.ig, edge.arrow.size = 0.5, edge.arrow.width = 0.5, arrow.mode=3, main="Eigenvector Community Detection")
+
+mods<-c(mods, eigen=modularity(cn.eigen))
+
+mods
+
+```
+The Eigenvector community detection found two communities similar to the Walktrap clustering. 
+
+### Spinglass Community Detection
+
+```{r}
+giant.component <- function(graph) {
+  cl <- clusters(graph)
+  induced.subgraph(graph, which(cl$membership == which.max(cl$csize)))
+}
+```
+
+
+```{r}
+#extract giant component
+cn.giant<-giant.component(cn_advice.ig)
+```
+
+
+```{r}
+#consulting firm spinglass community detection
+#extract giant component
+cn.giant<-giant.component(cn_advice.ig)
+
+cn.spin<-spinglass.community(cn.giant)
+
+igraph::groups(cn.spin)
+
+cn_advice.nodes$cn.spin[which(cn_advice.nodes$name%in%V(cn.giant)$name)]<-cn.spin$membership
+
+plot(cn.spin,cn_advice.ig, edge.arrow.size = 0.5, edge.arrow.width = 0.5, arrow.mode=3, main="Spinglass Community Detection")
+
+mods<-c(mods, spin=modularity(cn.spin))
+
+mods
+```
+
+The Spinglass algorithm detected two communities similar to the Walktrap and Eigenvector algorithms but the modularity score is slightly higher 0.24.
+
+## Conclusion
+
+**Which communities make sense, and why?**   
+The Walktrap, Eigenvector, and Spinglass algorithms make the most sense. They divide the network into two equal and distinct nodes. 
+
+**Do some algorithms assign nodes to the "wrong" communities?**
+The Edge Betweenness algorithm appeared to incorrectly detect single nodes as communities, and the Leading Label Propagation only identified one community. 
+
+**Do we observe the type of behavior we would expect, given community assignment? **
+Yes. It makes sense that two communities would have the most ties among themselves and that there would be a subgroup that communicates with the other community.
+
+## References
+[1]Cross, R., Parker, A., 2004. The Hidden Power of Social Networks. Harvard Business School Press, Boston, MA.  
+[2]Data Set: <https://toreopsahl.com/datasets/#Cross_Parker> 
