@@ -235,7 +235,7 @@ is_weighted(got_graph)
 ```{r,results='hide'}
 library(igraph)
 
-
+ 
 
 # betweenness centrality
 V(got_graph)$betweenness <- igraph::betweenness(got_graph)
